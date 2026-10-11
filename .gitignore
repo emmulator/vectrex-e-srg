@@ -1,0 +1,16 @@
+# build artifacts
+/build/
+/tests/vxhost
+
+# IDE
+.idea/
+.cache/
+compile_commands.json
+/cmake-build-*/
+
+# misc
+*.log
+.DS_Store
+
+# python
+__pycache__/

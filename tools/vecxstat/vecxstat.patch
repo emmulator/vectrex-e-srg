@@ -1,0 +1,60 @@
+--- a/vecx.c
++++ b/vecx.c
+@@ -1764,6 +1764,16 @@
+ static int cheatDotCycleCount = 0;
+ static int startDraw=0;
+ 
++
++/* VXSTATS instrumentation (scratch build only) */
++extern unsigned reg_pc;
++static long vxs_txt=0; static double vxs_len=0; static long vxs_vec=0, vxs_dots=0, vxs_beam=0, vxs_start=0; static long long vxs_total=0;
++static int vxs_on=-1;
++static void vxs_frame(void){
++  if (vxs_on<0) vxs_on = getenv("VXSTATS")!=NULL;
++  if (vxs_on) fprintf(stderr,"GF %lld %lld %ld %ld %ld %ld %.0f\n", vxs_total, vxs_total - vxs_start, vxs_vec, vxs_dots, vxs_beam, vxs_txt, vxs_len);
++  vxs_start=vxs_total; vxs_vec=vxs_dots=vxs_beam=vxs_txt=0; vxs_len=0;
++}
+ static einline void alg_addline(
+       long x0, long y0,
+       long x1, long y1, unsigned char color, int speed)
+@@ -1772,6 +1782,11 @@
+    long index;
+ 
+    int isDot = (x0==x1) && (y0==y1);
++   if (isDot) vxs_dots++; else { if (reg_pc>=0xF495 && reg_pc<0xF511) { vxs_txt++; } else { vxs_vec++; vxs_len += sqrt((double)(x1-x0)*(x1-x0)+(double)(y1-y0)*(y1-y0)); } }
++   { static long long dumpat=-2; static long long dstart=0;
++     if (dumpat==-2){ char*e=getenv("VXDUMP"); dumpat = e? atoll(e):-1; }
++     if (dumpat>=0 && vxs_start>=dumpat && (dstart==0||dstart==vxs_start)) { dstart=vxs_start;
++       fprintf(stderr,"V %ld %ld %ld %ld %d %d\n",x0,y0,x1,y1,color,speed);} }
+    	  if (isDot)
+ 	  {
+ 		speed = 127;
+@@ -1860,6 +1875,7 @@
+    if (((via_orb & 0x01) == 0) && ((alg_sel & 0x06) == 0x02))
+ 		doStep(); // capacitor
+ 	intensityDrift++;
++	vxs_total++; if (sig_blank==1 && (alg_zsh&0x7f) && !(alg_zsh&0x80)) vxs_beam++;
+    if (sig_zero == 0)
+    {
+       /* need to force the current point to the 'orgin' so just
+@@ -1938,11 +1954,10 @@
+       }
+       else if (((alg_xsh != alg_vector_dx) && (sig_ramp== 0)) || 
+ 	           ((-alg_ysh != alg_vector_dy)&& (sig_ramp== 0)) || 
+-			   (makeUnsigned(alg_zsh) != alg_vector_color) || 
++			   (makeUnsigned(alg_zsh) != alg_vector_color)
+ // removed Dec 2025			   ((sig_ramp == 0) != alg_ramping)
+ 			   )
+       
+-	  ww
+ 	  {
+          /* the parameters of the vectoring processing has changed.
+           * so end the current line.
+@@ -2149,6 +2164,7 @@
+       icycles = e6809_sstep (via_ifr & 0x80, 0);
+ 	  vecx_intermediateSteps_static(icycles-stepsDone);
+       if (reg_pc == 0xf1a2) thisWaitRecal = 1;
++      if (reg_pc == 0xf192) vxs_frame();
+ 
+       cycles -= (long) icycles;
+       fcycles -= (long) icycles;
