@@ -1,0 +1,867 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.w_ePPE-a.js","assets":"assets.DOAjpBS9.js","comments":"comments.BcqPhVn7.js","db":"db.zFlAA4qL.js","dictation":"dictation.f3j7VXQ8.js","downloads":"downloads.axDW2QAi.js","embed":"embed.SWCZLzn6.js","endpoints":"endpoints.BPfoKaE1.js","files":"files.IkpCjcgM.js","mcp":"mcp.kl0G36TA.js","network":"network.B5UA9Su4.js","permissions":"permissions.6yWoDecA.js","reads":"reads.Bgov9hIw.js","room":"room.Dy3vHyq9.js","sample":"sample.D5wHJkl_.js","self":"artifact.w_ePPE-a.js","user":"user.CB0zJsP2.js"},"transforms":"_transforms.DF0fPd9f.js","comments":"_comments.CVOoGJSh.js","translate":"_translate.DqxC5ek1.js","ldx":"_ldx.B4FSryPi.js"}                   </script><script>(function(){"use strict";function fr(t){return t==="cookie"||t==="query"?t:void 0}function dr(t){return typeof t=="number"&&Number.isSafeInteger(t)&&t>0?t:void 0}var to=3e5;function hr(t,e){try{const r=t("navigation")[0],n=[r.responseStart,r.redirectEnd-r.redirectStart,r.domContentLoadedEventStart,e(),r.connectEnd-r.domainLookupStart,r.responseStart-r.requestStart];r.requestStart>0||(n.length=4);for(let a=0;a<n.length;a++)if(n[a]>=0&&n[a]<=3e5)n[a]=n[a]|0;else{if(a<4)return;n.length=4}return n}catch{return}}var pr=["light","dark","system"],mr=/^[A-Za-z0-9_-]{1,64}$/,Lt=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,vr=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function _r(t){const e=t.toLowerCase();return e.startsWith("data-")||e.startsWith("aria-")||vr.has(e)}var Ot="data-ldx-props";function yr(t,e){if(e.toLowerCase()===Ot)return!0;const r=t.getAttribute(Ot);if(r===null)return!1;try{const n=JSON.parse(r);if(n===null||typeof n!="object"||Array.isArray(n))return!0;const a=e.toLowerCase();return Object.keys(n).some(s=>s.toLowerCase()===a)}catch{return!0}}var ro="http://www.w3.org/1999/xhtml",gr="http://www.w3.org/2000/svg",wr=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),br=new Set(["script","style"]);function Er(t){const e=t.localName.toLowerCase();return t.namespaceURI==="http://www.w3.org/1999/xhtml"?!wr.has(e):t.namespaceURI===gr?!br.has(e):!1}function tt(t,e){return t===e||(t===160||t===32)&&(e===160||e===32)}function Sr(t,e){const r=t.length,n=e.length;let a=0;for(;a<r&&a<n&&tt(t.charCodeAt(a),e.charCodeAt(a));)a++;let s=0;for(;s<r-a&&s<n-a&&tt(t.charCodeAt(r-1-s),e.charCodeAt(n-1-s));)s++;return{p:a,s}}function kr(t,e){const r=t.firstChild;if(t.childNodes.length!==1||r===null||r.nodeType!==Node.TEXT_NODE){t.textContent=e;return}const n=r.data,a=n.length,s=e.length,{p:l,s:c}=Sr(n,e);l===a&&c===0&&a===s||r.replaceData(l,a-l-c,e.slice(l,s-c));const T=r.data,w=t.ownerDocument.getSelection?.()??null,_=w!==null&&w.rangeCount>0&&(w.anchorNode===r||w.focusNode===r)?{anchor:w.anchorNode,anchorOffset:w.anchorOffset,focus:w.focusNode,focusOffset:w.focusOffset}:null;let h=-1,A=-1;for(let p=0;p<T.length&&p<e.length;p++){const j=T.charCodeAt(p),R=e.charCodeAt(p);j!==R&&tt(j,R)&&(h<0&&(h=p),A=p)}const O=h>=0;if(O&&r.replaceData(h,A-h+1,e.slice(h,A+1)),O&&_!==null&&_.anchor!==null&&_.focus!==null)try{w.setBaseAndExtent(_.anchor,_.anchorOffset,_.focus,_.focusOffset)}catch{}}var Ar=new Set(["html","head","body","frameset"]);function Rr(t){return t.namespaceURI==="http://www.w3.org/1999/xhtml"&&Ar.has(t.localName)}function Tr(t){if(t===null||typeof t!="object")return!1;const e=t;if(typeof e.target!="string"||!mr.test(e.target)||e.text!==void 0&&typeof e.text!="string")return!1;if(e.attrsSet!==void 0){if(e.attrsSet===null||typeof e.attrsSet!="object")return!1;for(const[r,n]of Object.entries(e.attrsSet))if(!Lt.test(r)||typeof n!="string")return!1}if(e.attrsRemoved!==void 0){if(!Array.isArray(e.attrsRemoved))return!1;for(const r of e.attrsRemoved)if(typeof r!="string"||!Lt.test(r))return!1}return!0}function Lr(t,e){if(t===null||typeof t!="object")return!1;const{seq:r,elements:n}=t;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let a=0;a<n.length;a++)if(!e(n[a]))return!1;return!0}function Or(t){return t===null||typeof t!="object"?!1:Lr(t.__frame_patch,Tr)}function Mr(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_init;return e!==null&&typeof e=="object"}function Pr(t){return t!==null&&typeof t=="object"&&t.__frame_size_poke===!0}function Nr(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_host_visible;return e!==null&&typeof e=="object"&&typeof e.visible=="boolean"}function Cr(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_theme;if(e===null||typeof e!="object")return!1;const r=e.theme;return typeof r=="string"&&pr.includes(r)}var Fr=["ok","empty","snapshot_error","snapshot_timeout","unclonable","oversize","unavailable","restore_error","withheld"],jr=["TypeError","RangeError","ReferenceError","SyntaxError","DataCloneError","QuotaExceededError","AbortError","TimeoutError","SecurityError","Error","other"];function xr(t){return typeof t=="string"&&jr.includes(t)?t:"other"}var Ir=Object.freeze({until:null,now:!1}),Dr="__claude_hot",Hr="__claude_hot_in",Br=/^__claude_hot(?:_in)?(?::|$)/,Mt=/^[0-9a-z]{1,32}$/,rt=t=>t===void 0?Dr:"__claude_hot:"+t,Le=t=>t===void 0?Hr:"__claude_hot_in:"+t;function qr(t,e){const r=[];for(let n=0;n<t.length;n++){const a=t.key(n);a!==null&&a!==e&&Br.test(a)&&r.push(a)}for(const n of r)t.removeItem(n)}function Ur(t){let e=null;try{e=q(JSON.parse(t)?.hot)}catch{return null}return e===null||typeof e.k!="string"||!Mt.test(e.k)?null:he(e.g)?{k:e.k,g:e.g}:{k:e.k}}var no=262144,Kr=3e3,Gr=5e3,Pt=/^[a-z0-9._:-]{1,64}$/,$r=["none","hot-restart","hard-reload"],zr=["asset","doc","added","removed"],Wr=1500,Vr=/^[0-9a-f]{64}$/;function q(t){return t!==null&&typeof t=="object"?t:null}function he(t){return typeof t=="number"&&Number.isInteger(t)&&t>=0&&t<2**31}function Nt(t){return t===void 0||typeof t=="number"&&Number.isFinite(t)}function Xr(t){return t===void 0||typeof t=="string"&&Pt.test(t)}function Ct(t){const e=q(t);return e!==null&&(e.until===null||typeof e.until=="number"&&Number.isFinite(e.until))&&typeof e.now=="boolean"}function nt(t){const e=q(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Nt(e.seq)&&typeof e.handoff=="string"&&Fr.includes(e.handoff)&&Xr(e.note)}function Ft(t){const e=q(t);return e!==null&&he(e.gen)&&(e.phase==="final"||e.phase==="pending")&&(e.from===null||nt(e.from))}function Yr(t){const e=q(t);return e!==null&&e.kv===1&&he(e.gen)&&nt(e.from)&&Object.hasOwn(e,"data")}function Jr(t){const e=q(t);return e!==null&&e.__frame_hot_snapshot===!0&&he(e.gen)&&typeof e.timeoutMs=="number"&&e.timeoutMs>=0&&e.timeoutMs<=6e4&&(e.handoff===void 0||typeof e.handoff=="boolean")&&(e.deadline===void 0||Ct(e.deadline))&&Nt(e.seq)&&(e.note===void 0||typeof e.note=="string")&&(e.key===void 0||typeof e.key=="string")}function Zr(t){const e=q(t);return e!==null&&e.__frame_hot_start===!0&&he(e.gen)&&nt(e.from)}function Qr(t){return typeof t=="string"&&t.length>=1&&t.length<=128}function jt(t){return q(t)!==null&&!Array.isArray(t)}function en(t){const e=q(t);return e!==null&&e.__frame_cap_grant===!0&&typeof e.cap=="string"&&Qr(e.ver)&&(e.grant===void 0||jt(e.grant))&&(e.budgets===void 0||jt(e.budgets)&&Object.values(e.budgets).every(Number.isFinite))&&(e.brokerGen===void 0||he(e.brokerGen))}function tn(t){const e=q(t);return e!==null&&e.__frame_cap_rewired===!0&&(e.caps===void 0||Array.isArray(e.caps)&&e.caps.every(r=>typeof r=="string"))&&(e.brokerGen===void 0||he(e.brokerGen))}function Ge(t){const e=q(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Number.isFinite(e.seq)}function xt(t){if(t==null||typeof t=="string")return!0;const e=q(t);return e!==null&&typeof e.doc=="string"&&typeof e.profile=="string"}function rn(t){const e=q(t);return e!==null&&typeof e.path=="string"&&zr.includes(e.kind)&&xt(e.from)&&xt(e.to)}function nn(t){return t===null?null:Object.freeze(t.filter(rn))}function on(t){const e=q(t);return e!==null&&e.__frame_hot_update===!0&&Number.isFinite(e.id)&&Ge(e.from)&&Ge(e.to)&&(e.changed===null||Array.isArray(e.changed))&&$r.includes(e.required)&&Ct(e.deadline)&&typeof e.verdictTimeoutMs=="number"&&e.verdictTimeoutMs>=0&&e.verdictTimeoutMs<=6e4&&(e.preflight===void 0||typeof e.preflight=="string"&&Vr.test(e.preflight))}function an(t){const e=q(t);return e!==null&&e.__frame_hot_readdress===!0&&Ge(e.from)&&Ge(e.to)}var pe=/^[\w.-]+\.js$/;function sn(t,e,r){return r?"inert":typeof e=="string"&&pe.test(e)?t?[e]:"inert":t?"inert":"framed"}var It=Object.freeze({[Symbol("claude.hot.restart")]:!0});function Dt(t,e){let r;try{r=t??sessionStorage}catch{return null}const n=rt(e?.k),a=Le(e?.k);let s=null;try{s=r.getItem(n)}catch{}try{r.removeItem(n)}catch{}try{qr(r,a)}catch{}let l=null;if(s!==null&&!(e!==null&&e.g===void 0))try{const c=JSON.parse(s);Yr(c)&&(e===null||c.gen===e.g)&&(l=c)}catch{}if(l===null)try{r.removeItem(a)}catch{}return l}function Ht(){const t=/^\/_f\/([^/]{1,128})\//.exec(location.pathname);return t?t[1]:""}var ln=/^[^/\\?#]{1,128}$/,ot=t=>ln.test(t)&&t!=="."&&t!=="..";function Bt(t,e,r){const n=new URL(t),a="/_f/"+e+"/";if(!e||!n.pathname.startsWith(a)||!ot(r))return null;const s=n.search.slice(1).split("&").filter(l=>!/^__frame_t(?:=|$)/.test(l)).join("&");return n.origin+"/_f/"+r+"/"+n.pathname.slice(a.length)+(s?"?"+s:"")+n.hash}var $e="{}";function Oe(t){if(!t)return null;const e={ver:t.ver,handoff:t.handoff};return t.seq!==void 0&&(e.seq=t.seq),t.note!==void 0&&(e.note=t.note),e}function qt(t,e){return t!==null&&t.note===void 0&&e?.note!==void 0?{...t,note:e.note}:t}function Ut(t){const e=t?.k;return e!==null&&typeof e=="object"?e:void 0}function cn(t,e,r,n=null){const a=setTimeout,s=clearTimeout,l=queueMicrotask,c=performance.now.bind(performance),T=new TextEncoder;let w=null,_=null;try{w=history,_=w.replaceState.bind(w)}catch{}const h=(...o)=>{try{console.warn(...o)}catch{}};let A=Ht(),O=null;try{O=sessionStorage}catch{}const p={storage:O,fetch:typeof fetch=="function"?fetch.bind(globalThis):null,entry:location.origin+location.pathname+location.search,ver:A,priors:[],key:n?.k};let j=n?.k;const R=typeof requestAnimationFrame=="function"?requestAnimationFrame:o=>a(()=>o(c()),16);let y=e?.data??{},b=Oe(e?.from),x=e?.gen??0,D=e!==null,B=!1,G=!1,H=null,be=!1;const Fe=new AbortController;let je=null,U=null,Ee=null,xe=!1,le=()=>{};const ce=new Promise(o=>{le=o});let ve=!1,u=!1,E=!1,m,g=null,I=!1,$=!1,K=!1,te=!1,Y=!1,_e=!1;const ye=o=>{for(const f of[rt(o),Le(o)])try{O?.removeItem(f)}catch{}},z=(o,f)=>{try{f!==null&&r.post(o,f)}catch{}},Ie=()=>Y||=K&&(U===null||te),J=()=>{const o={__frame_hot:!0,ready:U!==null,accept:Ee!==null,demand:!0};_e=!Y,_e&&(o.booting=!0),ve&&(o.readData=!0),E&&(o.threw=!0),g?.assess&&(o.preflight=!0),z(o,H)};let De=!1,re=!1,ue=!1,He=!1;const Je=()=>{De||!be||ue||(De=!0,z({__frame_reveal_hold:!0},"*"))},Se=()=>new Promise(o=>{let f,d=0;const v=M=>{if(f===void 0)f=M;else if(M!==f||++d>=8){o();return}try{R(v)}catch{o()}};try{R(v)}catch{o()}}),Be=()=>{ue=!0,z({__frame_reveal_ready:!0},"*")},qe=o=>{re||(re=!0,o.then(f=>{if(f===!1)return;let d=null;try{d=g?.settle?.()??null}catch{}return(d===null?Se():new Promise(v=>{a(v,50),Promise.resolve(d).then(v,v)}).then(Se)).then(Be)}))},gt=()=>{if(He||!ue)return;He=!0;const o=()=>{try{g?.afterReveal?.()}catch{}};o(),Se().then(()=>{o(),Be()})},ee=(o=!1)=>{if(xe||U===null||!D||!G)return;xe=!0;const f=U,d=y;l(()=>{let v;try{v=f(d)}catch(P){throw le(!1),P}let M=!1;try{M=typeof v?.then=="function"}catch{}if(!M){le(!0);return}Promise.resolve(v).then(()=>le(!0),P=>{le(!1),l(()=>{throw P})})}),qe(o?ce:r.dcl.then(()=>ce))},fe=o=>typeof o=="string"&&Pt.test(o)?o:void 0,ke=o=>{const f={__frame_hot_restart:!0},d=fe(o?.note);d!==void 0&&(f.note=d),o?.required==="hard-reload"&&(f.required="hard-reload"),z(f,H)},Ue=Object.freeze({get data(){return G||(u=!0),!D&&!ve&&(ve=!0,G&&J()),y},get from(){return b},get gen(){return x},signal:Fe.signal,snapshot(o){typeof o=="function"&&(je=o)},ready(o){typeof o!="function"||U!==null||(U=o,Je(),J(),B&&z({__frame_hot_ready:!0,gen:x},H),ee())},accept(o){typeof o=="function"&&(Ee=o,J())},restart(o){const f={note:o?.note,required:o?.required};if(G){ke(f);return}const d=m;m={note:fe(d?.note)??f.note,required:d?.required==="hard-reload"||f.required==="hard-reload"?"hard-reload":void 0}}});let i=null,S=()=>{};const k=new Promise(o=>{S=o});let N=null;const Z=()=>N??=r.dcl.then(()=>{let o=!1;try{o=i!==null&&i.expect()}catch{}if(!o)return;const f=i.maxMs;return new Promise(d=>{k.then(d),a(d,f)})}),Q=()=>{if(!I||$||g===null)return;$=!0;const o=g;Z().then(()=>{try{ue||o.afterStart(Ut(e),!1)}catch{}})},de=o=>{e!==null&&u&&(ve=!0),y={},b=null,x=0;try{O?.removeItem(Le(n?.k))}catch{}e!==null&&!o&&qe(r.dcl.then(()=>U!==null?ce:void 0))},$n=()=>{I=!0,qe(Z().then(()=>U!==null?ce:void 0)),Q()};try{addEventListener("error",()=>{E||U!==null||(E=!0,J())})}catch{}const sr=()=>{a(()=>{!Y&&Ie()&&_e&&J()},0)};try{K=document.readyState==="complete",K||addEventListener("load",()=>{K=!0,sr()},{once:!0})}catch{K=!0}Ie(),ce.then(()=>{te=!0,sr()});let ge=-1,wt,bt,Ke=!0,Et=!1,St,Ze=null;const kt=o=>{const f=Ze===null;Ze=Ke&&o[0]!=="withheld"?o:["withheld",o[1],$e];let d=o[0];if(Ke&&d!=="withheld"){const M={ver:A,handoff:d};wt!==void 0&&(M.seq=wt),bt!==void 0&&(M.note=bt);try{if(O===null)throw new Error("no storage");O.setItem(rt(j),'{"kv":1,"gen":'+ge+',"from":'+JSON.stringify(M)+(St!==void 0?',"k":'+JSON.stringify(St):"")+',"data":'+(d==="ok"?o[2]:$e)+"}")}catch{d="unavailable"}}else{d="withheld",ye(j);try{g?.release?.()}catch{}}const v={__frame_hot_snapshotted:!0,gen:ge,handoff:d,bytes:o[1]};o[3]!==void 0&&(v.errName=o[3]),z(v,H),f&&(d==="snapshot_error"||d==="unclonable"||d==="oversize")&&h("claude.hot: snapshot",d,o[3])},Ae=o=>{try{return xr(o?.name)}catch{return"other"}},Re=(o,f,d=0)=>kt(f===void 0?[o,d,$e]:[o,d,$e,Ae(f)]),zn=o=>{if(o.gen<=ge)return;const f=ge>=0;if(ge=o.gen,wt=o.seq,bt=fe(o.note),typeof o.key=="string"&&Mt.test(o.key)&&o.key!==j&&(ye(j),j=o.key),Ke&&=o.handoff!==!1,f){Ze!==null?kt(Ze):Et&&z({__frame_hot_held:!0,gen:ge},H);return}Fe.abort();const d=Object.freeze({handoff:Ke,timeoutMs:o.timeoutMs,deadline:o.deadline??Ir}),v=je,M=()=>{if(Ke)try{St=g?.capture()}catch{}if(v===null){Re("empty");return}let L=!1;const W=a(()=>{L||(L=!0,Re("snapshot_timeout"))},Math.max(0,d.timeoutMs));Promise.resolve().then(()=>v(d)).then(Te=>{if(L)return;L=!0,s(W);let ne;try{ne=JSON.stringify(Te)}catch(At){Re("unclonable",At);return}if(typeof ne!="string"){Re("unclonable");return}let oe=ne.length;try{oe=T.encode(ne).length}catch{}if(oe>262144){Re("oversize",void 0,oe);return}kt(["ok",oe,ne])},Te=>{L||(L=!0,s(W),Re("snapshot_error",Te))})};let P=null;try{P=g?.holdForIme()??null}catch{}if(P===null)M();else{Et=!0,z({__frame_hot_held:!0,gen:ge},H);const L=()=>{Et=!1,M()};P.then(L,L)}},Wn=o=>{if(!B||D||U===null||o.gen!==x)return;let f=null;try{f=Dt(O,n&&{k:n.k,g:o.gen})}catch{}if(f!==null&&f.gen!==o.gen){f=null;try{O?.removeItem(Le(n?.k))}catch{}}y=f?.data??{},b=qt(Oe(f?.from??o.from),Oe(o.from)),f!==null&&(x=f.gen),D=!0,B=!1;const d=Ut(f);ce.then(v=>{try{v&&g?.afterStart(d,!0)}catch{}}),ee(!0)},ir=o=>{const f=A,d=p.entry;let v="",M,P=null;try{if(v=location.href,M=w.state,P=Bt(v,f,o),P!==null)if(_(M,"",P),location.pathname.startsWith("/_f/"+o+"/"))P=location.href;else return{failed:"navigate event canceled"}}catch(L){return{failed:Ae(L)}}A=p.ver=o,p.priors.push(f)>8&&p.priors.splice(1,1);try{p.entry=Bt(d,f,o)??d}catch{}return[P,f,d,v,M]},Vn=({from:o,to:f})=>{let d,v;if(!ot(f.ver))d="adopt_failed",v="not a version path segment";else if(f.ver===A)d="adopted";else if(!A||o.ver!==A)d="stale";else{const P=ir(f.ver);"failed"in P?(d="adopt_failed",v=P.failed):d=P[0]===null?"adopt_skipped":"adopted"}v!==void 0&&h(`claude.hot: could not move this page's URL to its new version folder /_f/${f.ver}/ (${v})`);const M={__frame_hot_readdressed:!0,to:f.ver,at:A,outcome:d};z(M,H)};let Qe=0;const Xn=o=>{const f=Ee;if(f===null||o.id<=Qe)return;Qe=o.id;const d=g?.assess;if(o.preflight===void 0||d===void 0){lr(o,f);return}let v=!1;const M=W=>{v||(v=!0,s(L),o.id===Qe&&lr(o,f,W))},P=()=>M(d.timeout(o)),L=a(P,Wr+100);d.run(o,window).then(M,P)},lr=(o,f,d)=>{let v,M=!1,P=!1,L,W,Te=null;const ne=C=>{if(P)return!1;if(L!==void 0&&L!==C)return h(`claude.hot: u.${C}() ignored - u.${L}() was called first`),!1;const ae=L===void 0;return L=C,ae},oe=C=>{L="restart",h(`claude.hot: ${C} - restarting`)},At=()=>{if(!ne("adopt")||o.id!==Qe)return;const C=o.to.ver;if(et.required!=="none"){oe(`u.adopt() needs required 'none', it is '${et.required}'`);return}if(!ot(C)){oe("u.adopt() cannot address this version");return}if(!A||C===A)return;const ae=ir(C);if("failed"in ae){W="adopt_failed",oe(`adopt_failed ${ae.failed}; URL not changed`);return}const[X,Tt,Zn,ur,Qn]=ae;X===null?(W="adopt_skipped",h(`claude.hot: adopt_skipped - page already left /_f/${Tt}/; URL not changed, update still applied`)):W="adopted",Te=()=>{if(A===C){if(X!==null)try{if(location.href!==X)h("claude.hot: adopt_revert_skipped - update not applied; URL left where the page navigated");else{if(_(Qn,"",ur),location.href!==ur){h("claude.hot: adopt_revert_failed navigate event canceled - URL still at the new version");return}W="adopt_reverted",h("claude.hot: adopt_reverted - adopt() was called but the handler threw; URL restored")}}catch(eo){h(`claude.hot: adopt_revert_failed ${Ae(eo)} - URL still at the new version`);return}A=p.ver=Tt,p.entry=Zn,p.priors[p.priors.length-1]===Tt&&p.priors.pop(),X===null&&(W=void 0)}}},et=Object.freeze({from:{ver:o.from.ver,seq:o.from.seq},to:{ver:o.to.ver,seq:o.to.seq},changed:nn(o.changed),required:o.required,deadline:o.deadline,adopt:At,defer(){return ne("defer")&&et.deadline.now&&oe("u.defer() past the deadline"),It},restart(C){return ne("restart"),L==="restart"&&!P&&(v??=fe(C?.note),M||=C?.required==="hard-reload"),It},...d?.update}),Yn=(C,ae)=>{P=!0,C==="threw"?(Te?.(),v??=Ae(ae).toLowerCase()):L===void 0&&h(C==="timeout"?"claude.hot: accept handler did not answer in time - restarting":"claude.hot: accept handler settled without defer/restart/adopt - restarting");const X={__frame_hot_verdict:!0,id:o.id};X.verdict=C==="threw"||L===void 0||L==="restart"?"restart":L==="adopt"?"applied":"deferred",X.verdict==="restart"&&(M&&(X.required="hard-reload"),v!==void 0&&(X.note=v)),W!==void 0&&(X.verdict==="applied"||W!=="adopted")&&(X.adopt=W),z(Object.assign(X,d?.verdict),H)};let cr=!1;const Rt=(C,ae)=>cr?!1:(cr=!0,s(Jn),Yn(C,ae),!0),Jn=a(()=>Rt("timeout"),o.verdictTimeoutMs);Promise.resolve().then(()=>f(et)).then(()=>Rt("settled"),C=>{!Rt("threw",C)&&L==="adopt"&&ke({note:Ae(C).toLowerCase()}),h("claude.hot: accept",Ae(C))})};try{t.hot===void 0&&Object.defineProperty(t,"hot",{value:Ue,writable:!1,configurable:!1,enumerable:!1})}catch{}return{hot:Ue,boot:p,afterConnect(){be=!0,(e!==null||U!==null)&&Je()},onInit(o,f){H=f,G=!0;const d=Ft(o)?o:null;d?.phase==="final"&&e!==null&&e.gen===d.gen?(D=!0,b=qt(b,Oe(d.from)),$n()):(B=d?.phase==="pending",de(B),D=!B,x=d?.gen??0,b=Oe(d?.from)),J(),_e&&a(()=>{Y||(Y=!0,J())},Gr),B&&U!==null&&z({__frame_hot_ready:!0,gen:x},f),m!==void 0&&(ke(m),m=void 0),ee()},onNoInit(){G=!0,de(!1),D=!0,ee()},onShell(o){return o?.__frame_revealed===!0?(gt(),!1):Jr(o)?(zn(o),!0):Zr(o)?(Wn(o),!0):on(o)?(Xn(o),!0):an(o)?(Vn(o),!0):!1},attachExtras(o){g=o,Q(),o.assess&&J()},inSlot:()=>Le(j),hydration(o,f){i??={expect:o,maxMs:f}},hydrated(){S()},carried(){return D?y:{}},presented:()=>ue}}var oo="frame_ldx_runtime",un="frame_ldx_build",ao="script#an-form",fn=256;function at(t,e,r){for(const n of t)r(n)&&t.delete(n);t.size>=fn&&!t.has(e)&&t.delete(t.values().next().value),t.add(e)}function Me(t,e,r,n){try{const a=t[e];if(typeof a!="function")return;t[e]=function(...s){if(n){let c;try{c=n(this)}catch{}if(c!==void 0)return c}const l=a.apply(this,s);try{r?.(this)}catch{}return l}}catch{}}var dn=()=>{},st;function hn(){if(st)return st;const t={media:new Set,contexts:new Set,wakeLocks:new Set,gate:null,refuse:null,onStart:null,onStop:null};st=t;const e=l=>t.gate?.(l),r=l=>{t.onStop?.(l)},n=window.HTMLMediaElement?.prototype;n&&(Me(n,"play",l=>{at(t.media,l,c=>c.paused),t.onStart?.(l)},e),Me(n,"pause",r));const a=window.AudioContext,s=window.AudioNode?.prototype;a&&s&&(Me(s,"connect",l=>{const c=l.context;c instanceof a&&(at(t.contexts,c,T=>T.state==="closed"),t.onStart?.(c))}),Me(a.prototype,"resume",void 0,e),Me(a.prototype,"suspend",r));try{const l=window.WakeLock?.prototype,c=l?.request;l&&typeof c=="function"&&(l.request=function(...T){if(t.refuse)return t.refuse();const w=c.apply(this,T);return Promise.resolve(w).then(_=>{at(t.wakeLocks,_,h=>h.released),t.onStart?.(_)},dn),w})}catch{}return t}function pn(t){let e=window;for(let r=0;e.parent&&e.parent!==e&&r<8;r++)if(e=e.parent,t(e))return!0;return!1}function mn(){let t=null;const e=()=>t??parent,r=n=>t?n===t:pn(a=>a===n);return{post(n,a){if(t){e().postMessage(n,a);return}let s=parent;for(let l=0;l<8&&(s.postMessage(n,a),!(!s.parent||s.parent===s));l++)s=s.parent},on(n){const a=s=>{const l=s.source;r(l)&&n(s.data,s.origin,s.isTrusted,()=>{t??=l})};return addEventListener("message",a),()=>removeEventListener("message",a)},port:n=>({post(a,s){if(s?.activation){e().postMessage(a,{targetOrigin:n,includeUserActivation:!0});return}if(s?.transfer){e().postMessage(a,n,s.transfer);return}e().postMessage(a,n)},on(a,s){const l=c=>{r(c.source)&&c.origin===n&&a(c.data,c)};return addEventListener("message",l,s),()=>removeEventListener("message",l,s)}})}}function vn(){const t={post:()=>{},on:()=>()=>{}};return{...t,port:()=>t}}var _n=500,yn=2e4,gn="data-token-reads",wn="data-frame-refused-watch",bn="data-frame-unsupported",En=/(?:^|\s)stylesheet(?:\s|$)/i;function Sn(t,e){let r="";if(t instanceof HTMLScriptElement?r=t.src:t instanceof HTMLLinkElement&&En.test(t.rel)&&(r=t.href),!r)return null;try{const n=new URL(r);return n.origin===location.origin&&n.pathname.startsWith(e)?n.origin+n.pathname:null}catch{return null}}function kn(t,e,r){if(!t||e!=="query")return;const n="/_f/"+t+"/";document.documentElement.setAttribute(wn,"");const a=location.href,s=fetch,l=setTimeout,c={method:"HEAD",cache:"no-store",credentials:"same-origin"},T=p=>p.ok||p.status===304;let w=!1,_=!1;const h=()=>removeEventListener("error",O,!0),A=async p=>{const j=await s(p,c);if(T(j))_=!0;else if(j.status===403){const R=await s(a,c);if(T(R)){const y=(await s(p,c)).status;y===403?(_=!0,document.documentElement.setAttribute(bn,""),r()):y<500&&(_=!0)}else R.status>=400&&R.status<500&&(_=!0)}},O=p=>{if(_||w)return;if(document.documentElement.hasAttribute(gn)){_=!0,h();return}const j=Sn(p.target,n);j&&(w=!0,l(()=>{A(j).catch(()=>{}).finally(()=>{w=!1,_&&h()})},_n))};addEventListener("error",O,!0),addEventListener("load",h,{once:!0}),l(h,yn)}var it="__frame_scroll",An=150,Rn=310,Tn=160,Ln=3e4,Kt="p,h1,h2,h3,h4,h5,h6,li,pre,blockquote,tr,dt,dd,figcaption,summary",Gt=()=>innerWidth<=Rn&&innerHeight<=Tn,$t=t=>{const e=document.createTreeWalker(t,NodeFilter.SHOW_TEXT);let r="";for(;r.length<600&&e.nextNode();)r+=e.currentNode.nodeValue.slice(0,600-r.length);const n=r.replace(/\s+/g," ").trim().slice(0,120);let a=2166136261;for(let s=0;s<n.length;s++)a=Math.imul(a^n.charCodeAt(s),16777619);return n.length>11?a>>>0||1:0},zt=t=>{for(let e=t;e&&e!==document.scrollingElement;e=e.parentElement){const r=getComputedStyle(e).position;if(r==="fixed"||r==="sticky"||e!==t&&e.scrollTop)return!1}return!0},On=()=>{const t=[],e=[];try{for(let r=0;r<16;r++){const n=document.elementFromPoint(innerWidth/(r%2?4:2),innerHeight*(r>>1)/8+1);let a=n?.closest(Kt)??n;for(;a&&!a.matches(Kt)&&![...a.childNodes].some(l=>l.nodeType===3&&l.nodeValue?.trim());)a=a.parentElement;const s=a&&!e.includes(a)?$t(a):0;s&&!t.some(l=>l[0]===s&&l[2]===a.tagName)&&zt(a)&&(e.push(a),t.push([s,Math.round(a.getBoundingClientRect().top),a.tagName]))}}catch{}return t.sort((r,n)=>+(r[1]<0)-+(n[1]<0)),t.length?t.slice(0,3):void 0},Mn=t=>{try{for(const[e,r,n]of t.a??[]){const a=document.getElementsByTagName(n);let s;for(let c=0;c<a.length&&a.length<5e3;c++)$t(a[c])===e&&(s=s===void 0||s?.contains(a[c])?a[c]:null);const l=s?.getBoundingClientRect();if(l?.height&&s.checkVisibility?.()!==!1&&zt(s)&&isFinite(r))return Math.max(0,Math.round(scrollY+l.top-r))}}catch{}return t.y};function Pn(){let t=0,e=!1,r=!1,n=!1,a={y:0},s=null;const l=b=>{try{sessionStorage.setItem(it,JSON.stringify(b))}catch{}},c=b=>{if(clearTimeout(t),s===null)return;const x=s;s=null,l({y:x,a:b&&x>0?On():void 0})},T=()=>{if(e){e=!1;return}r=!0,s=scrollY,clearTimeout(t),t=setTimeout(c,An,!0)};try{addEventListener("scroll",T,{passive:!0}),addEventListener("pagehide",()=>c())}catch{}const w=()=>{let b;try{b=sessionStorage.getItem(it)}catch{return null}if(b===null)return null;let x;try{x=JSON.parse(b)}catch{x=null}const{y:D,a:B}=x??{};if(!(typeof D=="number"&&Number.isFinite(D)&&D>=0)){try{sessionStorage.removeItem(it)}catch{}return null}const G=H=>Array.isArray(H)&&typeof H[0]=="number"&&Number.isFinite(H[1])&&typeof H[2]=="string";return{y:D,a:Array.isArray(B)&&B.length<4&&B.every(G)?B:void 0}};let _=!1,h=-1;const A=b=>{try{const x=scrollY,D=Mn(b);scrollTo({top:D,left:0,behavior:"instant"}),a=Gt()?b:{y:D,a:b.a},n=!0,clearTimeout(t),s=null,l(a),h=scrollY,h!==x&&(e=!0);const B=D!==b.y&&document.readyState!=="complete";(h!==D||B)&&!_&&(_=!0,addEventListener("load",()=>{try{scrollY===h&&A(w()??a)}catch{}},{once:!0}))}catch{}},O=()=>{try{return!!location.hash}catch{return!0}};let p=!1;const j=()=>{try{if(p||!Gt())return;p=!0;const b=Date.now(),x=()=>{try{removeEventListener("resize",x)}catch{}Date.now()-b>Ln||r||O()||A(w()??a)};addEventListener("resize",x)}catch{}};let R=!1,y=!1;return{restore(){if(R||(R=!0,O()))return;const b=w();b!==null&&(A(b),j())},promoted(){if(y||(y=!0,O()))return;const b=w();b!==null?(A(b),j()):n&&A(a)}}}function Nn(t,e,r,n){let a=null;try{a=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:T=>T})??null}catch{}const s=window.Worker,l=s?.prototype,c=Object.freeze({Worker:s,workerOn:l?.addEventListener,workerPost:l?.postMessage,workerTerminate:l?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,now:Date.now,policy:a,origins:e});r(t).then(T=>T?.bootTopLevel?T.bootTopLevel(c,n):n.settle()).catch(()=>n.settle())}var so="modulepreload",io=function(t){return"/"+t},lo={},Cn=function(e,r,n){let a=Promise.resolve();function s(l){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=l,window.dispatchEvent(c),!c.defaultPrevented)throw l}return a.then(l=>{for(const c of l||[])c.status==="rejected"&&s(c.reason);return e().catch(s)})},Fn=window===top,Wt=Object.getOwnPropertyDescriptor(window,"claude"),ze=sn(Fn,window.__FRAME_PREAMBLE?.topLevel,Wt?.writable===!1),lt=typeof ze=="object"&&ze[0],F=lt?vn():mn();(function(){const t=Object.defineProperty,e=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let a=0;a<r.length;a++){const s=r[a];try{t(e,s,{value:void 0,writable:!1,configurable:!1})}catch{try{delete e[s]}catch{}try{t(e,s,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof e[s]=="function"&&n++}if(n&&ze==="framed")try{F.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Vt=1e4,jn=2e3,ct=2e3,ut=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function Xt(t){for(const e of ut)if(e.endsWith(":*"))try{const r=new URL(t);if(`${r.protocol}//${r.hostname}:*`===e)return!0}catch{}else if(t===e)return!0;return!1}var Pe=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),Ne=window.__FRAME_PREAMBLE?.transforms,ft=window.__FRAME_PREAMBLE?.comments,dt=window.__FRAME_PREAMBLE?.translate,me=window.__FRAME_PREAMBLE?.ldx,We=fr(window.__FRAME_PREAMBLE?.cred),Yt=(()=>{try{const[t]=performance.getEntriesByType("navigation"),e=t?.serverTiming?.find(r=>r.name==="frame-cred-exp");return e!==void 0&&/^\d{1,15}$/.test(e.description)?dr(Number(e.description)):void 0}catch{return}})();function Jt(t){return Cn(()=>import("/_runtime/"+t),void 0)}var Ce=new Set,Zt=setTimeout,xn=fetch,In=AbortController,Dn=800+800*Math.random(),Hn=3e3,Ve=null,Qt=new Map;function Bn(t,e){let r=Qt.get(t);return r||Qt.set(t,r=qn(t,e)),r}function qn(t,e){if(Ve?.has(t))return Promise.resolve("csp");if(navigator.onLine===!1)return Promise.resolve("offline");const r=new In;let n=!1;return Zt(()=>{n=!0,r.abort()},Hn),xn("/_runtime/"+t,{signal:r.signal}).then(a=>(r.abort(),a.ok?/javascript/i.test(a.headers.get("content-type")??"")?e instanceof Error&&/:\d+:\d+\)?$/m.test(e.stack??"")?"eval":"served":"mime":"http"),()=>n?"timeout":Ve?.has(t)?"csp":"net")}function se(t){if(!Ve){const e=Ve=new Set;try{document.addEventListener("securitypolicyviolation",r=>{const n=/\/_runtime\/([^/?#]+)/.exec(r.blockedURI);n&&r.disposition!=="report"&&e.add(n[1])})}catch{}}return Jt(t).catch(()=>new Promise(e=>Zt(e,Dn)).then(()=>Jt(t+"?r=1")).then(e=>(e!==void 0&&Ce.add(t),e)))}function er(t,e,r){return{contract:t.contract,changes:new Set(t.changes??[]),flags:new Set(t.flags??[]),capabilities:t.capabilities??{},capBudgets:t.capBudgets??{},brokerGen:t.brokerGen,transforms:new Map,shellOrigin:e,shell:r,mount:yt,hooks:Xe,pipe:()=>({wrap:(n,a)=>(...s)=>{try{return a(...s)}catch(l){return Promise.reject(l)}}})}}var we=null,V=null;function tr(t,e,r){try{Object.defineProperty(t,e,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(t,e,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var ht=!1,Xe={editBefore:null,edit:null};function Un(t,e,r=!1){const n=[];let a;if(r)try{Xe.editBefore?.(t)}catch{}for(const s of t.elements){const l=document.querySelector(`[data-id="${s.target}"]`);if(!l){a=s.target;break}if([...Object.keys(s.attrsSet??{}),...s.attrsRemoved??[]].some(c=>!_r(c)||yr(l,c))){a=s.target;break}if(s.text!==void 0&&(!Er(l)||Rr(l))){a=s.target;break}for(const[c,T]of Object.entries(s.attrsSet??{}))if(!nr(l,c)){try{l.setAttribute(c,T)}catch{}rr(l,c,T)}for(const c of s.attrsRemoved??[])nr(l,c)||(l.removeAttribute(c),rr(l,c,null));typeof s.text=="string"&&kr(l,s.text),n.push(s.target)}if(r)try{Xe.edit?.(t.seq,n,a)}catch{}if(a!==void 0){F.post({__frame_patch_miss:{seq:t.seq}},e);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:t.seq,targets:n}}))}catch{}}function rr(t,e,r){if(!(t instanceof HTMLInputElement))return;const n=e.toLowerCase();n==="checked"?t.checked=r!==null:n==="value"&&t.type!=="file"&&(t.value=r??"")}function nr(t,e){const r=e.toLowerCase(),n=t;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${t.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function or(t){const e=document.documentElement;t==="light"||t==="dark"?(e.dataset.theme=t,e.style.colorScheme=t,ht=!0):ht&&(delete e.dataset.theme,e.style.colorScheme="",ht=!1)}var ie=new Map,pt=null;function mt(){let t;const e={u:new Promise(r=>{t=r}),r:r=>{e.done=!0,t(r)},done:!1,nulled:!1};return e}function Ye(t,e){t.nulled=!0,t.ver=e,t.r(null)}function vt(t,e){for(const[r,n]of ie)n.done||(e&&n.asked?e(r,n):Ye(n,t))}function Kn(){for(const t of ie.values())if(t.asked&&!t.done)return!0;return!1}var Gn=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),_t=!1,yt=(t,e)=>{let r=ie.get(t);if(r?.nulled&&_t)r=mt(),ie.set(t,r);else if(!r||r.done){r?.nulled&&V&&F.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:t,phase:"install"}},V);return}const n=typeof e=="function"?Object.setPrototypeOf(e,Gn):Object.assign(Object.create(null),e);typeof n.then=="function"&&delete n.then,r.want=void 0,r.r(Object.freeze(n))};function ar(){const t=Wt?.value??{};tr(window,"claude",t);for(const e of Object.keys(Pe)){if(t[e]!==void 0){tr(t,e,t[e]);continue}ie.set(e,mt())}if(t.use===void 0){const e=r=>{if(typeof r!="string"||!Object.hasOwn(Pe,r))return Promise.resolve(null);let n=ie.get(r);return n?(pt&&(n.nulled||n.want!==void 0)&&(n=pt(r,n)),n.asked=!0,n.u):Promise.resolve(t[r]??null)};try{Object.defineProperty(t,"use",{value:e,writable:!0,configurable:!0,enumerable:!1})}catch{}}return t}if(ze==="framed"){let t;const e=Ne&&pe.test(Ne)?se(Ne).catch(u=>{t={f:Ne,e:u}}):Promise.resolve(void 0),r=u=>{if(u.type==="auxclick"&&u.button!==1)return;const E=u.target,m=E&&E.closest?E.closest("a[href],area[href]"):null;if(!m)return;const g=m.getAttribute("href");if(!g)return;let I;try{I=new URL(g,document.baseURI)}catch{return}if((I.protocol==="http:"||I.protocol==="https:")&&I.origin!==location.origin){u.preventDefault();const $=(m.getAttribute("target")??"").toLowerCase(),K=u.type==="auxclick"||u.metaKey||u.ctrlKey||u.shiftKey||u.altKey||!["","_self","_top","_parent"].includes($);F.post({__frame_nav:!0,url:I.href,newTab:K},"*")}};addEventListener("click",r,!0),addEventListener("auxclick",r,!0);const n={},a=u=>{u.isTrusted&&(n.pointer=!0)},s=u=>{u.isTrusted&&(n.click=!0)};addEventListener("pointermove",a,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0});const l={cb:null};addEventListener("keydown",u=>l.cb?.(u),!0);const c={cb:null};addEventListener("keydown",u=>c.cb?.(u));const T=hn();e.then(u=>u?.installEscapeForward?.(l,E=>{V&&F.post(E,V)})),e.then(u=>{try{u?.installFocusKeep?.()}catch{}}),e.then(u=>{if(!u?.wireNav)return;const E=F.port("*");u.wireNav(E),removeEventListener("click",r,!0),removeEventListener("auxclick",r,!0),removeEventListener("pointermove",a,!0),removeEventListener("click",s,!0),u.wireEngagement?.(n,E,T)});let w=null;try{w=Pn()}catch{}const _=document.readyState==="loading"?new Promise(u=>document.addEventListener("DOMContentLoaded",()=>u(),{once:!0})):Promise.resolve();let h="dcl",A=!1;_.then(()=>{A=!0});let O=null,p=null;try{p=Ur(window.name),O=Dt(null,p)}catch{}const j=ar();let R=null;try{R=cn(j,O,{post:(u,E)=>F.post(u,E),dcl:_},p)}catch{}e.then(u=>{try{R&&u?.installHotExtras?.(R)}catch{}});let y=null;const b=()=>Array.isArray(y?.flags)&&y.flags.includes("frame_ldx_runtime")&&!!me&&pe.test(me)&&document.querySelector("script#an-form")!==null;try{R?.hydration(b,Kr)}catch{}let x=null,D=0;const B=F.on((u,E,m,g)=>{Xt(E)&&Mr(u)&&(g(),y=u.__frame_init,V=E,B(),clearTimeout(D),x?.())});if(We){const u=Yt===void 0?{__frame_cred:We}:{__frame_cred:We,exp:Yt};for(const E of ut)try{E.endsWith(":*")||F.post(u,E)}catch{}}F.post({__frame_connect:!0},"*");try{R?.afterConnect()}catch{}const G=setTimeout,H=clearTimeout;let be=()=>NaN,Fe=()=>[];try{be=performance.now.bind(performance),Fe=performance.getEntriesByType.bind(performance)}catch{}let je=0;const U=()=>{try{F.post({__frame_alive:!0},"*")}catch{}je=G(U,jn)},Ee=()=>H(je);U(),addEventListener("load",Ee,{once:!0});const xe=new Promise(u=>{x=u,D=setTimeout(()=>{B(),u()},Vt)}),le=new WeakSet;addEventListener("error",u=>{u.target&&le.add(u.target)},!0);try{kn(Ht(),We,()=>{e.then(u=>{try{u?.drawRefusedNotice?.()}catch{}})})}catch{}const ce=()=>{let u=[];try{u=[...document.querySelectorAll("link[rel~=stylesheet]:not([rel~=alternate])")].filter(m=>!m.sheet&&!m.disabled&&!le.has(m)&&m.getAttribute("href")&&URL.canParse(m.href)&&(!m.media||matchMedia(m.media).matches))}catch{}let E=u.length;return E===0?Promise.resolve():new Promise(m=>{try{const g=ct-be();g>0&&(h="sheets");const I=G(m,g>0?g<ct?g:ct:0),$=()=>{--E===0&&(H(I),m())};for(const K of u)K.addEventListener("load",$,{once:!0}),K.addEventListener("error",$,{once:!0})}catch{m()}})};_.then(()=>{try{w?.restore()}catch{}}),Promise.all([xe,_,e]).then(([,,u])=>{if(y?.hostOverlays!==!0||!V)return;const E=I=>{try{return I?.()===!0}catch{return!1}},m=E(u?.declaresCover),g=y.hostSides===!0?{cover:m,sides:E(u?.declaresSides)}:{cover:m};if(F.post({__frame_layout:g},V),y.hostBackground===!0){const I=V;try{u?.watchBackground?.($=>F.post({__frame_layout:{...g,background:$}},I))}catch{}}});const ve={cb:null};F.on((u,E)=>{if(Xt(E)&&Pr(u)){try{w?.promoted()}catch{}ve.cb?.()}}),xe.then(async()=>{if(!y||!V){vt();try{R?.onNoInit()}catch{}return}if(or(y.theme),y.hostVisible===!1&&e.then(i=>i?.applyHostVisible?.(!1,T)),y.hostKeys!==void 0){const i=V,S=y.hostKeys;e.then(k=>k?.installHostKeyForward?.(c,S,N=>F.post(N,i)))}try{R?.onInit(y.hot,V)}catch{}let u;const E=()=>{try{!u&&me&&b()&&(u=se(me),u.then(i=>i?.prefetch?.()).catch(()=>{}))}catch{}};E(),_.then(E);const m=V,g=F.port(m),I=(i,S)=>F.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:i,phase:S}},m),$=(i,S,k)=>{new Promise(N=>N(Bn(S,k))).then(N=>I(i,N),()=>I(i))},K=i=>F.post({__frame_cap_recovered:{cap:i}},m);let te=y.brokerGen;const Y=()=>R?.boot.ver??"",_e=Y(),ye=(i,S)=>{const k=Y();H(S.t),S.want=k,S.t=G(()=>{S.done||Ye(S,k)},Vt),F.post({__frame_cap_want:!0,cap:i,ver:k},m)},z=(i,S)=>{const k=ie.get(i.cap),N=Pe[i.cap];if(!S||!k||k.done||k.want!==i.ver||!pe.test(N))return;if(H(k.t),k.want=void 0,te=i.brokerGen??te,i.ver!==Y()){ye(i.cap,k);return}if(!i.grant||i.cap==="network"){Ye(k,i.ver);return}const Z=we,Q=we={...Z,capabilities:{...Z.capabilities,[i.cap]:i.grant},capBudgets:{...Z.capBudgets,[i.cap]:{...Z.capBudgets[i.cap],...i.budgets}}};se(N).then(de=>{Ce.has(N)&&K(i.cap),Q.brokerGen=te,_t=!0;try{de?.install?.(Q)}catch{I(i.cap,"install")}finally{_t=!1}},de=>$(i.cap,N,de)).then(()=>{k.done||Ye(k,i.ver)})};let Ie=!1,J=!1;F.on((i,S,k)=>{if(S!==m)return;try{if(R?.onShell(i))return}catch{}if(Cr(i)&&or(i.__frame_theme.theme),en(i)&&z(i,k),k&&tn(i)&&(te=i.brokerGen??te),Nr(i)){const Q=i.__frame_host_visible.visible;e.then(de=>de?.applyHostVisible?.(Q,T))}Or(i)&&Un(i.__frame_patch,m,k);const N=i?.__fc_mode;N&&typeof N=="object"&&!Ie&&ft&&pe.test(ft)&&(Ie=!0,se(ft).then(Q=>Q.install?.(m,N.on===!0,g)).catch(()=>{}));const Z=i?.__ft_cmd;Z&&typeof Z=="object"&&!J&&dt&&pe.test(dt)&&(J=!0,se(dt).then(Q=>Q.install?.(m,Z,g)).catch(()=>{}))});const De=Object.keys(y.capabilities??{}).filter(i=>Object.hasOwn(Pe,i)).map(i=>[i,Pe[i]]).filter(i=>typeof i[1]=="string"&&pe.test(i[1])),re=m;let ue=!1,He=()=>{};const Je=new Promise(i=>{He=()=>{ue=!0,i()}}),Se=()=>(ue||(h="caps"),Je),Be=O!==null||Ft(y.hot)||y.hostVisible===!1||y.hostOverlays===!0;A&&(h="init");const qe=_.then(()=>Be?Se():new Promise(i=>G(i,0))).then(ce).then(()=>{let i=!0;try{i=Be||Kn()}catch{}return i?Se():void 0}).then(()=>{Ee();const i=hr(Fe,be);F.post(i?{__frame_ready:!0,nav:i,gate:h}:{__frame_ready:!0,gate:h},re),e.then(S=>{S?.installSizeReporter?.(re,ve,g),S?.installPaintReporter?.(g)})}),gt=await Promise.allSettled(De.map(([,i])=>se(i))),ee=await e;if(ee?.buildBoot||(t?$("_transforms",t.f,t.e):I("_transforms")),ee?.buildBoot)try{we=ee.buildBoot(y,ee.TRANSFORMS??{},{shellOrigin:re,mount:yt,hooks:Xe,shell:g},i=>F.post({__frame_cap_telemetry:i},re))}catch{I("_transforms","install"),we=er(y,re,g)}else we=er(y,re,g);ee?.buildBoot&&Ce.has(Ne??"")&&K("_transforms");const fe=we;fe.brokerGen=te,gt.forEach((i,S)=>{const[k,N]=De[S];if(i.status!=="fulfilled"){$(k,N,i.reason);return}Ce.has(N)&&K(k);try{i.value?.install?.(fe)}catch{I(k,"install")}});const ke=y.capWants===!0;ke&&(pt=(i,S)=>{const k=Y();if(!k)return S;if(!S.nulled)return S.want!==k&&ye(i,S),S;if(k===S.ver)return S;const N=mt();return ie.set(i,N),ye(i,N),N}),vt(_e,ke&&Y()!==_e?ye:void 0),He(),await qe;let Ue=!1;try{Ue=b()}catch{}me&&Ue?(u??se(me)).then(i=>i?.boot?.({shellOrigin:m,build:fe.flags.has(un),hot:R?.hot??null,carried:R?.carried(),presented:()=>R?.presented()??!0})).catch(()=>!1).then(i=>{R?.hydrated(),i!==!0?I("_ldx"):Ce.has(me)&&K("_ldx")}):R?.hydrated()})}else lt&&(ar(),Nn(lt,ut,se,{settle:vt,mount:yt}))})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Lessons From 32 KB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; each principle is statement, Vectrex instance, a live "screen" or chart, enterprise translations. */
+:root {
+  --bg: #eef1f5; --surface: #ffffff; --fg: #141a22; --muted: #566170; --rule: #d3d9e2;
+  --accent: #2c4ccc; --accent-soft: #dfe5fb; --warn: #b9321c; --warn-soft: #f8e1dc; --ok: #1d7444;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300;
+  --scr: #080c12; --scr-edge: #263040; --ph: #e4ecff; --ph-dim: #6a7a94; --amb: #ffb35c;
+  --f-display: "Chakra Petch", "Bahnschrift", "DIN Alternate", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0d1116; --surface: #151b23; --fg: #e6ebf2; --muted: #9ba6b5; --rule: #29323f;
+  --accent: #8fa6ff; --accent-soft: #1e2747; --warn: #ff7d66; --warn-soft: #3a1d18; --ok: #57c787;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+  --scr-edge: #313c4e; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0d1116; --surface: #151b23; --fg: #e6ebf2; --muted: #9ba6b5; --rule: #29323f;
+  --accent: #8fa6ff; --accent-soft: #1e2747; --warn: #ff7d66; --warn-soft: #3a1d18; --ok: #57c787;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+  --scr-edge: #313c4e; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--f-body); padding-inline: 16px; padding-block: 0 64px }
+main { max-width: 80%; margin: 0 auto; display: grid; gap: 72px }
+h1, h2 { font-family: var(--f-display); font-weight: 600; text-wrap: balance; margin: 0; letter-spacing: -0.01em }
+h1 { font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1 }
+h2 { font-size: clamp(1.35rem, 3.2vw, 1.75rem); line-height: 1.2 }
+p { margin: 0; max-width: 68ch }
+code { font-family: var(--f-mono); font-size: .88em; background: var(--accent-soft); padding: 0 .3em; border-radius: 3px; overflow-wrap: anywhere }
+.lbl { font: 500 .72rem/1.2 var(--f-mono); text-transform: uppercase; letter-spacing: .09em; color: var(--muted) }
+.num { font-variant-numeric: tabular-nums }
+
+/* hero */
+header.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center; padding-top: 48px }
+header .lede { display: grid; gap: 18px }
+header .lede p { color: var(--fg) }
+header .lede p.thesis { font-size: 1.12rem; line-height: 1.55 }
+.specs { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 500 .82rem/1.3 var(--f-mono); color: var(--muted) }
+.specs b { color: var(--fg); font-weight: 500 }
+.note { font-size: .86rem; color: var(--muted) }
+
+/* screens: a CRT in both themes */
+.screen { background: var(--scr); border: 1px solid var(--scr-edge); border-radius: 14px; padding: 10px; position: relative; min-width: 0 }
+.screen canvas { display: block; width: 100%; border-radius: 8px }
+.screen .cap { position: absolute; left: 18px; top: 14px; font: 500 .68rem/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ph-dim) }
+
+/* principle sections */
+section.p { display: grid; gap: 22px; scroll-margin-top: 16px }
+.p-head { display: flex; gap: 14px; align-items: baseline }
+.p-num { font: 600 1rem/1 var(--f-mono); color: var(--accent); border: 1.5px solid var(--accent); border-radius: 6px; padding: 5px 7px; flex: none; transform: translateY(-3px) }
+.vx { display: grid; gap: 6px }
+.ent { display: grid; gap: 8px }
+.ent ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 70ch }
+.ent li::marker { color: var(--accent) }
+
+figure.viz { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 20px; display: grid; gap: 18px; min-width: 0 }
+.panel { display: grid; gap: 12px; min-width: 0 }
+.panel-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline }
+.panel-head h3 { margin: 0; font: 600 .98rem/1.3 var(--f-body) }
+.illus { font: 500 .66rem/1 var(--f-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border: 1px dashed var(--muted); border-radius: 4px; padding: 3px 6px; white-space: nowrap }
+.readout { font: 400 .9rem/1.45 var(--f-mono); color: var(--fg); font-variant-numeric: tabular-nums }
+.readout .bad { color: var(--warn); font-weight: 500 }
+.readout .good { color: var(--ok); font-weight: 500 }
+.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px }
+.divider { border: 0; border-top: 1px solid var(--rule); margin: 0 }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center }
+.ctl { display: grid; gap: 4px; min-width: 0; flex: 1 1 220px }
+.ctl label { font: 500 .78rem/1.2 var(--f-mono); color: var(--muted) }
+.ctl label output { color: var(--fg) }
+input[type=range] { width: 100%; accent-color: var(--accent); margin: 0 }
+button { font: 500 .82rem/1 var(--f-mono); color: var(--fg); background: var(--surface); border: 1px solid var(--rule); border-radius: 7px; padding: 8px 12px; cursor: pointer }
+button:hover { border-color: var(--accent) }
+button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent) }
+button:disabled { opacity: .45; cursor: default }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden }
+.seg button { border: 0; border-radius: 0; border-right: 1px solid var(--rule) }
+.seg button:last-child { border-right: 0 }
+
+/* P1 bars */
+.bar-wrap { position: relative; padding-top: 18px }
+.bar { display: flex; height: 40px; border-radius: 6px; overflow: hidden; background: repeating-linear-gradient(135deg, transparent 0 6px, var(--warn-soft) 6px 9px) }
+.bar .sg { height: 100%; border-right: 2px solid var(--surface); display: flex; align-items: center; justify-content: center; font: 500 .7rem/1 var(--f-mono); color: #0b0f15; overflow: hidden; white-space: nowrap; transition: flex-basis .18s ease; min-width: 0 }
+.bar .sg.dark-ink { color: #ffffff }
+.bar-under { position: absolute; left: 0; right: 0; top: 18px; height: 40px; pointer-events: none }
+.budget-line { position: absolute; top: -18px; bottom: -4px; border-left: 2px solid var(--fg) }
+.budget-line span { position: absolute; top: 0; left: 6px; font: 500 .7rem/1 var(--f-mono); white-space: nowrap; color: var(--fg) }
+.axis { position: relative; height: 16px; font: 400 .68rem/1 var(--f-mono); color: var(--muted) }
+.axis span { position: absolute; transform: translateX(-50%) }
+.axis span:first-child { transform: none }
+.axis span:last-child { transform: translateX(-100%) }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 400 .78rem/1.3 var(--f-mono); color: var(--muted) }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px }
+.legend b { color: var(--fg); font-weight: 500 }
+.chip { display: inline-block; font: 600 .72rem/1 var(--f-mono); padding: 4px 7px; border-radius: 4px; letter-spacing: .05em }
+.chip.pass { color: var(--ok); border: 1.5px solid var(--ok) }
+.chip.fail { color: var(--warn); border: 1.5px solid var(--warn) }
+
+/* P2 */
+.ring-grid { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 24px; align-items: center }
+.ring-grid svg { width: 100%; height: auto; cursor: pointer; touch-action: none }
+.counts { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-family: var(--f-mono) }
+.counts .big { font: 600 1.7rem/1 var(--f-display); color: var(--fg) }
+.counts .arrow { color: var(--muted) }
+.counts .unit { font-size: .74rem; color: var(--muted); margin-right: 4px }
+
+/* P3 */
+.mx { overflow-x: auto }
+.mx svg { display: block; max-width: 100%; height: auto }
+.tally { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px }
+.tally div { border-top: 2px solid var(--rule); padding-top: 6px; display: grid; gap: 2px }
+.tally .v { font: 600 1.35rem/1.1 var(--f-display); font-variant-numeric: tabular-nums }
+
+/* P4 */
+.clocks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px }
+.clock { display: grid; gap: 8px; min-width: 0 }
+.clock h4 { margin: 0; font: 600 .9rem/1.3 var(--f-body) }
+
+/* P5 */
+.slots svg, .herd svg { display: block; width: 100%; height: auto }
+
+/* P6 */
+.tree { font: 400 .86rem/1.5 var(--f-mono); margin: 0; padding: 0; list-style: none; overflow-x: auto }
+.tree ul { list-style: none; margin: 0; padding-left: 20px; border-left: 1px dashed var(--rule); margin-left: 7px }
+.tree li { padding: 2px 0 }
+.tree button { padding: 2px 6px; font-size: .78rem; margin-right: 6px }
+.tree .used { color: var(--accent); font-weight: 500 }
+.tree .meta { color: var(--muted) }
+.mini-bars { display: grid; gap: 8px }
+.mini-bars .row { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr); gap: 10px; align-items: center; font: 400 .8rem/1.3 var(--f-mono) }
+.mini-bars .track { height: 18px; position: relative }
+.mini-bars .fill { height: 100%; border-radius: 0 4px 4px 0; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font: 500 .72rem/1 var(--f-mono); color: #fff; min-width: 48px; white-space: nowrap }
+
+/* P7 */
+.tail-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 20px; align-items: start }
+.deploy svg { display: block; width: 100%; height: auto }
+
+/* P8 */
+.parts { display: grid; gap: 10px }
+.parts .row { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr) minmax(0, 1fr); gap: 12px; align-items: start; font-size: .88rem; padding-top: 10px; border-top: 1px solid var(--rule) }
+.parts .row.h { border-top: 0; padding-top: 0 }
+.dots { display: flex; gap: 4px; margin-bottom: 4px }
+.dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--muted) }
+.dots.plat i { background: var(--accent) }
+.parts .what { color: var(--muted); font-size: .8rem; line-height: 1.4 }
+
+.closing { border-top: 1px solid var(--rule); padding-top: 28px; display: grid; gap: 12px }
+
+#tip { position: fixed; z-index: 10; pointer-events: none; background: var(--fg); color: var(--bg); font: 400 .76rem/1.35 var(--f-mono); padding: 6px 8px; border-radius: 6px; max-width: 260px }
+
+@media (max-width: 760px) {
+  header.hero { grid-template-columns: minmax(0, 1fr); padding-top: 28px }
+  .split, .clocks, .tail-grid, .ring-grid { grid-template-columns: minmax(0, 1fr) }
+  .ring-grid svg { max-width: 300px; justify-self: center }
+  figure.viz { padding: 14px }
+  main { gap: 56px }
+  .parts .row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) }
+  .parts .row > :first-child { grid-column: 1 / -1; font-weight: 600 }
+  .mini-bars .row { grid-template-columns: minmax(0, 1fr) }
+}
+@media (prefers-reduced-motion: reduce) { .bar .sg { transition: none } }
+</style>
+
+<main>
+<header class="hero">
+  <div class="lede">
+    <span class="lbl">E-SRG, a Vectrex game, analyzed for CJ engineering by https://github.com/forrest-akin</span>
+    <h1>Lessons From 32&nbsp;KB</h1>
+    <div class="specs"><span><b>6809</b> at 1.5 MHz</span><span><b>1 KB</b> RAM</span><span><b>32 KB</b> cartridge ROM</span><span><b>30,000</b> cycles per 50 Hz frame</span></div>
+    <p>The Vectrex has no framebuffer. A vector beam redraws everything every 50 Hz frame, so the game gets 30,000 cycles to draw a frame and run its logic. E-SRG, a dome-defense game, fills both that budget and the ROM.</p>
+    <p class="thesis">The lessons that transfer are not about micro-optimization. They are about when and where work happens, and they carry over once you swap the Vectrex's scarce resource (cycles and bytes) for an enterprise system's: round trips, contention, coordination, and engineer attention.</p>
+    <p class="note">Every Vectrex number comes from the E-SRG repository. Panels marked <span class="illus">Illustrative</span> use made-up enterprise numbers to show a shape.</p>
+  </div>
+  <div class="screen" aria-label="The E-SRG dome turning, drawn from the game's precomputed views">
+    <span class="cap">dome · real views from gen_dome.py</span>
+    <canvas id="heroCv" height="300"></canvas>
+  </div>
+</header>
+
+<!-- 1 -->
+<section class="p" id="budget">
+  <div class="p-head"><span class="p-num">1</span><h2>The budget is the architecture.</h2></div>
+  <div class="vx"><span class="lbl">On the Vectrex</span>
+    <p>Each frame gets 30,000 cycles and the whole game fits in 32 KB. Every subsystem has a measured price (a <code>FRAME_STATS</code> build reports it): radar ~3.8k cycles, stars ~4k, HUD glyphs ~2.3k, a missile projection ~1k, each visible crack ~900. With about 55 bytes of ROM free, an argument about a feature is settled by arithmetic.</p>
+  </div>
+  <figure class="viz">
+    <div class="panel">
+      <div class="panel-head"><h3>One Vectrex frame</h3><span class="lbl">cycles</span></div>
+      <div class="ctl"><label for="crk">Visible cracks: <output id="crkOut">2</output></label><input id="crk" type="range" min="0" max="20" value="2"></div>
+      <div class="bar-wrap"><div class="bar" id="vxBar"></div><div class="bar-under"><div class="budget-line" id="vxLine"><span>30,000 frame</span></div></div></div>
+      <div class="axis" id="vxAxis"></div>
+      <div class="legend" id="vxLeg"></div>
+      <div class="readout" id="vxRead"></div>
+    </div>
+    <hr class="divider">
+    <div class="panel">
+      <div class="panel-head"><h3>One request on a hot path</h3><span class="illus">Illustrative</span></div>
+      <div class="ctl"><label for="nq">Queries per request: <output id="nqOut">8</output></label><input id="nq" type="range" min="1" max="40" value="8"></div>
+      <div class="bar-wrap"><div class="bar" id="enBar"></div><div class="bar-under"><div class="budget-line" id="enLine"><span>250 ms budget</span></div></div></div>
+      <div class="axis" id="enAxis"></div>
+      <div class="legend" id="enLeg"></div>
+      <div class="readout" id="enRead"></div>
+    </div>
+    <figcaption class="note">Vectrex dome cost is the generator's cost model for its worst view (~15.5k). The ship, missile drawing, game logic and sound are not itemized and draw from what is left.</figcaption>
+  </figure>
+  <div class="ent"><span class="lbl">In enterprise systems</span><ul>
+    <li>Give each request path an explicit latency and query budget, split by hop, so a regression has an owner.</li>
+    <li>Enforce it where it fails a build: query-count assertions in tests, startup-time and dependency-count limits in CI.</li>
+    <li>Enterprise systems have no hard ceiling, so nothing forces anyone to say no. A budget is that ceiling, and the patterns below follow from having one.</li>
+  </ul></div>
+</section>
+
+<!-- 2 -->
+<section class="p" id="state-space">
+  <div class="p-head"><span class="p-num">2</span><h2>Move work to build time, after finding the real size of the state space.</h2></div>
+  <div class="vx"><span class="lbl">On the Vectrex</span>
+    <p>Rotating the dome's vertices at run time managed 14 Hz. <code>tools/gen_dome.py</code> precomputes every view: 240 rotation steps per turn, but 5-fold symmetry leaves 48 distinct views, and mirror symmetry leaves 25 to store (about 11 KB). The generator asserts the symmetry and the screen fit, so a bad table fails the build, not the game.</p>
+  </div>
+  <figure class="viz">
+    <div class="counts" aria-label="240 steps, 48 distinct, 25 stored"><span class="big">240</span><span class="unit">steps</span><span class="arrow">→</span><span class="big">48</span><span class="unit">distinct</span><span class="arrow">→</span><span class="big">25</span><span class="unit">stored</span></div>
+    <div class="ring-grid">
+      <svg id="ring" viewBox="0 0 260 260" role="img" aria-label="240 rotation steps around a ring; the selected step's four identical steps and five mirror twins are marked"></svg>
+      <div class="panel">
+        <div class="screen"><span class="cap" id="ringCap">step 0</span><canvas id="ringCv" height="230"></canvas></div>
+        <div class="readout" id="ringRead"></div>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="ctl"><label for="stp">Rotation step: <output id="stpOut">0</output></label><input id="stp" type="range" min="0" max="239" value="29"></div>
+      <button id="ringPlay" aria-pressed="false">Turn the dome</button>
+      <div class="seg" role="group" aria-label="Update rate"><button id="r50" aria-pressed="true">50 Hz lookup</button><button id="r14" aria-pressed="false">14 Hz run-time math</button></div>
+    </div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>stored view</span><span><i style="background:var(--rule)"></i>drawn mirrored</span><span><i style="background:var(--s2);border-radius:50%"></i>same picture as the selected step</span><span><i style="border:2px solid var(--s2);border-radius:50%;background:transparent"></i>its mirror twin</span></div>
+  </figure>
+  <div class="ent"><span class="lbl">In enterprise systems</span><ul>
+    <li>Compute on write, not on read: keep reporting rollups current as events arrive instead of running a GROUP BY per query.</li>
+    <li>Normalize cache keys first, then count how many distinct answers actually exist. The count decides whether to precompute.</li>
+    <li>Prefer code generation to runtime reflection, and run any check that can run at build time there, not per request.</li>
+  </ul></div>
+</section>
+
+<!-- 3 -->
+<section class="p" id="representation">
+  <div class="p-head"><span class="p-num">3</span><h2>Pick the representation that makes the hot question trivial.</h2></div>
+  <div class="vx"><span class="lbl">On the Vectrex</span>
+    <p>A bullet flies outward along the ship's cell line, so it can only meet a missile aimed at that same cell. <code>collide()</code> compares two bytes per pair (the cell's ring and azimuth) and, only on a match, one distance along the shared line: no 3-D geometry. Each missile's state is four values linear in distance, so a frame's flight update is four adds.</p>
+  </div>
+  <figure class="viz">
+    <div class="controls">
+      <div class="ctl"><label for="nm">Missiles: <output id="nmOut">3</output></label><input id="nm" type="range" min="1" max="40" value="3"></div>
+      <div class="ctl"><label for="nb">Bullets: <output id="nbOut">2</output></label><input id="nb" type="range" min="1" max="20" value="2"></div>
+      <button id="shuf">Reshuffle targets</button>
+    </div>
+    <div class="seg" role="group" aria-label="Collision method">
+      <button data-m="geo" aria-pressed="false">3-D test, every pair</button><button data-m="esrg" aria-pressed="true">E-SRG: compare cells</button><button data-m="idx" aria-pressed="false">Index by cell</button>
+    </div>
+    <div class="mx" id="mx"></div>
+    <div class="tally"><div><span class="lbl">pairs visited</span><span class="v" id="tPairs"></span></div><div><span class="lbl">multiplies</span><span class="v" id="tMul"></span></div><div><span class="lbl">comparisons</span><span class="v" id="tCmp"></span></div></div>
+    <figcaption class="note">E-SRG has 3 missile and 2 bullet slots on 76 cells; the sliders go further to show the growth. Rows are bullets, columns are missiles.</figcaption>
+  </figure>
+  <div class="ent"><span class="lbl">In enterprise systems</span><ul>
+    <li>Key and partition data by what the hot path joins on, so a query that crosses partitions can't be written.</li>
+    <li>Prefer additive representations, such as an append-only ledger where a balance is a sum, to read-modify-write.</li>
+    <li>The expensive case doesn't get faster. It stops existing.</li>
+  </ul></div>
+</section>
+
+<!-- 4 -->
+<section class="p" id="fixed-step">
+  <div class="p-head"><span class="p-num">4</span><h2>Separate what must be correct from what can be stale, and degrade only the stale part.</h2></div>
+  <div class="vx"><span class="lbl">On the Vectrex</span>
+    <p><code>game_step</code> runs once for every 50 Hz frame that has actually passed (read from VIA timer 2), catching up at most 3 per loop. Drawing runs once per loop. Under load, play speed holds and only the picture updates less often.</p>
+  </div>
+  <figure class="viz">
+    <div class="controls">
+      <div class="ctl"><label for="ld">Cycles per game loop: <output id="ldOut">60,000</output></label><input id="ld" type="range" min="20000" max="120000" step="1000" value="60000"></div>
+      <button id="clkPlay" aria-pressed="true">Pause</button>
+    </div>
+    <div class="clocks">
+      <div class="clock"><h4>One logic step per drawn frame</h4><div class="screen"><canvas id="ckA" height="230"></canvas></div><div class="readout" id="ckAr"></div></div>
+      <div class="clock"><h4>E-SRG: one step per real frame, cap 3</h4><div class="screen"><canvas id="ckB" height="230"></canvas></div><div class="readout" id="ckBr"></div></div>
+    </div>
+    <figcaption class="note">Thin hand: wall clock. Amber hand: game time as of the last drawn picture. Ticks below: drawn pictures over the last 2 seconds. The right side uses the game's own catch-up rule (overrun in 256-cycle units, 117 to a frame).</figcaption>
+  </figure>
+  <div class="ent"><span class="lbl">In enterprise systems</span><ul>
+    <li>Keep the system of record at a fixed pace; let derived views, dashboards and search indexes lag first.</li>
+    <li>Cap catch-up work per cycle, so recovering from a backlog doesn't become its own overload.</li>
+  </ul></div>
+</section>
+
+<!-- 5 -->
+<section class="p" id="amortize">
+  <div class="p-head"><span class="p-num">5</span><h2>Amortize: one expensive refresh per tick, cheap estimates for the rest.</h2></div>
+  <div class="vx"><span class="lbl">On the Vectrex</span>
+    <p>Projecting an object to the screen costs ~1k cycles, so only one of the five object slots is projected per frame, in turn. A newly fired bullet goes first, for two frames, because it moves fast. The others move by their last per-frame motion until their turn.</p>
+  </div>
+  <figure class="viz">
+    <div class="panel slots">
+      <div class="panel-head"><h3>Which slot is projected, frame by frame</h3><span class="lbl">slowed down</span></div>
+      <svg id="slots" viewBox="0 0 640 150" role="img" aria-label="Five object slots over 24 frames; each frame projects exactly one"></svg>
+      <div class="controls"><button id="fire">Fire a bullet</button><button id="slPlay" aria-pressed="true">Pause</button><span class="readout" id="slRead"></span></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>projected (~1k cycles)</span><span><i style="border:1.5px solid var(--muted);background:transparent"></i>moved by last motion</span><span><i style="background:var(--rule);border-radius:50%;width:6px;height:6px"></i>empty slot</span></div>
+    </div>
+    <hr class="divider">
+    <div class="panel herd">
+      <div class="panel-head"><h3>Cache refreshes per tick</h3><span class="illus">Illustrative</span></div>
+      <div class="controls">
+        <div class="ctl"><label for="ck">Cached keys: <output id="ckOut">1,200</output></label><input id="ck" type="range" min="200" max="5000" step="100" value="1200"></div>
+        <div class="ctl"><label for="ttl">TTL in ticks: <output id="ttlOut">30</output></label><input id="ttl" type="range" min="10" max="60" value="30"></div>
+      </div>
+      <svg id="herd" viewBox="0 0 640 250" role="img" aria-label="Refresh load per tick: synchronized expiry spikes versus a flat staggered rotation"></svg>
+      <div class="readout" id="herdRead"></div>
+    </div>
+  </figure>
+  <div class="ent"><span class="lbl">In enterprise systems</span><ul>
+    <li>Refresh on a rotating, staggered schedule instead of letting every key expire at once and stampede the backend (a thundering herd).</li>
+    <li>Between refreshes, serve the cheap estimate: the last value, or the last value plus its known rate of change.</li>
+  </ul></div>
+</section>
+
+<!-- 6 -->
+<section class="p" id="pulled-in">
+  <div class="p-head"><span class="p-num">6</span><h2>Watch what actually gets pulled in.</h2></div>
+  <div class="vx"><span class="lbl">On the Vectrex</span>
+    <p>The aslink linker includes whole modules, so linking PeerC's BIOS-wrapper file for three wrappers costs about 640 bytes. The build leaves that file out, and <code>src/bios.s</code> holds just the three the game calls. Small static C helpers get inlined into <code>main</code> and can cost more ROM than they look.</p>
+  </div>
+  <figure class="viz">
+    <div class="panel">
+      <div class="panel-head"><h3>Bytes, at E-SRG's scale</h3><span class="lbl">ROM</span></div>
+      <div class="mini-bars">
+        <div class="row"><span>PeerC wrapper module</span><div class="track"><div class="fill" style="width:100%;background:var(--warn)">~640 B</div></div></div>
+        <div class="row"><span>ROM free in 1.0.0</span><div class="track"><div class="fill" style="width:8.6%;background:var(--ok)">~55 B</div></div></div>
+      </div>
+      <p class="note">Wrappers the game calls: <code>_Print_Str_d</code>, <code>_Sound_Byte</code>, <code>_Intensity_a</code>.</p>
+    </div>
+    <hr class="divider">
+    <div class="panel">
+      <div class="panel-head"><h3>One call, one dependency</h3><span class="illus">Illustrative</span></div>
+      <div class="controls"><div class="seg" role="group" aria-label="Approach"><button id="depAdd" aria-pressed="true">Add the library</button><button id="depOwn" aria-pressed="false">Own the 20 lines</button></div><button id="depExp">Expand all</button></div>
+      <ul class="tree" id="tree"></ul>
+      <div class="tally"><div><span class="lbl">methods you call</span><span class="v">1</span></div><div><span class="lbl">jars on classpath</span><span class="v" id="tJars"></span></div><div><span class="lbl">classes shipped</span><span class="v" id="tCls"></span></div></div>
+    </div>
+  </figure>
+  <div class="ent"><span class="lbl">In enterprise systems</span><ul>
+    <li>A Maven dependency added for one utility brings its whole transitive tree onto the classpath, along with its upgrades and CVEs.</li>
+    <li>An abstraction's runtime cost (proxies, an ORM's N+1 queries, auto-configuration) is invisible at the call site. Measure it before it spreads.</li>
+    <li>Own the 20 lines you use.</li>
+  </ul></div>
+</section>
+
+<!-- 7 -->
+<section class="p" id="in-between">
+  <div class="p-head"><span class="p-num">7</span><h2>Write down exactly how the test environment differs from production, and test the states in between.</h2></div>
+  <div class="vx"><span class="lbl">On the Vectrex</span>
+    <p>The vecx emulator doesn't model three things a real console does: the beam's ramp tail (it keeps moving ~2.5 to 4 cycles after each stroke, different per console), the Y sample-and-hold, and zero-reference drift. The tail is a calibrated constant: each polyline's start is drawn at <code>dome_pos_scale</code> = 64 + 3 × tail, adjustable in game. The repo's rule is to look at frames in between, not just end states.</p>
+  </div>
+  <figure class="viz">
+    <div class="tail-grid">
+      <div class="screen"><span class="cap" id="tailCap">real dome view · 10 polylines</span><canvas id="tailCv" height="260"></canvas></div>
+      <div class="panel">
+        <div class="ctl"><label for="tl">Ramp tail (cycles): <output id="tlOut">2.5</output></label><input id="tl" type="range" min="0" max="4" step="0.1" value="2.5"></div>
+        <div class="ctl"><label for="ps">Polyline start scale (in-game CAL): <output id="psOut">64</output></label><input id="ps" type="range" min="48" max="104" value="64"></div>
+        <div class="controls"><button id="tVecx">vecx: no tail</button><button id="tCal">Calibrate</button></div>
+        <div class="readout" id="tailRead"></div>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="panel deploy">
+      <div class="panel-head"><h3>A rolling deploy with a schema migration</h3><span class="illus">Illustrative</span></div>
+      <svg id="dep" viewBox="0 0 640 210" role="img" aria-label="Timeline of four pods moving from v1 to v2 after a schema migration, with the mixed window marked"></svg>
+      <div class="ctl"><label for="dt">Time: <output id="dtOut">40</output></label><input id="dt" type="range" min="0" max="100" value="40"></div>
+      <div class="readout" id="depRead"></div>
+    </div>
+  </figure>
+  <div class="ent"><span class="lbl">In enterprise systems</span><ul>
+    <li>Write down how the lab differs from production: data volume, skew, latency, concurrency.</li>
+    <li>Enterprise systems break in the in-between states: two versions live during a rolling deploy, a half-applied migration, a consumer reading both schemas.</li>
+    <li>Shipping each commit so it can deploy on its own is this principle applied to history.</li>
+  </ul></div>
+</section>
+
+<!-- 8 -->
+<section class="p" id="platform">
+  <div class="p-head"><span class="p-num">8</span><h2>Use what the platform already guarantees.</h2></div>
+  <div class="vx"><span class="lbl">On the Vectrex</span>
+    <p>The NORMAL high score is written to the BIOS high-score slot (<code>$CBEB</code>, six characters and <code>$80</code>), which the BIOS keeps through a reset and shows on its boot screen. The UVMC2 multicart saves that slot per ROM. The game's storage is a write and a read of those 7 bytes.</p>
+  </div>
+  <figure class="viz">
+    <div class="panel-head"><h3>Moving parts you own</h3><span class="illus">Illustrative</span></div>
+    <div class="parts">
+      <div class="row h"><span></span><span class="lbl">Built in the app</span><span class="lbl">Platform guarantee</span></div>
+      <div class="row"><span>Unique email</span><div><div class="dots"><i></i><i></i><i></i><i></i></div><span class="what">read, check, insert, race-retry</span></div><div><div class="dots plat"><i></i></div><span class="what">UNIQUE constraint</span></div></div>
+      <div class="row"><span>Replay events</span><div><div class="dots"><i></i><i></i><i></i><i></i></div><span class="what">replay table, writer, reader, cleanup job</span></div><div><div class="dots plat"><i></i></div><span class="what">broker retention + offset reset</span></div></div>
+      <div class="row"><span>Restart a hung worker</span><div><div class="dots"><i></i><i></i><i></i></div><span class="what">watchdog, health poller, restart script</span></div><div><div class="dots plat"><i></i></div><span class="what">liveness probe + restart policy</span></div></div>
+    </div>
+  </figure>
+  <div class="ent"><span class="lbl">In enterprise systems</span><ul>
+    <li>Database constraints over application-level checks.</li>
+    <li>Broker retention over a custom replay store.</li>
+    <li>Kubernetes primitives over homegrown supervisors. Every part you don't build is a failure you don't have.</li>
+  </ul></div>
+</section>
+
+<section class="closing">
+  <h2>What doesn't transfer</h2>
+  <p>The instruction-level work: hand-written 6809 assembly, fixed-point math, <code>-Os</code>. A network round trip or a serialization pass costs orders of magnitude more than any instruction count in a Java service, so that effort buys little there. What carries over is the discipline, applied to the resource that is actually scarce.</p>
+</section>
+</main>
+<div id="tip" hidden></div>
+
+<script>
+const DV=[[-18,-223,-38,-228,-38,-228,-53,-210,-53,-210,-73,-213,-73,-213,-85,-194,-85,-194,-99,-196,-99,-196,-105,-179,-105,-179,-113,-182,-113,-182,-113,-168,-113,-168,-116,-168,-116,-168,-112,-154,-112,-154,-108,-143,-108,-143,-101,-129,-101,-129,-99,-125,-99,-125,-90,-113,-90,-113,-81,-103,-81,-103,-68,-92,-68,-92,-56,-84,-56,-84,-42,-78,-42,-78,-28,-74,-28,-74,-14,-71,-14,-71,0,-70,0,-70,14,-71,14,-71,28,-74,28,-74,42,-78,42,-78,56,-84,56,-84,68,-92,68,-92,81,-103,81,-103,90,-113,90,-113,99,-125,99,-125,101,-129,101,-129,93,-120,93,-120,82,-106,82,-106,69,-98,69,-98,68,-105,68,-105,50,-100,50,-100,37,-88,37,-88,19,-86,19,-86,9,-79,9,-79,-9,-79,-9,-79,-19,-86,-19,-86,-37,-88,-37,-88,-50,-100,-50,-100,-44,-111,-44,-111,-57,-129,-57,-129,-47,-146,-47,-146,-58,-168,-58,-168,-78,-172,-78,-172,-86,-155,-86,-155,-99,-159,-99,-159,-105,-179,-113,-168,-108,-152,-108,-152,-101,-146,-101,-146,-99,-159,-108,-152,-108,-143,-101,-146,-92,-128,-92,-128,-80,-121,-80,-121,-76,-134,-76,-134,-57,-129,-47,-146,-24,-143,-24,-143,-12,-162,-12,-162,-23,-184,-23,-184,-46,-187,-46,-187,-58,-168,-46,-187,-53,-210,-23,-184,-11,-202,-11,-202,-18,-223,-18,-223,0,-236,0,-236,18,-223,18,-223,38,-228,38,-228,53,-210,53,-210,73,-213,73,-213,85,-194,85,-194,99,-196,99,-196,105,-179,105,-179,113,-182,113,-182,113,-168,113,-168,116,-168,116,-168,112,-154,112,-154,108,-143,108,-143,108,-152,108,-152,113,-168,105,-179,99,-159,99,-159,86,-155,86,-155,76,-134,76,-134,57,-129,57,-129,47,-146,47,-146,58,-168,58,-168,46,-187,46,-187,53,-210,46,-187,23,-184,23,-184,11,-202,11,-202,18,-223,11,-202,-11,-202,23,-184,12,-162,12,-162,-12,-162,-24,-143,-12,-124,-12,-124,12,-124,12,-124,22,-108,22,-108,10,-95,10,-95,-10,-95,-10,-95,-19,-86,-10,-95,-22,-108,-22,-108,-44,-111,-50,-100,-68,-105,-68,-105,-69,-98,-69,-98,-82,-106,-82,-106,-81,-103,-82,-106,-93,-120,-93,-120,-101,-129,-93,-120,-92,-128,-80,-121,-68,-105,-69,-98,-56,-87,-56,-87,-41,-82,-41,-82,-37,-88,-41,-82,-27,-76,-27,-76,-28,-74,-27,-76,-13,-74,-13,-74,-9,-79,-13,-74,0,-72,0,-72,13,-74,13,-74,9,-79,13,-74,27,-76,27,-76,41,-82,41,-82,56,-87,56,-87,56,-84,56,-87,69,-98,68,-105,80,-121,80,-121,76,-134,80,-121,92,-128,92,-128,93,-120,92,-128,101,-146,101,-146,99,-159,108,-152,101,-146,108,-143,101,-129,82,-106,81,-103,57,-129,44,-111,44,-111,50,-100,44,-111,22,-108,10,-95,19,-86,27,-76,28,-74,41,-82,37,-88,12,-124,24,-143,24,-143,47,-146,58,-168,78,-172,78,-172,85,-194,78,-172,86,-155,24,-143,12,-162,-12,-124,-22,-108,-56,-87,-56,-84,-76,-134,-86,-155,-78,-172,-85,-194,0,-72,0,-70],[-14,-223,-33,-229,-33,-229,-50,-211,-50,-211,-69,-214,-69,-214,-82,-195,-82,-195,-97,-198,-97,-198,-104,-181,-104,-181,-112,-183,-112,-183,-113,-170,-113,-170,-116,-170,-116,-170,-113,-155,-113,-155,-112,-153,-112,-153,-105,-138,-105,-138,-100,-127,-100,-127,-91,-114,-91,-114,-82,-104,-82,-104,-69,-93,-69,-93,-56,-85,-56,-85,-42,-78,-42,-78,-29,-74,-29,-74,-15,-71,-15,-71,-1,-70,-1,-70,13,-71,13,-71,27,-73,27,-73,41,-78,41,-78,55,-84,55,-84,67,-92,67,-92,80,-102,80,-102,89,-112,89,-112,98,-124,98,-124,101,-128,101,-128,93,-119,93,-119,82,-106,82,-106,69,-98,69,-98,68,-105,68,-105,51,-99,51,-99,38,-88,38,-88,19,-86,19,-86,9,-79,9,-79,-8,-79,-8,-79,-18,-86,-18,-86,-37,-88,-37,-88,-49,-100,-49,-100,-42,-111,-42,-111,-55,-130,-55,-130,-44,-147,-44,-147,-55,-169,-55,-169,-75,-173,-75,-173,-84,-156,-84,-156,-98,-161,-98,-161,-104,-181,-113,-170,-108,-153,-108,-153,-101,-147,-101,-147,-98,-161,-108,-153,-108,-145,-108,-145,-102,-131,-102,-131,-100,-127,-102,-131,-93,-121,-93,-121,-83,-107,-83,-107,-70,-99,-70,-99,-56,-88,-56,-88,-41,-83,-41,-83,-37,-88,-41,-83,-28,-76,-28,-76,-29,-74,-28,-76,-13,-75,-13,-75,-8,-79,-13,-75,0,-72,0,-72,13,-74,13,-74,9,-79,13,-74,27,-75,27,-75,41,-82,41,-82,56,-87,56,-87,55,-84,56,-87,69,-98,68,-105,81,-120,81,-120,77,-133,77,-133,87,-153,87,-153,100,-158,100,-158,106,-177,106,-177,113,-180,113,-180,114,-166,114,-166,116,-167,116,-167,112,-152,112,-152,107,-142,107,-142,108,-150,108,-150,114,-166,106,-177,101,-194,101,-194,87,-192,87,-192,76,-212,76,-212,57,-209,57,-209,42,-227,42,-227,22,-222,22,-222,4,-236,4,-236,-14,-223,-14,-223,-7,-202,-7,-202,-20,-184,-20,-184,-43,-188,-43,-188,-55,-169,-43,-188,-50,-211,-20,-184,-9,-162,-9,-162,-21,-143,-21,-143,-44,-147,-55,-130,-74,-135,-74,-135,-79,-122,-79,-122,-92,-129,-92,-129,-101,-147,-108,-145,-113,-155,-92,-129,-93,-121,-79,-122,-67,-106,-67,-106,-49,-100,-42,-111,-20,-108,-20,-108,-9,-95,-9,-95,-18,-86,-9,-95,12,-95,12,-95,24,-108,24,-108,14,-124,14,-124,26,-143,26,-143,49,-145,49,-145,58,-128,58,-128,77,-133,81,-120,93,-127,93,-127,93,-119,93,-127,102,-145,102,-145,100,-158,108,-150,102,-145,107,-142,101,-128,82,-106,80,-102,58,-128,45,-110,45,-110,51,-99,45,-110,24,-108,12,-95,19,-86,27,-75,27,-73,41,-82,38,-88,14,-124,-9,-124,-9,-124,-21,-143,-9,-124,-20,-108,0,-72,-1,-70,-56,-88,-56,-85,-70,-99,-67,-106,-82,-104,-83,-107,-74,-135,-84,-156,-75,-173,-82,-195,-9,-162,15,-162,15,-162,27,-184,27,-184,49,-186,49,-186,57,-209,49,-186,61,-167,61,-167,49,-145,61,-167,80,-171,80,-171,87,-192,80,-171,87,-153,27,-184,15,-201,15,-201,22,-222,15,-201,-7,-202,15,-162,26,-143],[-10,-223,-29,-229,-29,-229,-46,-212,-46,-212,-66,-216,-66,-216,-80,-197,-80,-197,-95,-200,-95,-200,-102,-182,-102,-182,-111,-185,-111,-185,-113,-171,-113,-171,-116,-172,-116,-172,-113,-157,-113,-157,-112,-154,-112,-154,-106,-139,-106,-139,-101,-128,-101,-128,-92,-115,-92,-115,-83,-105,-83,-105,-70,-93,-70,-93,-57,-85,-57,-85,-43,-79,-43,-79,-30,-74,-30,-74,-16,-71,-16,-71,-1,-70,-1,-70,12,-71,12,-71,27,-73,27,-73,40,-77,40,-77,54,-84,54,-84,66,-91,66,-91,79,-101,79,-101,88,-111,88,-111,97,-123,97,-123,100,-127,100,-127,92,-118,92,-118,81,-105,81,-105,69,-97,69,-97,68,-104,68,-104,52,-99,52,-99,38,-87,38,-87,20,-86,20,-86,9,-79,9,-79,-8,-79,-8,-79,-17,-86,-17,-86,-36,-89,-36,-89,-49,-101,-49,-101,-41,-112,-41,-112,-53,-130,-53,-130,-42,-147,-42,-147,-52,-170,-52,-170,-73,-174,-73,-174,-82,-157,-82,-157,-96,-162,-96,-162,-102,-182,-113,-171,-108,-155,-108,-155,-100,-149,-100,-149,-96,-162,-108,-155,-108,-146,-108,-146,-102,-132,-102,-132,-101,-128,-102,-132,-93,-122,-93,-122,-83,-108,-83,-108,-70,-100,-70,-100,-56,-88,-56,-88,-41,-83,-41,-83,-36,-89,-41,-83,-28,-76,-28,-76,-30,-74,-28,-76,-14,-75,-14,-75,-8,-79,-14,-75,-1,-72,-1,-72,13,-74,13,-74,9,-79,13,-74,27,-75,27,-75,41,-82,41,-82,55,-86,55,-86,54,-84,55,-86,69,-97,68,-104,81,-120,81,-120,78,-132,78,-132,89,-152,89,-152,101,-157,101,-157,107,-176,107,-176,114,-178,114,-178,114,-164,114,-164,115,-165,115,-165,111,-151,111,-151,107,-140,107,-140,108,-149,108,-149,114,-164,107,-176,103,-193,103,-193,90,-191,90,-191,79,-210,79,-210,60,-208,60,-208,45,-226,45,-226,26,-222,26,-222,9,-236,9,-236,-10,-223,-10,-223,-3,-202,-3,-202,-16,-185,-16,-185,-39,-189,-39,-189,-52,-170,-39,-189,-46,-212,-16,-185,-5,-163,-5,-163,-18,-144,-18,-144,-42,-147,-53,-130,-73,-136,-73,-136,-78,-123,-78,-123,-92,-130,-92,-130,-100,-149,-108,-146,-113,-157,-92,-130,-93,-122,-83,-108,-83,-105,-70,-100,-66,-107,-66,-107,-49,-101,-41,-112,-19,-109,-19,-109,-8,-95,-8,-95,-17,-86,-8,-95,13,-95,13,-95,25,-108,25,-108,16,-123,16,-123,29,-142,29,-142,52,-145,52,-145,60,-128,60,-128,78,-132,81,-120,93,-126,93,-126,92,-118,93,-126,102,-143,102,-143,101,-157,108,-149,102,-143,107,-140,100,-127,81,-105,79,-101,52,-99,46,-110,46,-110,25,-108,13,-95,20,-86,27,-75,27,-73,38,-87,41,-82,46,-110,60,-128,52,-145,64,-166,64,-166,53,-185,53,-185,60,-208,53,-185,30,-183,30,-183,19,-201,19,-201,26,-222,19,-201,-3,-202,30,-183,18,-162,18,-162,-5,-163,-18,-144,-7,-124,-7,-124,16,-123,29,-142,18,-162,-7,-124,-19,-109,-1,-72,-1,-70,-56,-88,-57,-85,-66,-107,-78,-123,-73,-136,-82,-157,-73,-174,-80,-197,64,-166,82,-169,82,-169,90,-191,82,-169,89,-152],[-5,-224,-25,-230,-25,-230,-42,-212,-42,-212,-63,-217,-63,-217,-77,-198,-77,-198,-93,-201,-93,-201,-101,-184,-101,-184,-110,-187,-110,-187,-112,-173,-112,-173,-116,-174,-116,-174,-113,-158,-113,-158,-113,-156,-113,-156,-107,-141,-107,-141,-102,-129,-102,-129,-93,-116,-93,-116,-83,-105,-83,-105,-71,-94,-71,-94,-58,-86,-58,-86,-44,-79,-44,-79,-30,-74,-30,-74,-17,-71,-17,-71,-2,-70,-2,-70,12,-71,12,-71,26,-73,26,-73,39,-77,39,-77,53,-83,53,-83,65,-90,65,-90,78,-101,78,-101,86,-110,86,-110,96,-122,96,-122,100,-126,100,-126,92,-117,92,-117,81,-104,81,-104,69,-96,69,-96,69,-103,69,-103,52,-98,52,-98,39,-87,39,-87,21,-85,21,-85,10,-79,10,-79,-8,-79,-8,-79,-17,-86,-17,-86,-36,-89,-36,-89,-48,-101,-48,-101,-39,-112,-39,-112,-51,-131,-51,-131,-39,-148,-39,-148,-50,-171,-50,-171,-70,-175,-70,-175,-81,-158,-81,-158,-95,-164,-95,-164,-101,-184,-112,-173,-107,-156,-107,-156,-99,-150,-99,-150,-95,-164,-107,-156,-108,-148,-108,-148,-102,-133,-102,-133,-102,-129,-102,-133,-93,-123,-93,-123,-83,-109,-83,-109,-69,-100,-69,-100,-57,-89,-57,-89,-41,-83,-41,-83,-36,-89,-41,-83,-28,-76,-28,-76,-30,-74,-28,-76,-14,-75,-14,-75,-8,-79,-14,-75,-1,-72,-1,-72,13,-74,13,-74,10,-79,13,-74,26,-75,26,-75,41,-81,41,-81,55,-86,55,-86,53,-83,55,-86,69,-96,69,-103,82,-119,82,-119,79,-131,79,-131,90,-151,90,-151,102,-155,102,-155,108,-174,108,-174,114,-176,114,-176,114,-163,114,-163,115,-163,115,-163,111,-149,111,-149,107,-139,107,-139,108,-147,108,-147,114,-163,108,-174,104,-191,104,-191,92,-189,92,-189,82,-209,82,-209,64,-206,64,-206,49,-225,49,-225,31,-221,31,-221,13,-236,13,-236,-5,-224,-5,-224,1,-202,1,-202,-12,-185,-12,-185,-36,-189,-36,-189,-50,-171,-36,-189,-42,-212,-12,-185,-2,-163,-2,-163,-15,-144,-15,-144,-39,-148,-51,-131,-71,-137,-71,-137,-77,-124,-77,-124,-91,-132,-91,-132,-99,-150,-108,-148,-113,-158,-91,-132,-93,-123,-83,-109,-83,-105,-69,-100,-66,-107,-66,-107,-48,-101,-39,-112,-17,-109,-17,-109,-7,-95,-7,-95,-17,-86,-7,-95,14,-95,14,-95,27,-107,27,-107,18,-123,18,-123,32,-142,32,-142,54,-144,54,-144,62,-127,62,-127,79,-131,82,-119,93,-125,93,-125,92,-117,93,-125,102,-142,102,-142,102,-155,108,-147,102,-142,107,-139,100,-126,81,-104,78,-101,52,-98,48,-109,48,-109,27,-107,14,-95,21,-85,26,-75,26,-73,39,-87,41,-81,48,-109,62,-127,54,-144,66,-165,66,-165,56,-184,56,-184,64,-206,56,-184,34,-183,34,-183,23,-201,23,-201,31,-221,23,-201,1,-202,34,-183,22,-162,22,-162,-2,-163,-15,-144,-5,-124,-5,-124,18,-123,32,-142,22,-162,-5,-124,-17,-109,-1,-72,-2,-70,-57,-89,-58,-86,-66,-107,-77,-124,-71,-137,-81,-158,-70,-175,-77,-198,66,-165,84,-168,84,-168,92,-189,84,-168,90,-151],[-1,-224,-21,-230,-21,-230,-39,-213,-39,-213,-59,-218,-59,-218,-74,-199,-74,-199,-91,-203,-91,-203,-99,-186,-99,-186,-109,-189,-109,-189,-112,-175,-112,-175,-116,-176,-116,-176,-114,-160,-114,-160,-114,-157,-114,-157,-108,-142,-108,-142,-102,-130,-102,-130,-93,-117,-93,-117,-84,-106,-84,-106,-72,-95,-72,-95,-58,-86,-58,-86,-45,-79,-45,-79,-31,-75,-31,-75,-18,-71,-18,-71,-3,-70,-3,-70,11,-71,11,-71,25,-73,25,-73,38,-77,38,-77,52,-83,52,-83,64,-90,64,-90,77,-100,77,-100,80,-103,80,-103,92,-116,92,-116,99,-125,99,-125,106,-138,106,-138,110,-147,110,-147,115,-162,115,-162,114,-161,114,-161,115,-174,115,-174,109,-172,109,-172,106,-189,106,-189,94,-188,94,-188,84,-207,84,-207,67,-205,67,-205,53,-224,53,-224,35,-221,35,-221,17,-235,17,-235,-1,-224,-1,-224,5,-202,5,-202,-9,-185,-9,-185,-32,-190,-32,-190,-46,-171,-46,-171,-37,-148,-37,-148,-13,-144,-13,-144,1,-163,1,-163,-9,-185,5,-202,27,-200,27,-200,35,-221,27,-200,37,-182,37,-182,59,-184,59,-184,67,-205,59,-184,69,-164,69,-164,56,-143,56,-143,63,-126,63,-126,80,-130,80,-130,91,-150,91,-150,102,-154,102,-154,109,-172,114,-161,108,-146,108,-146,103,-141,103,-141,102,-154,108,-146,106,-138,103,-141,93,-124,93,-124,92,-116,93,-124,82,-118,82,-118,69,-103,69,-103,53,-98,53,-98,39,-87,39,-87,21,-85,21,-85,10,-79,10,-79,-7,-79,-7,-79,-16,-87,-16,-87,-35,-89,-35,-89,-47,-102,-47,-102,-38,-112,-38,-112,-49,-132,-49,-132,-37,-148,-49,-132,-70,-138,-70,-138,-76,-125,-76,-125,-90,-133,-90,-133,-98,-151,-98,-151,-93,-165,-93,-165,-99,-186,-112,-175,-107,-158,-107,-158,-98,-151,-107,-158,-108,-149,-108,-149,-103,-134,-103,-134,-102,-130,-103,-134,-93,-125,-93,-125,-83,-110,-83,-110,-69,-101,-69,-101,-57,-89,-57,-89,-41,-84,-41,-84,-35,-89,-41,-84,-28,-76,-28,-76,-31,-75,-28,-76,-14,-75,-14,-75,-7,-79,-14,-75,-1,-72,-1,-72,13,-74,13,-74,10,-79,13,-74,26,-75,26,-75,40,-81,40,-81,54,-85,54,-85,52,-83,54,-85,69,-96,69,-96,69,-103,69,-96,80,-103,82,-118,80,-130,63,-126,49,-109,49,-109,53,-98,49,-109,28,-107,28,-107,20,-123,20,-123,34,-142,34,-142,56,-143,69,-164,86,-167,86,-167,94,-188,86,-167,91,-150,37,-182,25,-161,25,-161,1,-163,-13,-144,-3,-124,-3,-124,20,-123,28,-107,15,-95,15,-95,-6,-95,-6,-95,-16,-87,-6,-95,-15,-109,-15,-109,-38,-112,-47,-102,-65,-108,-65,-108,-69,-101,-65,-108,-76,-125,-70,-138,-79,-159,-79,-159,-93,-165,-79,-159,-68,-176,-68,-176,-46,-171,-32,-190,-39,-213,-74,-199,-68,-176,-108,-149,-114,-160,-90,-133,-93,-125,-83,-110,-84,-106,-58,-86,-57,-89,-15,-109,-3,-124,15,-95,21,-85,26,-75,25,-73,39,-87,40,-81,-1,-72,-3,-70,34,-142,25,-161],[3,-224,-17,-231,-17,-231,-35,-214,-35,-214,-56,-219,-56,-219,-71,-201,-71,-201,-88,-205,-88,-205,-97,-187,-97,-187,-108,-191,-108,-191,-111,-177,-111,-177,-115,-178,-115,-178,-114,-162,-114,-162,-114,-159,-114,-159,-109,-143,-109,-143,-103,-132,-103,-132,-94,-118,-94,-118,-85,-107,-85,-107,-72,-95,-72,-95,-59,-87,-59,-87,-46,-80,-46,-80,-31,-75,-31,-75,-19,-72,-19,-72,-4,-70,-4,-70,10,-71,10,-71,24,-73,24,-73,37,-76,37,-76,52,-82,52,-82,63,-89,63,-89,77,-99,77,-99,80,-102,80,-102,91,-115,91,-115,98,-124,98,-124,106,-136,106,-136,109,-146,109,-146,114,-160,114,-160,114,-159,114,-159,115,-172,115,-172,110,-170,110,-170,107,-187,107,-187,96,-186,96,-186,87,-206,87,-206,70,-204,70,-204,57,-223,57,-223,39,-220,39,-220,22,-235,22,-235,3,-224,3,-224,9,-202,9,-202,-5,-185,-5,-185,-28,-190,-28,-190,-43,-172,-43,-172,-34,-149,-34,-149,-10,-144,-10,-144,4,-163,4,-163,-5,-185,9,-202,31,-200,31,-200,39,-220,31,-200,41,-181,41,-181,62,-183,62,-183,70,-204,62,-183,71,-163,71,-163,58,-143,58,-143,65,-125,65,-125,81,-129,81,-129,93,-148,93,-148,103,-152,103,-152,110,-170,114,-159,108,-144,108,-144,103,-139,103,-139,103,-152,108,-144,106,-136,103,-139,93,-123,93,-123,91,-115,83,-117,69,-102,69,-102,54,-97,54,-97,39,-86,39,-86,22,-85,22,-85,10,-79,10,-79,-7,-79,-7,-79,-15,-87,-15,-87,-35,-90,-35,-90,-46,-102,-46,-102,-36,-113,-36,-113,-47,-132,-47,-132,-34,-149,-47,-132,-68,-139,-68,-139,-75,-126,-75,-126,-90,-134,-90,-134,-97,-153,-97,-153,-92,-167,-92,-167,-97,-187,-111,-177,-106,-159,-106,-159,-97,-153,-106,-159,-108,-151,-108,-151,-103,-136,-103,-136,-103,-132,-103,-136,-93,-126,-93,-126,-83,-111,-83,-111,-69,-102,-69,-102,-57,-90,-57,-90,-41,-84,-41,-84,-35,-90,-41,-84,-29,-77,-29,-77,-31,-75,-29,-77,-14,-75,-14,-75,-7,-79,-14,-75,-2,-72,-2,-72,13,-74,13,-74,10,-79,13,-74,26,-75,26,-75,40,-81,40,-81,54,-85,54,-85,52,-82,54,-85,69,-95,69,-95,69,-102,69,-95,80,-102,93,-123,83,-117,83,-117,81,-129,65,-125,50,-108,50,-108,54,-97,50,-108,30,-107,30,-107,23,-123,23,-123,37,-141,37,-141,58,-143,71,-163,88,-165,88,-165,96,-186,88,-165,93,-148,41,-181,28,-161,28,-161,4,-163,-10,-144,0,-124,0,-124,23,-123,30,-107,16,-94,16,-94,-4,-95,-4,-95,-15,-87,-4,-95,-13,-109,-13,-109,-36,-113,-46,-102,-64,-109,-64,-109,-69,-102,-64,-109,-75,-126,-68,-139,-77,-161,-77,-161,-92,-167,-77,-161,-65,-177,-65,-177,-43,-172,-28,-190,-35,-214,-71,-201,-65,-177,-90,-134,-93,-126,-83,-111,-85,-107,-59,-87,-57,-90,-13,-109,0,-124,16,-94,22,-85,26,-75,24,-73,39,-86,40,-81,-2,-72,-4,-70,37,-141,28,-161,-108,-151,-114,-162],[7,-224,-12,-231,-12,-231,-31,-215,-31,-215,-52,-220,-52,-220,-68,-202,-68,-202,-86,-206,-86,-206,-96,-189,-96,-189,-106,-193,-106,-193,-110,-179,-110,-179,-115,-179,-115,-179,-114,-164,-114,-164,-114,-161,-114,-161,-109,-145,-109,-145,-103,-133,-103,-133,-95,-119,-95,-119,-85,-108,-85,-108,-73,-96,-73,-96,-60,-87,-60,-87,-47,-80,-47,-80,-32,-75,-32,-75,-19,-72,-19,-72,-4,-70,-4,-70,9,-71,9,-71,24,-73,24,-73,36,-76,36,-76,51,-82,51,-82,62,-89,62,-89,75,-98,75,-98,79,-102,79,-102,91,-114,91,-114,97,-122,97,-122,105,-135,105,-135,108,-145,108,-145,114,-158,114,-158,113,-158,113,-158,115,-171,115,-171,110,-169,110,-169,108,-185,108,-185,98,-184,98,-184,89,-204,89,-204,73,-203,73,-203,60,-222,60,-222,42,-219,42,-219,26,-234,26,-234,7,-224,7,-224,13,-202,13,-202,-1,-185,-1,-185,-25,-191,-25,-191,-40,-173,-40,-173,-31,-149,-31,-149,-7,-144,-7,-144,8,-162,8,-162,-1,-185,13,-202,34,-199,34,-199,42,-219,34,-199,44,-181,44,-181,65,-181,65,-181,73,-203,65,-181,73,-162,73,-162,61,-142,61,-142,66,-125,66,-125,82,-128,82,-128,94,-147,94,-147,104,-151,104,-151,110,-169,113,-158,108,-143,108,-143,103,-138,103,-138,104,-151,108,-143,105,-135,103,-138,93,-122,93,-122,91,-114,83,-116,69,-101,69,-101,54,-97,54,-97,40,-86,40,-86,22,-85,22,-85,10,-79,10,-79,-7,-79,-7,-79,-15,-87,-15,-87,-34,-90,-34,-90,-45,-102,-45,-102,-34,-113,-34,-113,-45,-133,-45,-133,-31,-149,-45,-133,-66,-139,-66,-139,-74,-127,-74,-127,-89,-135,-89,-135,-96,-154,-96,-154,-90,-168,-90,-168,-96,-189,-110,-179,-105,-161,-105,-161,-96,-154,-105,-161,-108,-152,-108,-152,-103,-137,-103,-137,-103,-133,-103,-137,-93,-127,-93,-127,-83,-111,-83,-111,-69,-102,-69,-102,-57,-90,-57,-90,-41,-84,-41,-84,-34,-90,-41,-84,-29,-77,-29,-77,-32,-75,-29,-77,-14,-75,-14,-75,-7,-79,-14,-75,-2,-72,-2,-72,12,-74,12,-74,10,-79,12,-74,25,-74,25,-74,40,-80,40,-80,54,-84,54,-84,51,-82,54,-84,68,-94,68,-94,69,-101,68,-94,79,-102,93,-122,83,-116,83,-116,82,-128,66,-125,51,-108,51,-108,54,-97,51,-108,31,-107,31,-107,25,-122,25,-122,39,-141,39,-141,61,-142,73,-162,90,-164,90,-164,98,-184,90,-164,94,-147,44,-181,31,-160,31,-160,8,-162,-7,-144,2,-124,2,-124,25,-122,31,-107,17,-94,17,-94,-3,-95,-3,-95,-15,-87,-3,-95,-12,-109,-12,-109,-34,-113,-45,-102,-64,-109,-64,-109,-69,-102,-64,-109,-74,-127,-66,-139,-74,-162,-74,-162,-90,-168,-74,-162,-62,-178,-62,-178,-40,-173,-25,-191,-31,-215,-62,-178,-68,-202,-114,-164,-108,-152,-89,-135,-93,-127,-83,-111,-85,-108,-60,-87,-57,-90,-12,-109,2,-124,17,-94,22,-85,25,-74,24,-73,40,-86,40,-80,-2,-72,-4,-70,39,-141,31,-160],[12,-223,-8,-231,-8,-231,-27,-215,-27,-215,-48,-221,-48,-221,-65,-203,-65,-203,-83,-208,-83,-208,-94,-191,-94,-191,-105,-195,-105,-195,-109,-180,-109,-180,-115,-181,-115,-181,-114,-165,-114,-165,-115,-162,-115,-162,-110,-146,-110,-146,-104,-134,-104,-134,-96,-120,-96,-120,-86,-109,-86,-109,-74,-97,-74,-97,-60,-88,-60,-88,-47,-80,-47,-80,-33,-75,-33,-75,-20,-72,-20,-72,-5,-70,-5,-70,8,-70,8,-70,23,-72,23,-72,35,-76,35,-76,50,-81,50,-81,61,-88,61,-88,74,-98,74,-98,79,-101,79,-101,90,-113,90,-113,97,-121,97,-121,104,-134,104,-134,107,-141,107,-141,113,-156,113,-156,115,-169,115,-169,111,-167,111,-167,109,-184,109,-184,99,-183,99,-183,92,-202,92,-202,76,-201,76,-201,64,-221,64,-221,46,-218,46,-218,30,-234,30,-234,12,-223,12,-223,17,-201,17,-201,3,-185,3,-185,-21,-191,-21,-191,-37,-173,-37,-173,-28,-150,-28,-150,-4,-144,-4,-144,11,-162,11,-162,3,-185,17,-201,38,-198,38,-198,46,-218,38,-198,47,-180,47,-180,68,-180,68,-180,76,-201,68,-180,75,-161,75,-161,63,-141,63,-141,67,-124,67,-124,83,-127,83,-127,95,-146,95,-146,104,-149,104,-149,111,-167,99,-183,91,-163,91,-163,95,-146,103,-137,104,-149,107,-141,103,-137,103,-137,93,-121,93,-121,90,-113,83,-115,69,-100,69,-100,55,-96,55,-96,40,-86,40,-86,23,-85,23,-85,11,-79,11,-79,-6,-80,-6,-80,-14,-87,-14,-87,-33,-90,-33,-90,-44,-103,-44,-103,-33,-113,-33,-113,-43,-133,-43,-133,-28,-150,-43,-133,-64,-140,-64,-140,-73,-128,-73,-128,-88,-136,-88,-136,-95,-155,-95,-155,-88,-169,-88,-169,-94,-191,-109,-180,-105,-162,-105,-162,-95,-155,-105,-162,-108,-154,-108,-154,-103,-138,-103,-138,-104,-134,-103,-138,-93,-128,-93,-128,-83,-112,-83,-112,-69,-103,-69,-103,-57,-91,-57,-91,-40,-85,-40,-85,-33,-90,-40,-85,-29,-77,-29,-77,-33,-75,-29,-77,-14,-75,-14,-75,-6,-80,-14,-75,-2,-72,-2,-72,12,-74,12,-74,11,-79,12,-74,25,-74,25,-74,40,-80,40,-80,53,-84,53,-84,50,-81,53,-84,68,-94,68,-94,69,-100,68,-94,79,-101,93,-121,83,-115,83,-115,83,-127,67,-124,52,-107,52,-107,55,-96,52,-107,33,-106,33,-106,27,-122,27,-122,42,-140,42,-140,63,-141,75,-161,91,-163,47,-180,34,-160,34,-160,11,-162,-4,-144,4,-124,4,-124,27,-122,33,-106,18,-94,18,-94,-2,-95,-2,-95,-14,-87,-2,-95,-10,-109,-10,-109,-33,-113,-44,-103,-63,-110,-63,-110,-69,-103,-63,-110,-73,-128,-64,-140,-72,-163,-72,-163,-88,-169,-72,-163,-59,-179,-59,-179,-37,-173,-21,-191,-27,-215,-59,-179,-65,-203,-108,-154,-114,-165,-88,-136,-93,-128,-83,-112,-86,-109,-60,-88,-57,-91,-10,-109,4,-124,18,-94,23,-85,25,-74,23,-72,40,-86,40,-80,-2,-72,-5,-70,42,-140,34,-160],[16,-223,-4,-231,-4,-231,-23,-216,-23,-216,-44,-222,-44,-222,-62,-204,-62,-204,-80,-209,-80,-209,-91,-192,-91,-192,-103,-196,-103,-196,-108,-182,-108,-182,-114,-183,-114,-183,-114,-167,-114,-167,-115,-164,-115,-164,-110,-148,-110,-148,-104,-135,-104,-135,-96,-121,-96,-121,-86,-110,-86,-110,-75,-97,-75,-97,-61,-88,-61,-88,-48,-81,-48,-81,-33,-76,-33,-76,-21,-72,-21,-72,-6,-70,-6,-70,7,-70,7,-70,22,-72,22,-72,34,-76,34,-76,49,-81,49,-81,59,-88,59,-88,73,-97,73,-97,78,-100,78,-100,90,-112,90,-112,96,-120,96,-120,103,-132,103,-132,107,-140,107,-140,113,-155,113,-155,115,-167,115,-167,111,-165,111,-165,110,-182,110,-182,101,-181,101,-181,94,-201,94,-201,79,-200,79,-200,67,-220,67,-220,50,-217,50,-217,34,-233,34,-233,16,-223,16,-223,20,-201,20,-201,6,-185,6,-185,-17,-191,-17,-191,-34,-174,-34,-174,-26,-150,-26,-150,-1,-145,-1,-145,14,-162,14,-162,6,-185,20,-201,42,-198,42,-198,50,-217,42,-198,50,-179,50,-179,70,-179,70,-179,79,-200,70,-179,77,-160,77,-160,65,-140,65,-140,69,-123,69,-123,84,-126,84,-126,95,-145,95,-145,105,-148,105,-148,111,-165,101,-181,93,-161,93,-161,95,-145,103,-135,105,-148,107,-140,103,-135,103,-135,93,-120,93,-120,90,-112,83,-114,70,-100,70,-100,55,-96,55,-96,40,-85,40,-85,23,-84,23,-84,11,-79,11,-79,-6,-80,-6,-80,-13,-87,-13,-87,-33,-90,-33,-90,-43,-103,-43,-103,-31,-114,-31,-114,-40,-134,-40,-134,-26,-150,-40,-134,-62,-141,-62,-141,-72,-128,-72,-128,-87,-137,-87,-137,-94,-157,-94,-157,-86,-171,-86,-171,-91,-192,-108,-182,-104,-164,-104,-164,-94,-157,-104,-164,-107,-155,-107,-155,-103,-140,-103,-140,-104,-135,-103,-140,-92,-129,-92,-129,-83,-113,-83,-113,-68,-104,-68,-104,-57,-91,-57,-91,-40,-85,-40,-85,-33,-90,-40,-85,-29,-77,-29,-77,-33,-76,-29,-77,-14,-75,-14,-75,-6,-80,-13,-87,-1,-96,-1,-96,19,-94,19,-94,34,-106,34,-106,29,-122,29,-122,44,-140,44,-140,65,-140,69,-123,53,-107,53,-107,55,-96,53,-107,34,-106,19,-94,23,-84,24,-74,12,-74,12,-74,11,-79,12,-74,-3,-72,-3,-72,-14,-75,-6,-70,-3,-72,-1,-96,-8,-109,-8,-109,-31,-114,-43,-103,-62,-111,-62,-111,-68,-104,-62,-111,-72,-128,-62,-141,-70,-164,-70,-164,-86,-171,-70,-164,-56,-180,-56,-180,-34,-174,-17,-191,-23,-216,-56,-180,-62,-204,-107,-155,-114,-167,-87,-137,-92,-129,-83,-113,-86,-110,-61,-88,-57,-91,-8,-109,6,-124,6,-124,29,-122,44,-140,37,-159,37,-159,50,-179,37,-159,14,-162,-1,-145,6,-124,40,-85,40,-80,40,-80,24,-74,24,-74,22,-72,40,-80,52,-83,52,-83,49,-81,52,-83,67,-93,67,-93,70,-100,67,-93,78,-100,93,-120,83,-114,83,-114,84,-126,77,-160,93,-161],[20,-223,1,-231,1,-231,-19,-216,-19,-216,-41,-223,-41,-223,-58,-206,-58,-206,-77,-211,-77,-211,-89,-194,-89,-194,-101,-198,-101,-198,-107,-184,-107,-184,-113,-185,-113,-185,-113,-169,-113,-169,-115,-166,-115,-166,-111,-149,-111,-149,-105,-137,-105,-137,-103,-141,-103,-141,-107,-157,-107,-157,-103,-165,-103,-165,-107,-184,-113,-169,-107,-157,-103,-165,-93,-158,-93,-158,-84,-172,-84,-172,-89,-194,-84,-172,-68,-165,-68,-165,-60,-142,-60,-142,-38,-134,-38,-134,-23,-150,-23,-150,-30,-175,-30,-175,-53,-181,-53,-181,-68,-165,-53,-181,-58,-206,-30,-175,-14,-192,-14,-192,10,-185,10,-185,24,-201,24,-201,20,-223,20,-223,38,-232,38,-232,54,-216,54,-216,71,-218,71,-218,82,-198,82,-198,96,-199,96,-199,102,-179,102,-179,111,-180,111,-180,112,-164,112,-164,115,-165,115,-165,112,-153,112,-153,106,-139,106,-139,102,-131,102,-131,95,-119,95,-119,89,-111,89,-111,77,-99,77,-99,67,-93,67,-93,70,-99,70,-99,55,-95,55,-95,40,-85,40,-85,24,-84,24,-84,11,-78,11,-78,-6,-80,-6,-80,-12,-87,-12,-87,-32,-91,-32,-91,-41,-104,-41,-104,-29,-114,-29,-114,-38,-134,-23,-150,2,-144,2,-144,17,-162,17,-162,10,-185,24,-201,45,-197,45,-197,54,-216,45,-197,54,-178,54,-178,73,-178,73,-178,82,-198,73,-178,79,-159,79,-159,66,-139,66,-139,70,-122,70,-122,85,-125,85,-125,96,-143,96,-143,105,-146,105,-146,112,-164,102,-179,94,-160,94,-160,96,-143,102,-134,105,-146,106,-139,102,-134,102,-134,93,-119,93,-119,89,-111,83,-113,70,-99,67,-93,52,-83,52,-83,48,-81,48,-81,33,-75,33,-75,21,-72,21,-72,6,-70,6,-70,-6,-70,-6,-70,-22,-72,-22,-72,-34,-76,-34,-76,-49,-81,-49,-81,-61,-89,-61,-89,-75,-98,-75,-98,-76,-99,-76,-99,-86,-110,-86,-110,-96,-121,-96,-121,-97,-122,-97,-122,-105,-137,-103,-141,-92,-130,-92,-130,-83,-114,-83,-114,-68,-104,-68,-104,-57,-92,-57,-92,-40,-85,-40,-85,-32,-91,-40,-85,-29,-78,-29,-78,-34,-76,-29,-78,-14,-75,-14,-75,-6,-80,-12,-87,1,-96,1,-96,20,-94,20,-94,35,-106,35,-106,31,-121,31,-121,46,-139,46,-139,66,-139,70,-122,54,-106,54,-106,55,-95,54,-106,35,-106,20,-94,24,-84,24,-74,12,-74,12,-74,11,-78,12,-74,-3,-72,-3,-72,-14,-75,-6,-70,-3,-72,1,-96,-6,-110,-6,-110,-29,-114,-41,-104,-61,-111,-61,-111,-68,-104,-75,-98,-86,-111,-86,-111,-97,-122,-92,-130,-86,-138,-86,-138,-93,-158,-86,-138,-71,-129,-71,-129,-60,-142,-71,-129,-61,-111,-57,-92,-61,-89,-83,-114,-86,-111,-6,-110,9,-124,9,-124,31,-121,46,-139,40,-159,40,-159,54,-178,40,-159,17,-162,2,-144,9,-124,40,-85,39,-79,39,-79,24,-74,24,-74,21,-72,39,-79,52,-83,93,-119,83,-113,83,-113,85,-125,79,-159,94,-160,-14,-192,-19,-216],[24,-222,5,-231,5,-231,-14,-216,-14,-216,-37,-224,-37,-224,-55,-207,-55,-207,-74,-212,-74,-212,-87,-195,-87,-195,-100,-200,-100,-200,-106,-186,-106,-186,-113,-187,-113,-187,-113,-170,-113,-170,-115,-168,-115,-168,-111,-151,-111,-151,-110,-149,-110,-149,-103,-134,-103,-134,-97,-122,-97,-122,-87,-110,-87,-110,-77,-99,-77,-99,-65,-91,-65,-91,-52,-83,-52,-83,-50,-81,-50,-81,-34,-76,-34,-76,-23,-72,-23,-72,-7,-70,-7,-70,5,-70,5,-70,20,-72,20,-72,32,-75,32,-75,47,-80,47,-80,51,-83,51,-83,66,-92,66,-92,76,-99,76,-99,88,-110,88,-110,94,-118,94,-118,102,-130,102,-130,106,-137,106,-137,112,-151,112,-151,115,-164,115,-164,112,-162,112,-162,112,-178,112,-178,104,-178,104,-178,98,-197,98,-197,84,-197,84,-197,74,-217,74,-217,57,-215,57,-215,42,-232,42,-232,24,-222,24,-222,28,-200,28,-200,14,-185,14,-185,-10,-192,-10,-192,-27,-175,-27,-175,-20,-151,-20,-151,4,-144,4,-144,21,-162,21,-162,14,-185,28,-200,49,-196,49,-196,57,-215,49,-196,57,-177,57,-177,76,-177,76,-177,84,-197,76,-177,81,-158,81,-158,68,-138,68,-138,71,-121,71,-121,85,-124,85,-124,97,-142,97,-142,105,-145,105,-145,112,-162,96,-159,104,-178,81,-158,96,-159,96,-159,97,-142,105,-145,102,-133,102,-133,106,-137,102,-133,92,-118,92,-118,88,-110,83,-112,69,-98,69,-98,56,-95,56,-95,40,-85,40,-85,24,-84,24,-84,11,-78,11,-78,-5,-80,-5,-80,-12,-87,-12,-87,-31,-91,-31,-91,-40,-104,-40,-104,-27,-114,-27,-114,-36,-135,-36,-135,-20,-151,-36,-135,-58,-143,-58,-143,-69,-130,-69,-130,-85,-139,-85,-139,-91,-159,-91,-159,-82,-173,-82,-173,-87,-195,-106,-186,-102,-167,-102,-167,-91,-159,-102,-167,-107,-158,-107,-158,-102,-142,-102,-142,-105,-138,-105,-138,-97,-123,-97,-123,-97,-122,-97,-123,-87,-112,-87,-112,-83,-115,-83,-115,-68,-105,-68,-105,-57,-92,-57,-92,-40,-86,-40,-86,-31,-91,-40,-86,-29,-78,-29,-78,-34,-76,-29,-78,-14,-75,-14,-75,-5,-80,-12,-87,2,-95,2,-95,21,-94,21,-94,37,-105,37,-105,33,-121,33,-121,49,-138,49,-138,68,-138,71,-121,55,-106,55,-106,56,-95,66,-92,69,-98,55,-106,37,-105,21,-94,24,-84,24,-74,12,-74,12,-74,11,-78,12,-74,-4,-72,-4,-72,-14,-75,-7,-70,-4,-72,2,-95,-5,-110,-5,-110,-27,-114,-40,-104,-60,-112,-60,-112,-68,-105,-76,-99,-87,-112,-83,-115,-91,-131,-91,-131,-102,-142,-105,-138,-111,-151,-107,-158,-113,-170,-85,-139,-91,-131,-69,-130,-60,-112,-77,-99,-76,-99,-76,-99,-61,-89,-61,-89,-57,-92,-61,-89,-50,-81,-5,-110,11,-124,11,-124,33,-121,49,-138,43,-158,43,-158,57,-177,43,-158,21,-162,4,-144,11,-124,40,-85,39,-79,39,-79,24,-74,24,-74,20,-72,39,-79,51,-83,85,-124,83,-112,83,-112,92,-118,-10,-192,-14,-216,-50,-182,-27,-175,-58,-143,-65,-166,-65,-166,-50,-182,-50,-182,-55,-207,-82,-173,-65,-166],[28,-222,9,-231,9,-231,-10,-217,-10,-217,-33,-225,-33,-225,-51,-208,-51,-208,-71,-214,-71,-214,-84,-197,-84,-197,-98,-202,-98,-202,-104,-187,-104,-187,-112,-189,-112,-189,-112,-172,-112,-172,-115,-169,-115,-169,-112,-152,-112,-152,-111,-150,-111,-150,-104,-136,-104,-136,-98,-123,-98,-123,-88,-111,-88,-111,-78,-100,-78,-100,-66,-92,-66,-92,-53,-83,-53,-83,-50,-82,-50,-82,-35,-76,-35,-76,-24,-73,-24,-73,-8,-71,-8,-71,4,-70,4,-70,20,-72,20,-72,31,-75,31,-75,46,-80,46,-80,51,-82,51,-82,66,-91,66,-91,75,-98,75,-98,87,-109,87,-109,93,-117,93,-117,101,-129,101,-129,105,-136,105,-136,111,-150,111,-150,115,-162,115,-162,112,-160,112,-160,113,-176,113,-176,105,-176,105,-176,100,-195,100,-195,87,-195,87,-195,77,-215,77,-215,61,-214,61,-214,46,-231,46,-231,28,-222,28,-222,32,-199,32,-199,17,-185,17,-185,-6,-192,-6,-192,-24,-175,-24,-175,-17,-151,-17,-151,7,-144,7,-144,24,-161,24,-161,17,-185,32,-199,52,-195,52,-195,61,-214,52,-195,59,-176,59,-176,78,-176,78,-176,87,-195,78,-176,83,-157,83,-157,70,-138,70,-138,72,-121,72,-121,86,-123,86,-123,98,-141,98,-141,105,-144,105,-144,112,-160,97,-157,105,-176,83,-157,97,-157,97,-157,98,-141,105,-144,102,-131,102,-131,105,-136,102,-131,92,-117,92,-117,87,-109,83,-111,69,-98,69,-98,56,-94,56,-94,41,-84,41,-84,25,-84,25,-84,12,-78,12,-78,-5,-80,-5,-80,-11,-87,-11,-87,-30,-91,-30,-91,-39,-105,-39,-105,-26,-115,-26,-115,-33,-135,-33,-135,-17,-151,-33,-135,-56,-143,-56,-143,-68,-131,-68,-131,-84,-140,-84,-140,-90,-161,-90,-161,-80,-175,-80,-175,-84,-197,-104,-187,-100,-168,-100,-168,-90,-161,-100,-168,-106,-160,-106,-160,-102,-144,-102,-144,-105,-139,-105,-139,-98,-124,-98,-124,-98,-123,-98,-124,-87,-112,-87,-112,-83,-116,-83,-116,-67,-106,-67,-106,-57,-93,-57,-93,-40,-86,-40,-86,-30,-91,-40,-86,-29,-78,-29,-78,-35,-76,-29,-78,-14,-76,-14,-76,-5,-80,-11,-87,3,-95,3,-95,22,-93,22,-93,38,-105,38,-105,35,-121,35,-121,51,-138,51,-138,70,-138,86,-123,83,-111,83,-111,92,-117,72,-121,56,-105,56,-105,56,-94,66,-91,69,-98,56,-105,38,-105,22,-93,25,-84,23,-74,11,-73,11,-73,12,-78,11,-73,-4,-72,-4,-72,-14,-76,-8,-71,-4,-72,3,-95,-3,-110,-3,-110,-26,-115,-39,-105,-59,-112,-59,-112,-67,-106,-59,-112,-68,-131,-56,-143,-62,-167,-62,-167,-80,-175,-62,-167,-47,-183,-47,-183,-24,-175,-6,-192,-10,-217,-47,-183,-51,-208,-106,-160,-112,-172,-112,-152,-105,-139,-102,-144,-91,-132,-91,-132,-83,-116,-87,-112,-76,-100,-76,-100,-62,-90,-62,-90,-57,-93,-62,-90,-50,-82,-76,-100,-78,-100,-91,-132,-84,-140,-3,-110,13,-124,13,-124,35,-121,51,-138,46,-158,46,-158,59,-176,46,-158,24,-161,7,-144,13,-124,41,-84,39,-79,39,-79,23,-74,23,-74,20,-72,39,-79,51,-82],[32,-221,14,-231,14,-231,-6,-217,-6,-217,-28,-225,-28,-225,-48,-208,-48,-208,-68,-215,-68,-215,-82,-198,-82,-198,-96,-204,-96,-204,-103,-189,-103,-189,-111,-191,-111,-191,-112,-174,-112,-174,-115,-171,-115,-171,-112,-154,-112,-154,-112,-152,-112,-152,-105,-137,-105,-137,-99,-124,-99,-124,-89,-112,-89,-112,-79,-101,-79,-101,-67,-92,-67,-92,-54,-84,-54,-84,-51,-82,-51,-82,-35,-77,-35,-77,-24,-73,-24,-73,-8,-71,-8,-71,3,-70,3,-70,19,-72,19,-72,29,-75,29,-75,45,-80,45,-80,50,-82,50,-82,65,-91,65,-91,74,-97,74,-97,87,-109,87,-109,91,-116,91,-116,102,-130,102,-130,105,-135,105,-135,110,-148,110,-148,114,-160,114,-160,112,-159,112,-159,113,-175,113,-175,106,-174,106,-174,102,-194,102,-194,89,-194,89,-194,80,-214,80,-214,64,-213,64,-213,50,-230,50,-230,32,-221,32,-221,36,-199,36,-199,21,-184,21,-184,-2,-192,-2,-192,-20,-176,-20,-176,-14,-151,-14,-151,10,-144,10,-144,27,-161,27,-161,21,-184,36,-199,56,-194,56,-194,64,-213,56,-194,62,-175,62,-175,80,-174,80,-174,89,-194,80,-174,85,-155,85,-155,72,-137,72,-137,73,-120,73,-120,86,-122,86,-122,98,-140,98,-140,105,-142,105,-142,112,-159,98,-156,106,-174,85,-155,98,-156,98,-156,98,-140,105,-142,102,-130,91,-116,83,-111,83,-111,69,-97,69,-97,56,-94,56,-94,41,-84,41,-84,25,-84,25,-84,12,-78,12,-78,-5,-80,-5,-80,-10,-87,-10,-87,-30,-92,-30,-92,-38,-105,-38,-105,-24,-115,-24,-115,-31,-136,-31,-136,-14,-151,-31,-136,-54,-144,-54,-144,-66,-132,-66,-132,-83,-142,-83,-142,-88,-162,-88,-162,-78,-176,-78,-176,-82,-198,-103,-189,-99,-170,-99,-170,-88,-162,-99,-170,-105,-161,-105,-161,-102,-145,-102,-145,-105,-141,-105,-141,-98,-126,-98,-126,-99,-124,-98,-126,-87,-113,-87,-113,-83,-117,-83,-117,-67,-106,-67,-106,-57,-93,-57,-93,-39,-86,-39,-86,-30,-92,-39,-86,-30,-78,-30,-78,-35,-77,-30,-78,-14,-76,-14,-76,-5,-80,-10,-87,4,-95,4,-95,23,-93,23,-93,39,-104,39,-104,37,-120,37,-120,53,-137,53,-137,72,-137,86,-122,83,-111,73,-120,57,-104,57,-104,56,-94,65,-91,69,-97,57,-104,39,-104,23,-93,25,-84,23,-73,11,-73,11,-73,12,-78,11,-73,-4,-72,-4,-72,-14,-76,-8,-71,-4,-72,4,-95,-1,-110,-1,-110,-24,-115,-38,-105,-58,-113,-58,-113,-67,-106,-58,-113,-66,-132,-54,-144,-60,-168,-60,-168,-78,-176,-60,-168,-44,-184,-44,-184,-20,-176,-2,-192,-6,-217,-44,-184,-48,-208,-105,-161,-112,-174,-112,-154,-105,-141,-102,-145,-90,-133,-90,-133,-83,-117,-87,-113,-77,-100,-77,-100,-62,-91,-62,-91,-57,-93,-62,-91,-51,-82,-77,-100,-79,-101,-90,-133,-83,-142,-1,-110,15,-123,15,-123,37,-120,53,-137,48,-157,48,-157,62,-175,48,-157,27,-161,10,-144,15,-123,41,-84,38,-79,38,-79,23,-73,23,-73,19,-72,38,-79,50,-82],[36,-220,18,-231,18,-231,-2,-217,-2,-217,-24,-226,-24,-226,-44,-209,-44,-209,-65,-216,-65,-216,-79,-200,-79,-200,-93,-205,-93,-205,-101,-191,-101,-191,-109,-193,-109,-193,-111,-176,-111,-176,-115,-173,-115,-173,-112,-156,-112,-156,-112,-153,-112,-153,-106,-138,-106,-138,-99,-125,-99,-125,-90,-113,-90,-113,-80,-102,-80,-102,-68,-93,-68,-93,-55,-84,-55,-84,-52,-83,-52,-83,-36,-77,-36,-77,-25,-73,-25,-73,-9,-71,-9,-71,2,-70,2,-70,18,-71,18,-71,28,-74,28,-74,44,-79,44,-79,49,-81,49,-81,65,-90,65,-90,74,-96,74,-96,86,-108,86,-108,91,-115,91,-115,101,-129,101,-129,104,-133,104,-133,110,-147,110,-147,114,-159,114,-159,112,-157,112,-157,114,-173,114,-173,107,-173,107,-173,103,-192,103,-192,91,-192,91,-192,83,-212,83,-212,68,-212,68,-212,54,-229,54,-229,36,-220,36,-220,39,-198,39,-198,25,-184,25,-184,2,-192,2,-192,-17,-176,-17,-176,-11,-151,-11,-151,13,-144,13,-144,30,-161,30,-161,25,-184,39,-198,59,-193,59,-193,68,-212,59,-193,65,-174,65,-174,82,-173,82,-173,91,-192,82,-173,86,-154,86,-154,73,-136,73,-136,74,-119,74,-119,87,-121,87,-121,99,-138,99,-138,105,-141,105,-141,112,-157,99,-154,107,-173,86,-154,99,-154,99,-154,99,-138,105,-141,101,-129,87,-121,83,-110,83,-110,69,-97,69,-97,56,-93,56,-93,41,-84,41,-84,26,-83,26,-83,12,-78,12,-78,-4,-80,-4,-80,-9,-87,-9,-87,-29,-92,-29,-92,-36,-105,-36,-105,-22,-115,-22,-115,-29,-136,-29,-136,-11,-151,-29,-136,-51,-145,-51,-145,-64,-133,-64,-133,-81,-143,-81,-143,-86,-163,-86,-163,-75,-177,-75,-177,-79,-200,-101,-191,-98,-172,-98,-172,-86,-163,-98,-172,-104,-163,-104,-163,-101,-146,-101,-146,-105,-142,-105,-142,-99,-127,-99,-127,-99,-125,-99,-127,-87,-114,-87,-114,-82,-118,-82,-118,-66,-107,-66,-107,-56,-94,-56,-94,-39,-87,-39,-87,-29,-92,-39,-87,-30,-78,-30,-78,-36,-77,-30,-78,-14,-76,-14,-76,-4,-80,-9,-87,5,-95,5,-95,24,-93,24,-93,41,-104,41,-104,39,-120,39,-120,55,-136,55,-136,73,-136,74,-119,58,-104,58,-104,56,-93,65,-90,69,-97,58,-104,41,-104,39,-120,18,-123,18,-123,13,-144,30,-161,51,-156,51,-156,65,-174,51,-156,55,-136,83,-110,91,-115,49,-81,38,-78,38,-78,41,-84,38,-78,22,-73,22,-73,11,-73,11,-73,12,-78,11,-73,-5,-72,-5,-72,-14,-76,-9,-71,-5,-72,5,-95,1,-110,1,-110,-22,-115,-36,-105,-57,-114,-57,-114,-66,-107,-57,-114,-64,-133,-51,-145,-57,-169,-57,-169,-75,-177,-57,-169,-40,-184,-40,-184,-17,-176,2,-192,-2,-217,-40,-184,-44,-209,-104,-163,-111,-176,-112,-156,-105,-142,-101,-146,-89,-135,-89,-135,-82,-118,-87,-114,-77,-101,-77,-101,-62,-91,-62,-91,-56,-94,-62,-91,-52,-83,-77,-101,-80,-102,-89,-135,-81,-143,1,-110,18,-123,24,-93,26,-83,22,-73,18,-71],[40,-220,22,-230,22,-230,2,-217,2,-217,-20,-226,-20,-226,-40,-210,-40,-210,-61,-217,-61,-217,-76,-201,-76,-201,-91,-207,-91,-207,-99,-193,-99,-193,-108,-195,-108,-195,-110,-177,-110,-177,-115,-175,-115,-175,-112,-157,-112,-157,-113,-155,-113,-155,-107,-140,-107,-140,-100,-127,-100,-127,-91,-114,-91,-114,-80,-102,-80,-102,-69,-94,-69,-94,-56,-85,-56,-85,-52,-83,-52,-83,-36,-77,-36,-77,-26,-73,-26,-73,-10,-71,-10,-71,1,-70,1,-70,17,-71,17,-71,27,-74,27,-74,43,-79,43,-79,49,-81,49,-81,64,-90,64,-90,73,-96,73,-96,85,-107,85,-107,90,-114,90,-114,101,-128,101,-128,103,-132,103,-132,109,-145,109,-145,113,-157,113,-157,112,-156,112,-156,114,-171,114,-171,108,-171,108,-171,105,-190,105,-190,93,-191,93,-191,85,-211,85,-211,71,-210,71,-210,58,-227,58,-227,40,-220,40,-220,43,-197,43,-197,28,-183,28,-183,6,-192,6,-192,-13,-176,-13,-176,-8,-151,-8,-151,16,-144,16,-144,33,-160,33,-160,28,-183,43,-197,62,-192,62,-192,71,-210,62,-192,68,-173,68,-173,85,-172,85,-172,93,-191,85,-172,88,-153,88,-153,75,-135,75,-135,75,-118,75,-118,87,-120,87,-120,99,-137,99,-137,105,-140,105,-140,112,-156,100,-153,108,-171,88,-153,100,-153,100,-153,99,-137,105,-140,101,-128,87,-120,83,-109,83,-109,69,-96,69,-96,57,-93,57,-93,41,-83,41,-83,26,-83,26,-83,12,-78,12,-78,-4,-80,-4,-80,-8,-88,-8,-88,-28,-92,-28,-92,-35,-106,-35,-106,-20,-115,-20,-115,-26,-136,-26,-136,-8,-151,-26,-136,-49,-146,-49,-146,-63,-133,-63,-133,-80,-144,-80,-144,-84,-165,-84,-165,-73,-178,-73,-178,-76,-201,-73,-178,-54,-169,-54,-169,-49,-146,-63,-133,-55,-114,-55,-114,-35,-106,-28,-92,-39,-87,-39,-87,-56,-94,-56,-94,-65,-108,-65,-108,-82,-119,-82,-119,-87,-115,-87,-115,-99,-128,-99,-128,-100,-127,-99,-128,-105,-144,-105,-144,-100,-148,-100,-148,-103,-164,-103,-164,-96,-173,-96,-173,-99,-193,-110,-177,-103,-164,-112,-157,-105,-144,-100,-148,-88,-136,-88,-136,-82,-119,-87,-115,-78,-102,-78,-102,-63,-92,-63,-92,-56,-94,-63,-92,-52,-83,-39,-87,-30,-79,-30,-79,-36,-77,-30,-79,-14,-76,-14,-76,-4,-80,-8,-88,7,-95,7,-95,25,-93,25,-93,42,-104,42,-104,40,-119,40,-119,57,-136,57,-136,75,-135,75,-118,58,-103,58,-103,57,-93,64,-90,69,-96,58,-103,42,-104,40,-119,20,-123,20,-123,16,-144,33,-160,54,-155,54,-155,68,-173,54,-155,57,-136,83,-109,90,-114,49,-81,38,-78,38,-78,41,-83,38,-78,22,-73,22,-73,11,-73,11,-73,12,-78,11,-73,-5,-72,-5,-72,-14,-76,-10,-71,-5,-72,17,-71,22,-73,26,-83,25,-93,7,-95,2,-110,2,-110,-20,-115,2,-110,20,-123,-13,-176,-37,-185,-37,-185,-54,-169,-37,-185,-40,-210,2,-217,6,-192,-55,-114,-65,-108,-78,-102,-80,-102,-88,-136,-80,-144,-84,-165,-96,-173],[44,-219,26,-230,26,-230,6,-217,6,-217,-16,-227,-16,-227,-36,-211,-36,-211,-58,-219,-58,-219,-73,-203,-73,-203,-89,-209,-89,-209,-97,-194,-97,-194,-107,-196,-107,-196,-110,-179,-110,-179,-114,-176,-114,-176,-112,-159,-112,-159,-113,-157,-113,-157,-108,-141,-108,-141,-101,-128,-101,-128,-92,-115,-92,-115,-81,-103,-81,-103,-70,-94,-70,-94,-57,-85,-57,-85,-46,-81,-46,-81,-31,-75,-31,-75,-27,-73,-27,-73,-37,-77,-37,-77,-53,-84,-53,-84,-57,-85,-53,-84,-63,-92,-63,-92,-78,-103,-78,-103,-88,-116,-88,-116,-99,-129,-99,-129,-101,-128,-99,-129,-105,-145,-105,-145,-100,-149,-100,-149,-102,-166,-102,-166,-94,-175,-94,-175,-97,-194,-110,-179,-102,-166,-94,-175,-83,-166,-83,-166,-70,-179,-70,-179,-73,-203,-70,-179,-51,-170,-51,-170,-46,-146,-46,-146,-24,-137,-24,-137,-5,-152,-5,-152,-10,-176,-10,-176,-33,-186,-33,-186,-51,-170,-33,-186,-36,-211,-10,-176,9,-192,9,-192,32,-183,32,-183,47,-197,47,-197,44,-219,44,-219,61,-226,61,-226,74,-209,74,-209,88,-209,88,-209,95,-189,95,-189,106,-188,106,-188,109,-169,109,-169,114,-169,114,-169,112,-154,112,-154,113,-155,113,-155,108,-144,108,-144,102,-131,102,-131,100,-127,100,-127,105,-138,105,-138,112,-154,101,-152,109,-169,89,-152,101,-152,101,-152,99,-136,99,-136,105,-138,99,-136,87,-119,87,-119,75,-117,75,-117,76,-134,76,-134,89,-152,89,-152,87,-171,87,-171,95,-189,87,-171,70,-172,70,-172,65,-191,65,-191,74,-209,65,-191,47,-197,32,-183,36,-160,36,-160,18,-144,18,-144,-5,-152,-24,-137,-18,-116,-18,-116,-34,-106,-34,-106,-27,-92,-27,-92,-8,-88,-8,-88,-3,-80,-3,-80,12,-78,12,-78,10,-73,10,-73,-5,-72,-5,-72,-14,-76,-14,-76,-3,-80,-8,-88,8,-95,8,-95,26,-93,26,-93,43,-103,43,-103,42,-119,42,-119,59,-135,59,-135,76,-134,87,-119,83,-108,83,-108,69,-95,69,-95,57,-92,57,-92,41,-83,41,-83,27,-83,27,-83,12,-78,10,-73,21,-73,21,-73,37,-78,37,-78,48,-81,48,-81,42,-78,42,-78,26,-74,26,-74,16,-71,16,-71,0,-70,0,-70,-10,-71,-10,-71,-5,-72,-10,-71,-27,-73,-30,-79,-37,-77,-38,-87,-30,-79,-30,-79,-14,-76,-27,-92,-38,-87,-38,-87,-56,-95,-56,-95,-65,-108,-65,-108,-81,-120,-81,-120,-88,-116,-81,-120,-88,-137,-88,-137,-100,-149,-105,-145,-112,-159,-88,-137,-78,-145,-78,-145,-83,-166,-78,-145,-61,-134,-61,-134,-46,-146,-61,-134,-54,-115,-54,-115,-34,-106,-18,-116,4,-110,4,-110,8,-95,4,-110,22,-123,22,-123,42,-119,43,-103,59,-103,59,-103,57,-92,63,-89,72,-95,72,-95,84,-106,84,-106,90,-113,90,-113,100,-127,90,-113,83,-108,75,-117,59,-103,69,-95,63,-89,63,-89,48,-81,41,-83,37,-78,27,-83,26,-93,21,-73,16,-71,22,-123,18,-144,36,-160,56,-155,56,-155,70,-172,56,-155,59,-135,9,-192,6,-217,-54,-115,-65,-108,-56,-95,-63,-92,-78,-103,-81,-103],[48,-218,30,-229,30,-229,11,-217,11,-217,-12,-227,-12,-227,-33,-211,-33,-211,-54,-220,-54,-220,-70,-204,-70,-204,-86,-210,-86,-210,-95,-196,-95,-196,-105,-198,-105,-198,-109,-181,-109,-181,-114,-178,-114,-178,-112,-161,-112,-161,-114,-158,-114,-158,-108,-143,-108,-143,-101,-129,-101,-129,-93,-116,-93,-116,-82,-104,-82,-104,-71,-95,-71,-95,-58,-86,-58,-86,-47,-81,-47,-81,-32,-75,-32,-75,-27,-73,-27,-73,-37,-78,-37,-78,-53,-84,-53,-84,-58,-86,-53,-84,-63,-93,-63,-93,-79,-103,-79,-103,-88,-117,-88,-117,-99,-130,-99,-130,-101,-129,-99,-130,-105,-146,-105,-146,-99,-150,-99,-150,-101,-167,-101,-167,-93,-176,-93,-176,-95,-196,-109,-181,-101,-167,-93,-176,-80,-167,-80,-167,-67,-180,-67,-180,-70,-204,-67,-180,-48,-171,-48,-171,-44,-147,-44,-147,-21,-137,-21,-137,-2,-152,-2,-152,-6,-177,-6,-177,-30,-186,-30,-186,-48,-171,-30,-186,-33,-211,-6,-177,13,-192,13,-192,35,-182,35,-182,50,-196,50,-196,48,-218,48,-218,65,-225,65,-225,77,-208,77,-208,90,-207,90,-207,97,-188,97,-188,108,-186,108,-186,109,-168,109,-168,114,-167,114,-167,112,-152,112,-152,105,-137,105,-137,99,-125,99,-125,89,-112,89,-112,83,-105,83,-105,71,-94,71,-94,63,-89,63,-89,68,-95,68,-95,57,-92,57,-92,41,-83,41,-83,27,-83,27,-83,13,-78,13,-78,-3,-80,-3,-80,-7,-88,-7,-88,-26,-93,-26,-93,-32,-106,-32,-106,-16,-116,-16,-116,-21,-137,-2,-152,21,-143,21,-143,39,-159,39,-159,35,-182,50,-196,68,-190,68,-190,77,-208,68,-190,73,-171,73,-171,88,-169,88,-169,97,-188,88,-169,91,-150,91,-150,77,-133,77,-133,76,-117,76,-117,87,-118,87,-118,99,-135,99,-135,105,-137,99,-135,101,-150,101,-150,109,-168,101,-150,91,-150,77,-133,61,-134,61,-134,44,-119,44,-119,44,-103,44,-103,27,-92,27,-92,9,-95,9,-95,-7,-88,-3,-80,-14,-76,-14,-76,-6,-72,-6,-72,10,-73,10,-73,13,-78,10,-73,21,-73,21,-73,37,-77,37,-77,47,-80,47,-80,41,-78,41,-78,25,-74,25,-74,15,-71,15,-71,-1,-70,-1,-70,-11,-71,-11,-71,-6,-72,-11,-71,-27,-73,-30,-79,-37,-78,-38,-88,-30,-79,-30,-79,-14,-76,-26,-93,-38,-88,-38,-88,-55,-95,-55,-95,-64,-109,-64,-109,-81,-121,-81,-121,-88,-117,-81,-121,-87,-138,-87,-138,-99,-150,-105,-146,-112,-161,-87,-138,-76,-146,-76,-146,-80,-167,-76,-146,-59,-135,-59,-135,-44,-147,-59,-135,-53,-115,-53,-115,-32,-106,-16,-116,6,-110,6,-110,9,-95,6,-110,24,-123,24,-123,44,-119,44,-103,60,-102,60,-102,57,-92,63,-89,47,-80,41,-83,37,-77,27,-83,27,-92,21,-73,15,-71,60,-102,76,-117,83,-107,68,-95,89,-112,83,-107,83,-107,87,-118,61,-134,59,-154,59,-154,73,-171,59,-154,39,-159,21,-143,24,-123,13,-192,11,-217,-53,-115,-64,-109,-55,-95,-63,-93,-79,-103,-82,-104],[52,-217,35,-229,35,-229,15,-216,15,-216,-7,-227,-7,-227,-29,-212,-29,-212,-50,-221,-50,-221,-67,-205,-67,-205,-83,-212,-83,-212,-93,-198,-93,-198,-104,-200,-104,-200,-107,-183,-107,-183,-113,-180,-113,-180,-112,-162,-112,-162,-114,-160,-114,-160,-109,-144,-109,-144,-102,-130,-102,-130,-94,-117,-94,-117,-83,-105,-83,-105,-72,-96,-72,-96,-59,-86,-59,-86,-49,-82,-49,-82,-33,-75,-33,-75,-28,-74,-28,-74,-38,-78,-38,-78,-54,-84,-54,-84,-59,-86,-54,-84,-63,-93,-63,-93,-79,-104,-79,-104,-87,-118,-87,-118,-99,-132,-99,-132,-102,-130,-99,-132,-105,-148,-105,-148,-98,-152,-98,-152,-100,-169,-100,-169,-91,-178,-91,-178,-93,-198,-107,-183,-100,-169,-91,-178,-78,-168,-78,-168,-65,-182,-65,-182,-67,-205,-65,-182,-45,-172,-45,-172,-41,-147,-41,-147,-19,-137,-19,-137,1,-152,1,-152,-3,-177,-3,-177,-26,-187,-26,-187,-45,-172,-26,-187,-29,-212,-3,-177,17,-191,17,-191,39,-182,39,-182,53,-195,53,-195,52,-217,52,-217,68,-224,68,-224,80,-206,80,-206,93,-206,93,-206,99,-186,99,-186,109,-185,109,-185,110,-166,110,-166,114,-166,114,-166,111,-151,111,-151,104,-136,104,-136,99,-124,99,-124,88,-111,88,-111,82,-104,82,-104,70,-94,70,-94,62,-88,62,-88,68,-94,68,-94,57,-91,57,-91,41,-82,41,-82,27,-83,27,-83,13,-78,13,-78,-3,-80,-3,-80,-6,-88,-6,-88,-25,-93,-25,-93,-31,-107,-31,-107,-14,-116,-14,-116,-19,-137,1,-152,24,-143,24,-143,42,-158,42,-158,39,-182,53,-195,71,-189,71,-189,80,-206,71,-189,75,-170,75,-170,90,-168,90,-168,99,-186,90,-168,92,-149,92,-149,78,-132,78,-132,77,-116,77,-116,87,-117,87,-117,99,-133,99,-133,104,-136,99,-133,102,-149,102,-149,110,-166,102,-149,92,-149,78,-132,63,-133,63,-133,45,-118,45,-118,45,-102,45,-102,28,-92,28,-92,10,-95,10,-95,-6,-88,-3,-80,-14,-76,-14,-76,-6,-72,-6,-72,10,-73,10,-73,13,-78,10,-73,20,-73,20,-73,36,-77,36,-77,46,-80,46,-80,40,-78,40,-78,24,-74,24,-74,14,-71,14,-71,-1,-70,-1,-70,-12,-71,-12,-71,-6,-72,-12,-71,-28,-74,-30,-79,-38,-78,-37,-88,-30,-79,-30,-79,-14,-76,-25,-93,-37,-88,-37,-88,-55,-96,-55,-96,-63,-110,-63,-110,-80,-121,-80,-121,-87,-118,-80,-121,-85,-139,-85,-139,-98,-152,-105,-148,-112,-162,-85,-139,-75,-147,-75,-147,-78,-168,-75,-147,-57,-136,-57,-136,-41,-147,-57,-136,-51,-116,-51,-116,-31,-107,-14,-116,8,-109,8,-109,10,-95,8,-109,26,-122,26,-122,45,-118,45,-102,60,-102,60,-102,57,-91,62,-88,46,-80,41,-82,36,-77,27,-83,28,-92,20,-73,14,-71,60,-102,77,-116,82,-106,68,-94,88,-111,82,-106,82,-106,87,-117,63,-133,61,-153,61,-153,75,-170,61,-153,42,-158,24,-143,26,-122,17,-191,15,-216,-51,-116,-63,-110,-55,-96,-63,-93,-79,-104,-83,-105],[19,-216,39,-228,39,-228,55,-216,55,-216,72,-222,72,-222,82,-205,82,-205,95,-204,95,-204,101,-184,101,-184,110,-183,110,-183,111,-164,111,-164,114,-164,114,-164,111,-149,111,-149,104,-134,104,-134,98,-123,98,-123,88,-110,88,-110,81,-104,81,-104,68,-93,68,-93,61,-88,61,-88,46,-79,46,-79,36,-77,36,-77,41,-82,41,-82,57,-91,57,-91,68,-93,68,-93,61,-88,57,-91,61,-101,61,-101,46,-102,46,-102,47,-118,47,-118,64,-133,64,-133,80,-131,80,-131,77,-115,77,-115,88,-116,88,-116,99,-132,99,-132,104,-134,99,-132,102,-147,102,-147,111,-164,102,-147,93,-148,93,-148,92,-166,92,-166,101,-184,92,-166,78,-169,78,-169,74,-188,74,-188,82,-205,74,-188,57,-194,57,-194,42,-181,42,-181,21,-191,21,-191,19,-216,19,-216,-3,-227,-3,-227,-25,-213,-25,-213,-47,-222,-47,-222,-64,-206,-64,-206,-81,-213,-81,-213,-91,-199,-91,-199,-102,-202,-102,-202,-106,-185,-106,-185,-112,-182,-112,-182,-112,-164,-112,-164,-114,-162,-114,-162,-110,-146,-110,-146,-102,-131,-102,-131,-95,-118,-95,-118,-83,-106,-83,-106,-73,-96,-73,-96,-60,-87,-60,-87,-50,-82,-50,-82,-35,-76,-35,-76,-29,-74,-29,-74,-38,-78,-38,-78,-54,-85,-54,-85,-60,-87,-54,-85,-63,-94,-63,-94,-79,-105,-79,-105,-87,-119,-87,-119,-99,-133,-99,-133,-102,-131,-99,-133,-104,-149,-104,-149,-97,-153,-97,-153,-99,-171,-99,-171,-89,-179,-89,-179,-91,-199,-106,-185,-99,-171,-89,-179,-76,-170,-76,-170,-62,-183,-62,-183,-64,-206,-62,-183,-42,-172,-42,-172,-39,-148,-39,-148,-16,-137,-16,-137,4,-152,4,-152,1,-177,1,-177,-22,-187,-22,-187,-42,-172,-22,-187,-25,-213,1,-177,21,-191,42,-181,45,-158,45,-158,27,-143,27,-143,4,-152,-16,-137,-12,-116,-12,-116,-29,-107,-29,-107,-24,-93,-24,-93,-5,-88,-5,-88,-2,-80,-2,-80,13,-78,13,-78,10,-73,10,-73,-6,-72,-6,-72,-14,-76,-14,-76,-2,-80,-5,-88,11,-95,11,-95,29,-92,29,-92,46,-102,61,-101,77,-115,82,-105,68,-93,88,-110,82,-105,82,-105,88,-116,80,-131,93,-148,78,-169,63,-152,63,-152,45,-158,27,-143,28,-122,28,-122,47,-118,64,-133,63,-152,28,-122,10,-109,10,-109,11,-95,10,-109,-12,-116,-29,-107,-50,-117,-50,-117,-62,-110,-62,-110,-79,-122,-79,-122,-87,-119,-79,-122,-84,-140,-84,-140,-97,-153,-104,-149,-112,-164,-84,-140,-73,-148,-73,-148,-76,-170,-73,-148,-55,-136,-55,-136,-39,-148,-55,-136,-50,-117,-62,-110,-55,-96,-55,-96,-37,-88,-37,-88,-24,-93,-30,-80,-38,-78,-29,-74,-12,-71,-12,-71,-2,-70,-2,-70,13,-71,13,-71,20,-72,20,-72,10,-73,13,-78,28,-82,28,-82,29,-92,28,-82,41,-82,36,-77,20,-72,-6,-72,-12,-71,-14,-76,-30,-80,-30,-80,-37,-88,-55,-96,-63,-94,-79,-105,-83,-106,55,-216,57,-194],[23,-216,43,-227,43,-227,59,-215,59,-215,75,-221,75,-221,85,-203,85,-203,97,-202,97,-202,102,-183,102,-183,111,-181,111,-181,111,-163,111,-163,114,-162,114,-162,110,-148,110,-148,103,-133,103,-133,97,-122,97,-122,87,-109,87,-109,80,-103,80,-103,67,-93,67,-93,60,-87,60,-87,45,-79,45,-79,35,-77,35,-77,41,-82,41,-82,57,-90,57,-90,67,-93,67,-93,60,-87,57,-90,61,-100,61,-100,47,-101,47,-101,49,-117,49,-117,66,-132,66,-132,81,-130,81,-130,78,-114,78,-114,88,-115,88,-115,99,-131,99,-131,103,-133,99,-131,103,-146,103,-146,111,-163,94,-165,102,-183,85,-203,76,-186,76,-186,80,-168,80,-168,94,-165,94,-165,94,-147,94,-147,81,-130,66,-132,65,-151,65,-151,80,-168,65,-151,47,-157,47,-157,45,-180,45,-180,24,-191,24,-191,23,-216,23,-216,1,-227,1,-227,-21,-213,-21,-213,-43,-223,-43,-223,-61,-207,-61,-207,-78,-215,-78,-215,-89,-201,-89,-201,-100,-204,-100,-204,-105,-186,-105,-186,-112,-184,-112,-184,-111,-166,-111,-166,-114,-163,-114,-163,-110,-147,-110,-147,-103,-133,-103,-133,-95,-119,-95,-119,-84,-106,-84,-106,-74,-97,-74,-97,-61,-87,-61,-87,-51,-82,-51,-82,-36,-76,-36,-76,-29,-74,-29,-74,-38,-79,-38,-79,-55,-85,-55,-85,-61,-87,-55,-85,-63,-94,-63,-94,-79,-106,-79,-106,-87,-120,-87,-120,-99,-134,-99,-134,-103,-133,-99,-134,-104,-151,-104,-151,-96,-155,-96,-155,-97,-172,-97,-172,-87,-180,-87,-180,-89,-201,-105,-186,-97,-172,-87,-180,-74,-171,-74,-171,-59,-184,-59,-184,-61,-207,-59,-184,-39,-173,-39,-173,-36,-148,-36,-148,-13,-138,-13,-138,7,-151,7,-151,5,-177,5,-177,-19,-187,-19,-187,-39,-173,-19,-187,-21,-213,5,-177,24,-191,45,-180,60,-193,60,-193,76,-186,60,-193,59,-215,47,-157,29,-142,29,-142,7,-151,-13,-138,-10,-116,-10,-116,-28,-107,-28,-107,-23,-93,-23,-93,-4,-88,-4,-88,-2,-80,-2,-80,13,-77,13,-77,9,-73,9,-73,-7,-72,-7,-72,-14,-76,-14,-76,-2,-80,-4,-88,12,-95,12,-95,30,-92,30,-92,47,-101,61,-100,78,-114,81,-105,67,-93,87,-109,81,-105,81,-105,88,-115,103,-146,94,-147,49,-117,30,-122,30,-122,29,-142,30,-122,11,-109,11,-109,12,-95,11,-109,-10,-116,-28,-107,-48,-117,-48,-117,-61,-111,-61,-111,-78,-123,-78,-123,-87,-120,-78,-123,-83,-141,-83,-141,-96,-155,-104,-151,-111,-166,-83,-141,-71,-149,-71,-149,-74,-171,-71,-149,-53,-137,-53,-137,-36,-148,-53,-137,-48,-117,-61,-111,-54,-97,-54,-97,-36,-89,-36,-89,-23,-93,-30,-80,-38,-79,-29,-74,-13,-71,-13,-71,-3,-70,-3,-70,13,-71,13,-71,19,-72,19,-72,9,-73,13,-77,28,-82,28,-82,30,-92,28,-82,41,-82,35,-77,19,-72,-7,-72,-13,-71,-14,-76,-30,-80,-30,-80,-36,-89,-54,-97,-63,-94,-79,-106,-84,-106],[27,-215,46,-226,46,-226,62,-214,62,-214,78,-219,78,-219,88,-202,88,-202,99,-200,99,-200,104,-181,104,-181,112,-179,112,-179,111,-161,111,-161,114,-161,114,-161,110,-146,110,-146,103,-132,103,-132,96,-121,96,-121,86,-108,86,-108,81,-104,81,-104,67,-92,67,-92,60,-87,60,-87,44,-79,44,-79,35,-76,35,-76,41,-81,41,-81,57,-90,57,-90,67,-92,62,-100,57,-90,48,-101,62,-100,62,-100,78,-113,78,-113,82,-129,82,-129,95,-145,95,-145,95,-164,95,-164,104,-181,95,-164,82,-166,82,-166,79,-185,79,-185,88,-202,79,-185,63,-192,63,-192,48,-180,48,-180,28,-190,28,-190,27,-215,27,-215,6,-227,6,-227,-17,-213,-17,-213,-39,-223,-39,-223,-57,-209,-57,-209,-75,-216,-75,-216,-86,-203,-86,-203,-98,-206,-98,-206,-104,-188,-104,-188,-111,-186,-111,-186,-111,-167,-111,-167,-114,-165,-114,-165,-111,-148,-111,-148,-103,-134,-103,-134,-96,-120,-96,-120,-85,-107,-85,-107,-75,-98,-75,-98,-61,-88,-61,-88,-52,-83,-52,-83,-37,-76,-37,-76,-30,-74,-30,-74,-39,-79,-39,-79,-55,-86,-55,-86,-61,-88,-55,-86,-63,-95,-63,-95,-79,-107,-79,-107,-87,-121,-87,-121,-99,-135,-99,-135,-103,-134,-99,-135,-103,-152,-103,-152,-95,-156,-95,-156,-96,-174,-96,-174,-85,-182,-85,-182,-86,-203,-104,-188,-96,-174,-85,-182,-71,-172,-71,-172,-56,-185,-56,-185,-57,-209,-56,-185,-36,-174,-36,-174,-33,-149,-33,-149,-11,-138,-11,-138,10,-151,10,-151,8,-177,8,-177,-15,-188,-15,-188,-36,-174,-15,-188,-17,-213,8,-177,28,-190,48,-180,50,-156,50,-156,32,-142,32,-142,10,-151,-11,-138,-8,-116,-8,-116,-26,-108,-26,-108,-22,-93,-22,-93,-3,-88,-3,-88,-2,-80,-2,-80,13,-77,13,-77,9,-73,9,-73,-7,-72,-7,-72,-14,-77,-14,-77,-2,-80,-3,-88,14,-95,14,-95,30,-91,30,-91,48,-101,48,-101,50,-116,50,-116,67,-131,67,-131,82,-129,87,-115,99,-130,99,-130,103,-132,99,-130,103,-145,103,-145,111,-161,103,-145,95,-145,82,-166,68,-150,68,-150,50,-156,32,-142,32,-121,32,-121,50,-116,67,-131,68,-150,32,-121,13,-109,13,-109,14,-95,28,-82,13,-77,9,-73,18,-72,18,-72,12,-71,12,-71,-4,-70,-4,-70,-14,-71,-14,-71,-7,-72,-14,-77,-29,-80,-29,-80,-39,-79,-30,-74,-14,-71,-29,-80,-36,-89,-36,-89,-22,-93,-36,-89,-54,-97,-54,-97,-60,-112,-60,-112,-77,-124,-77,-124,-87,-121,-77,-124,-82,-142,-82,-142,-95,-156,-103,-152,-111,-167,-82,-142,-69,-150,-69,-150,-71,-172,-69,-150,-51,-138,-51,-138,-33,-149,-51,-138,-47,-118,-47,-118,-26,-108,-8,-116,13,-109,30,-91,28,-82,28,-82,41,-81,35,-76,18,-72,78,-113,87,-115,87,-115,81,-104,63,-192,62,-214,-47,-118,-60,-112,-54,-97,-63,-95,-79,-107,-85,-107],[-12,-214,-35,-224,-35,-224,-54,-210,-54,-210,-71,-218,-71,-218,-84,-204,-84,-204,-96,-208,-96,-208,-102,-190,-102,-190,-110,-188,-110,-188,-110,-169,-110,-169,-114,-167,-114,-167,-111,-150,-111,-150,-111,-149,-111,-149,-104,-136,-104,-136,-97,-123,-97,-123,-97,-122,-97,-122,-103,-135,-103,-135,-99,-136,-99,-136,-102,-154,-102,-154,-94,-157,-94,-157,-94,-175,-94,-175,-82,-183,-82,-183,-84,-204,-102,-190,-94,-175,-82,-183,-69,-173,-69,-173,-52,-185,-52,-185,-54,-210,-52,-185,-32,-174,-32,-174,-31,-149,-31,-149,-8,-138,-8,-138,13,-151,13,-151,12,-176,12,-176,-11,-188,-11,-188,-12,-214,-12,-214,10,-227,10,-227,31,-214,31,-214,50,-225,50,-225,66,-213,66,-213,81,-218,81,-218,90,-200,90,-200,101,-199,101,-199,105,-179,105,-179,112,-177,112,-177,111,-160,111,-160,114,-159,114,-159,109,-145,109,-145,102,-130,102,-130,95,-120,95,-120,85,-107,85,-107,80,-103,80,-103,66,-92,66,-92,59,-86,59,-86,43,-78,43,-78,34,-76,34,-76,40,-81,40,-81,57,-89,57,-89,66,-92,62,-99,57,-89,49,-101,62,-99,62,-99,79,-112,79,-112,83,-128,83,-128,96,-144,96,-144,96,-162,96,-162,105,-179,96,-162,84,-165,84,-165,81,-184,81,-184,90,-200,81,-184,66,-191,66,-191,52,-179,52,-179,32,-190,32,-190,12,-176,32,-190,31,-214,52,-179,53,-156,53,-156,34,-142,34,-142,13,-151,-8,-138,-6,-116,-6,-116,-25,-108,-25,-108,-21,-94,-21,-94,-3,-88,-3,-88,-1,-80,-1,-80,13,-77,13,-77,9,-73,9,-73,-7,-72,-7,-72,-14,-77,-14,-77,-1,-80,-3,-88,15,-95,15,-95,31,-91,31,-91,49,-101,49,-101,52,-116,52,-116,69,-130,69,-130,83,-128,69,-130,70,-149,70,-149,84,-165,70,-149,53,-156,34,-142,34,-121,34,-121,52,-116,34,-121,15,-109,15,-109,15,-95,28,-82,13,-77,9,-73,18,-72,18,-72,11,-71,11,-71,-5,-70,-5,-70,-14,-71,-14,-71,-7,-72,-14,-77,-29,-80,-29,-80,-39,-79,-39,-79,-55,-86,-55,-86,-62,-88,-62,-88,-53,-83,-53,-83,-38,-77,-38,-77,-31,-75,-31,-75,-39,-79,-31,-75,-14,-71,-29,-80,-35,-89,-35,-89,-21,-94,-35,-89,-53,-98,-53,-98,-59,-112,-59,-112,-76,-125,-76,-125,-86,-122,-86,-122,-99,-136,-103,-135,-111,-150,-102,-154,-110,-169,-94,-157,-80,-143,-80,-143,-76,-125,-86,-122,-79,-107,-79,-107,-63,-96,-63,-96,-53,-98,-63,-96,-55,-86,-62,-88,-76,-98,-76,-98,-85,-108,-85,-108,-97,-122,-85,-108,-79,-107,-59,-112,-45,-118,-45,-118,-25,-108,-6,-116,15,-109,31,-91,28,-82,28,-82,40,-81,34,-76,18,-72,79,-112,87,-114,87,-114,99,-128,99,-128,102,-130,99,-128,104,-143,104,-143,111,-160,96,-144,104,-143,87,-114,80,-103,66,-191,66,-213,-11,-188,-32,-174,-31,-149,-49,-138,-49,-138,-67,-151,-67,-151,-69,-173,-67,-151,-80,-143,-49,-138,-45,-118],[-8,-214,-31,-225,-31,-225,-50,-211,-50,-211,-68,-219,-68,-219,-81,-206,-81,-206,-94,-209,-94,-209,-100,-192,-100,-192,-109,-189,-109,-189,-110,-171,-110,-171,-114,-168,-114,-168,-111,-152,-111,-152,-111,-151,-111,-151,-105,-138,-105,-138,-98,-124,-98,-124,-97,-123,-97,-123,-104,-137,-104,-137,-99,-138,-99,-138,-102,-155,-102,-155,-92,-159,-92,-159,-92,-177,-92,-177,-80,-185,-80,-185,-81,-206,-100,-192,-92,-177,-80,-185,-66,-174,-66,-174,-49,-186,-49,-186,-50,-211,-49,-186,-29,-175,-29,-175,-28,-150,-28,-150,-5,-138,-5,-138,16,-151,16,-151,15,-176,15,-176,-8,-188,-8,-188,-8,-214,-8,-214,14,-227,14,-227,35,-214,35,-214,54,-224,54,-224,69,-211,69,-211,84,-216,84,-216,92,-198,92,-198,103,-197,103,-197,106,-177,106,-177,113,-176,113,-176,112,-158,112,-158,114,-157,114,-157,109,-143,109,-143,102,-129,102,-129,94,-119,94,-119,84,-106,84,-106,80,-102,80,-102,66,-91,66,-91,58,-86,58,-86,42,-78,42,-78,34,-76,34,-76,40,-81,40,-81,57,-89,57,-89,66,-91,62,-99,57,-89,50,-100,62,-99,62,-99,79,-112,79,-112,83,-127,83,-127,97,-143,97,-143,98,-161,98,-161,106,-177,98,-161,86,-164,86,-164,84,-182,84,-182,92,-198,84,-182,69,-190,69,-190,55,-178,55,-178,35,-189,35,-189,15,-176,35,-189,35,-214,69,-190,69,-211,55,-178,55,-155,55,-155,37,-141,37,-141,16,-151,-5,-138,-4,-117,-4,-117,-23,-108,-23,-108,-20,-94,-20,-94,-2,-88,-2,-88,-1,-80,-1,-80,13,-77,13,-77,9,-73,9,-73,-7,-72,-7,-72,-14,-77,-14,-77,-1,-80,-2,-88,16,-95,16,-95,32,-91,32,-91,50,-100,50,-100,53,-115,53,-115,70,-129,70,-129,83,-127,70,-129,72,-148,72,-148,86,-164,72,-148,55,-155,37,-141,36,-120,36,-120,53,-115,36,-120,16,-109,16,-109,16,-95,29,-81,13,-77,9,-73,17,-72,17,-72,10,-71,10,-71,-6,-70,-6,-70,-15,-71,-15,-71,-7,-72,-14,-77,-29,-81,-29,-81,-39,-79,-39,-79,-56,-87,-56,-87,-63,-89,-63,-89,-54,-84,-54,-84,-39,-77,-39,-77,-31,-75,-31,-75,-39,-79,-31,-75,-15,-71,-29,-81,-35,-90,-35,-90,-20,-94,-23,-108,-43,-119,-43,-119,-58,-113,-58,-113,-75,-126,-75,-126,-86,-123,-86,-123,-99,-138,-104,-137,-111,-152,-102,-155,-110,-171,-92,-159,-79,-144,-79,-144,-75,-126,-86,-123,-79,-108,-79,-108,-63,-96,-63,-96,-52,-98,-52,-98,-58,-113,-52,-98,-35,-90,-56,-87,-63,-96,-63,-89,-77,-99,-77,-99,-86,-109,-86,-109,-97,-123,-86,-109,-79,-108,-47,-139,-28,-150,-29,-175,-8,-188,-65,-152,-47,-139,-47,-139,-43,-119,-79,-144,-65,-152,-65,-152,-66,-174,-4,-117,16,-109,32,-91,29,-81,29,-81,40,-81,34,-76,17,-72,79,-112,87,-113,87,-113,99,-127,99,-127,102,-129,99,-127,104,-142,104,-142,112,-158,97,-143,104,-142,87,-113,80,-102],[-4,-214,-27,-225,-27,-225,-46,-212,-46,-212,-65,-221,-65,-221,-78,-207,-78,-207,-91,-211,-91,-211,-98,-193,-98,-193,-107,-191,-107,-191,-109,-172,-109,-172,-114,-170,-114,-170,-111,-153,-111,-153,-112,-153,-112,-153,-106,-139,-106,-139,-99,-126,-99,-126,-91,-116,-91,-116,-81,-104,-81,-104,-78,-100,-78,-100,-64,-89,-64,-89,-55,-84,-55,-84,-39,-77,-39,-77,-32,-75,-32,-75,-40,-80,-40,-80,-56,-87,-56,-87,-64,-89,-56,-87,-63,-97,-63,-97,-79,-109,-79,-109,-85,-124,-85,-124,-98,-139,-98,-139,-104,-138,-104,-138,-98,-124,-98,-124,-99,-126,-98,-124,-86,-110,-86,-110,-79,-109,-86,-110,-78,-100,-63,-97,-52,-99,-52,-99,-57,-114,-57,-114,-74,-127,-74,-127,-85,-124,-74,-127,-77,-145,-77,-145,-91,-160,-91,-160,-101,-156,-101,-156,-98,-139,-104,-138,-111,-153,-101,-156,-109,-172,-91,-160,-90,-178,-90,-178,-77,-186,-77,-186,-78,-207,-98,-193,-90,-178,-77,-186,-63,-175,-63,-175,-46,-187,-46,-187,-46,-212,-46,-187,-26,-175,-26,-175,-25,-150,-25,-150,-3,-138,-3,-138,19,-151,19,-151,19,-176,19,-176,-4,-188,-4,-188,-4,-214,-4,-214,18,-226,18,-226,39,-213,39,-213,58,-223,58,-223,72,-210,72,-210,86,-214,86,-214,94,-197,94,-197,104,-195,104,-195,107,-176,107,-176,113,-174,113,-174,112,-156,112,-156,113,-156,113,-156,108,-142,108,-142,101,-128,101,-128,93,-118,93,-118,83,-105,83,-105,79,-101,79,-101,65,-90,65,-90,57,-85,57,-85,41,-78,41,-78,33,-75,33,-75,40,-80,40,-80,56,-88,56,-88,65,-90,63,-98,56,-88,50,-100,63,-98,63,-98,79,-111,79,-111,84,-126,84,-126,97,-142,97,-142,99,-159,99,-159,107,-176,99,-159,87,-163,87,-163,86,-181,86,-181,94,-197,86,-181,72,-188,72,-188,58,-177,58,-177,39,-189,39,-189,19,-176,39,-189,39,-213,72,-188,72,-210,58,-177,58,-154,58,-154,39,-141,39,-141,19,-151,39,-141,38,-120,38,-120,54,-115,54,-115,50,-100,50,-100,33,-90,33,-90,17,-94,17,-94,-1,-88,-1,-88,0,-80,0,-80,14,-77,14,-77,8,-73,8,-73,-8,-72,-8,-72,-14,-77,-14,-77,0,-80,-1,-88,-19,-94,-19,-94,-21,-108,-21,-108,-2,-117,-2,-117,-3,-138,-2,-117,18,-109,18,-109,17,-94,29,-81,14,-77,17,-72,9,-71,9,-71,-7,-70,-7,-70,-16,-72,-16,-72,-8,-72,-14,-77,-29,-81,-29,-81,-40,-80,-32,-75,-16,-72,-29,-81,-34,-90,-34,-90,-19,-94,-21,-108,-42,-119,-42,-119,-57,-114,-52,-99,-34,-90,-42,-119,-44,-140,-44,-140,-25,-150,-44,-140,-62,-152,-62,-152,-63,-175,-62,-152,-77,-145,-26,-175,-4,-188,58,-154,74,-147,74,-147,87,-163,74,-147,72,-129,72,-129,54,-115,38,-120,18,-109,33,-90,29,-81,29,-81,40,-80,33,-75,17,-72,17,-72,8,-73,72,-129,84,-126,87,-112,99,-126,99,-126,101,-128,99,-126,104,-141,104,-141,112,-156,104,-141,97,-142,79,-111,87,-112,87,-112,79,-101],[0,-214,-22,-226,-22,-226,-43,-212,-43,-212,-61,-222,-61,-222,-75,-209,-75,-209,-89,-213,-89,-213,-97,-195,-97,-195,-106,-193,-106,-193,-108,-174,-108,-174,-114,-172,-114,-172,-112,-155,-112,-155,-113,-154,-113,-154,-107,-141,-107,-141,-100,-127,-100,-127,-92,-117,-92,-117,-82,-105,-82,-105,-78,-101,-78,-101,-64,-90,-64,-90,-56,-85,-56,-85,-40,-77,-40,-77,-33,-75,-33,-75,-40,-80,-40,-80,-56,-88,-56,-88,-64,-90,-63,-97,-79,-110,-79,-110,-85,-125,-85,-125,-98,-140,-98,-140,-104,-139,-104,-139,-98,-125,-98,-125,-100,-127,-98,-125,-86,-111,-86,-111,-79,-110,-86,-111,-78,-101,-56,-88,-63,-97,-63,-97,-51,-99,-51,-99,-56,-114,-56,-114,-73,-128,-73,-128,-85,-125,-73,-128,-75,-146,-75,-146,-89,-161,-89,-161,-100,-158,-100,-158,-98,-140,-104,-139,-112,-155,-100,-158,-108,-174,-89,-161,-88,-179,-88,-179,-75,-187,-75,-187,-75,-209,-75,-187,-61,-176,-61,-176,-42,-188,-42,-188,-43,-212,-42,-188,-22,-176,-22,-176,-22,-150,-22,-150,0,-138,0,-138,22,-150,22,-150,22,-176,22,-176,0,-188,0,-188,0,-214,0,-214,22,-226,22,-226,43,-212,43,-212,61,-222,61,-222,75,-209,75,-209,89,-213,89,-213,97,-195,97,-195,106,-193,106,-193,108,-174,108,-174,114,-172,114,-172,112,-155,112,-155,113,-154,113,-154,107,-141,107,-141,100,-127,100,-127,92,-117,92,-117,82,-105,82,-105,78,-101,78,-101,64,-90,64,-90,56,-85,56,-85,40,-77,40,-77,33,-75,33,-75,40,-80,40,-80,56,-88,56,-88,64,-90,63,-97,56,-88,51,-99,63,-97,63,-97,79,-110,79,-110,85,-125,85,-125,98,-140,98,-140,100,-158,100,-158,108,-174,100,-158,89,-161,89,-161,88,-179,88,-179,97,-195,88,-179,75,-187,75,-187,61,-176,61,-176,42,-188,42,-188,22,-176,42,-188,43,-212,75,-187,75,-209,61,-176,60,-153,60,-153,42,-140,42,-140,22,-150,42,-140,40,-120,40,-120,56,-114,56,-114,51,-99,51,-99,33,-90,33,-90,18,-94,18,-94,0,-88,0,-88,0,-80,0,-80,14,-77,14,-77,8,-72,8,-72,-8,-72,-8,-72,-14,-77,-14,-77,0,-80,0,-88,-18,-94,-18,-94,-20,-108,-20,-108,0,-117,0,-117,0,-138,0,-117,20,-108,20,-108,18,-94,29,-81,14,-77,16,-72,8,-70,8,-70,-8,-70,-8,-70,-16,-72,-16,-72,-8,-72,-14,-77,-29,-81,-29,-81,-40,-80,-33,-75,-16,-72,-29,-81,-33,-90,-33,-90,-18,-94,-20,-108,-40,-120,-40,-120,-56,-114,-51,-99,-33,-90,-40,-120,-42,-140,-42,-140,-22,-150,-42,-140,-60,-153,-60,-153,-61,-176,-60,-153,-75,-146,-88,-179,-97,-195,-22,-176,0,-188,60,-153,75,-146,75,-146,89,-161,75,-146,73,-128,73,-128,56,-114,40,-120,20,-108,33,-90,29,-81,29,-81,40,-80,33,-75,16,-72,16,-72,8,-72,73,-128,85,-125,98,-125,100,-127,104,-139,98,-125,98,-125,86,-111,86,-111,79,-110,86,-111,78,-101,98,-140,104,-139,104,-139,112,-155]];
+const DC={"anchorY":-153.5625,"mul":4,"pos":64,"chunks":[[-70,-5,[[1,-24,-80],[1,72,-68],[1,-20,-84],[1,76,-56],[1,-12,-64],[1,68,-32],[1,-12,-36],[1,56,-8],[1,-4,-16],[1,64,12],[1,8,0],[1,60,24],[1,48,20],[1,52,36],[1,44,40],[1,44,48],[1,32,52],[1,28,56],[1,20,56],[1,12,52],[1,4,60],[1,-4,56],[1,-8,56],[1,-16,52]]],[77,39,[[1,-24,56],[1,-28,48],[1,-44,52],[1,-36,32],[1,-48,40],[1,-16,16],[1,36,-32],[1,52,-44],[1,32,-48],[1,-28,0],[1,20,-68],[1,44,-52],[1,8,-72],[1,24,-44],[1,0,-72],[1,-28,-36],[1,-12,-76],[1,-48,-48],[1,-44,36],[1,-76,-48],[1,-68,48],[1,-92,-44],[1,-16,-80],[1,68,-44]]],[-4,-81,[[1,-24,-56],[1,-80,-24],[0,44,-44],[1,68,20],[1,24,32],[1,-56,16],[0,32,-48],[1,32,-4],[1,60,24],[1,16,0],[0,-16,0],[1,40,36],[1,56,40],[1,36,56],[1,44,48],[1,24,64],[1,-24,20],[0,24,-20],[1,28,52],[1,8,-8],[0,-8,8],[1,4,56],[1,-16,24],[0,16,-24]]],[79,-14,[[1,12,52],[1,-8,56],[1,-20,-12],[0,20,12],[1,-4,52],[1,-24,60],[1,-20,56],[1,12,-8],[0,-12,8],[1,-40,56],[0,-28,0],[1,-64,52],[1,-48,-12],[1,-80,44],[1,-16,48],[1,-76,24],[1,-8,24],[1,52,0],[1,0,4],[1,56,-16],[1,40,-16],[1,-32,4],[1,-64,24],[0,-44,-24]]],[-20,108,[[1,-68,-16],[1,8,-48],[1,-80,-40],[1,12,-72],[1,-76,-60],[1,16,-72],[1,-60,-72],[1,48,-72],[1,88,24],[1,68,-52],[1,-16,-96],[1,72,-56],[0,-72,56],[1,-92,-24],[0,108,120],[1,88,40],[1,76,-52],[1,-16,-96],[0,68,-48],[1,-24,-80],[1,52,-24],[1,-32,-56],[1,-72,-32],[0,8,-36]]],[6,-108,[[1,-40,-20],[0,104,88],[1,36,-8],[0,56,40],[1,16,0],[0,20,56],[1,-28,12],[1,24,72],[0,-44,36],[1,12,88],[1,56,40],[1,36,-40],[0,-36,40],[1,0,84],[1,-48,52],[1,-64,-36],[1,-76,56],[1,-8,88],[1,68,32],[1,-16,68],[0,48,12],[1,-24,44],[1,32,-4],[0,-32,4]]],[29,93,[[1,-68,36],[1,-52,0],[0,32,24],[1,20,-24],[0,12,20],[1,52,-28],[0,88,-76],[1,12,-12],[0,12,-104],[1,-44,-16],[1,8,-84],[0,48,-52],[1,40,28],[0,40,20],[1,8,0],[0,-56,52],[1,24,8],[0,-112,28],[1,-72,56],[0,-68,-32],[1,-84,48],[1,-76,-40],[1,-88,32],[0,88,-32]]],[-30,56,[[1,4,-88],[1,-72,-44],[1,-80,32],[0,80,-32],[1,-4,-88],[0,36,64],[0,40,68],[1,84,-48],[1,-4,-96],[0,76,-52],[1,80,40],[1,4,92],[0,-76,56],[1,-80,-40],[0,76,-52],[0,76,-56],[1,60,-48],[0,72,32],[0,76,32],[1,8,-4],[0,-36,-108],[0,-40,-112],[1,12,-4],[0,-84,-32]]],[47,-66,[[1,-68,-44],[0,-52,24],[1,-84,-40],[0,-68,44],[1,-92,-28]]],[-11,66,[[1,-12,72],[1,-84,32],[0,84,-32],[1,68,24]]]]};
+
+</script>
+<script>
+(() => {
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString("en-US");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const SVGNS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs = {}, parent) => { const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+const vw = svg => Math.round(Math.max(340, Math.min(640, svg.clientWidth || 640)));
+const PH = "#e4ecff", PHG = "rgba(120,160,255,0.22)", DIM = "#5f6f88", AMB = "#ffb35c";
+
+// shared tooltip
+const tip = $("tip");
+function showTip(ev, html) { tip.innerHTML = html; tip.hidden = false; const x = Math.min(ev.clientX + 14, innerWidth - tip.offsetWidth - 8); tip.style.left = x + "px"; tip.style.top = (ev.clientY + 14) + "px"; }
+function hideTip() { tip.hidden = true; }
+
+// theme changes: redraw everything that reads tokens
+const redrawers = [];
+const onTheme = () => redrawers.forEach(f => f());
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onTheme);
+new MutationObserver(onTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+// canvas sizing
+function fit(cv) {
+  const w = cv.clientWidth, h = +cv.getAttribute("height-css") || cv.height;
+  if (!cv.getAttribute("height-css")) cv.setAttribute("height-css", cv.height);
+  const d = devicePixelRatio || 1;
+  cv.width = Math.round(w * d); cv.height = Math.round(h * d); cv.style.height = h + "px";
+  const c = cv.getContext("2d"); c.setTransform(d, 0, 0, d, 0, 0);
+  return { c, w, h };
+}
+function clear(c, w, h) { c.fillStyle = "#080c12"; c.fillRect(0, 0, w, h); }
+function glow(c, path, width = 1.25) {
+  c.lineCap = "round"; c.lineJoin = "round";
+  c.strokeStyle = PHG; c.lineWidth = width + 3; path(); c.stroke();
+  c.strokeStyle = PH; c.lineWidth = width; path(); c.stroke();
+}
+
+// ---- real dome views (gen_dome.py) ----
+const VIEWS = 48, STORED = 25, STEPS = 240, YC = -153;
+function viewOf(step) { const v = ((step % VIEWS) + VIEWS) % VIEWS; return { v, idx: v < STORED ? v : VIEWS - v, mir: v >= STORED }; }
+function drawDome(cv, step, label) {
+  const { c, w, h } = fit(cv); clear(c, w, h);
+  const { idx, mir } = viewOf(step), s = DV[idx], k = Math.min(w / 256, h / 190), sx = mir ? -1 : 1;
+  const cx = w / 2, cy = h / 2 + 12;
+  glow(c, () => { c.beginPath(); for (let i = 0; i < s.length; i += 4) { c.moveTo(cx + sx * s[i] * k, cy - (s[i + 1] - YC) * k); c.lineTo(cx + sx * s[i + 2] * k, cy - (s[i + 3] - YC) * k); } });
+}
+
+// hero
+const heroCv = $("heroCv");
+let heroStep = 29, heroLast = 0;
+function heroLoop(t) {
+  if (t - heroLast >= 20) { heroStep = (heroStep + 1) % STEPS; heroLast = t; drawDome(heroCv, heroStep); }
+  if (heroOn) requestAnimationFrame(heroLoop);
+}
+let heroOn = false;
+drawDome(heroCv, heroStep);
+const visible = (node, on, off) => new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? on() : off())).observe(node);
+if (!reduce) visible(heroCv, () => { if (!heroOn) { heroOn = true; requestAnimationFrame(heroLoop); } }, () => heroOn = false);
+
+// ---- 1: budgets ----
+function budget(cfg) {
+  const bar = $(cfg.bar), leg = $(cfg.leg), read = $(cfg.readId), axis = $(cfg.axis), line = $(cfg.line);
+  line.style.left = (cfg.budget / cfg.max * 100) + "%";
+  axis.innerHTML = cfg.ticks.map(t => `<span style="left:${t / cfg.max * 100}%">${cfg.tickFmt(t)}</span>`).join("");
+  return n => {
+    const segs = cfg.segs(n), total = segs.reduce((a, s) => a + s.v, 0);
+    bar.innerHTML = ""; leg.innerHTML = "";
+    segs.forEach(s => {
+      const d = document.createElement("div"); d.className = "sg" + (s.dark ? " dark-ink" : "");
+      const pct = Math.min(s.v, Math.max(0, cfg.max - segs.slice(0, segs.indexOf(s)).reduce((a, x) => a + x.v, 0))) / cfg.max * 100;
+      d.style.flex = `0 0 ${pct}%`; d.style.background = `var(${s.c})`;
+      const lab = s.short || s.name; if (pct / 100 * bar.clientWidth > lab.length * 7 + 12) d.textContent = lab;
+      d.addEventListener("pointermove", e => showTip(e, `<b>${s.name}</b><br>${cfg.unitFmt(s.v)}${s.note ? "<br>" + s.note : ""}`));
+      d.addEventListener("pointerleave", hideTip);
+      bar.appendChild(d);
+      leg.insertAdjacentHTML("beforeend", `<span><i style="background:var(${s.c})"></i>${s.name} <b>${cfg.unitFmt(s.v)}</b></span>`);
+    });
+    read.innerHTML = cfg.read(total, n);
+  };
+}
+const vx = budget({
+  bar: "vxBar", leg: "vxLeg", readId: "vxRead", axis: "vxAxis", line: "vxLine", budget: 30000, max: 48000,
+  ticks: [0, 12000, 24000, 36000, 48000], tickFmt: t => t ? (t / 1000) + "k" : "0", unitFmt: v => fmt(v),
+  segs: n => [
+    { name: "Dome", v: 15500, c: "--s1", dark: true, note: "gen_dome.py cost model, worst view" },
+    { name: "Radar", v: 3800, c: "--s2" },
+    { name: "Stars", v: 4000, c: "--s3", note: "12 dots × ~340" },
+    { name: "HUD glyphs", v: 2300, c: "--s4", short: "HUD" },
+    { name: "Projection", v: 1000, c: "--s5", short: "Proj" },
+    { name: `Cracks (${n} × 900)`, v: n * 900, c: "--s6", dark: true, short: "Cracks" },
+  ],
+  read: t => t <= 30000
+    ? `${fmt(t)} of 30,000 itemized · <span class="good">${fmt(30000 - t)} left</span> for the ship, missiles, logic and sound`
+    : `${fmt(t)} itemized · <span class="bad">${fmt(t - 30000)} past the frame</span> before the ship, missiles, logic and sound`
+});
+const en = budget({
+  bar: "enBar", leg: "enLeg", readId: "enRead", axis: "enAxis", line: "enLine", budget: 250, max: 400,
+  ticks: [0, 100, 200, 300, 400], tickFmt: t => t + (t === 400 ? " ms" : ""), unitFmt: v => fmt(v) + " ms",
+  segs: n => [
+    { name: "Gateway + TLS", v: 15, c: "--s1", dark: true, short: "GW" },
+    { name: "Auth", v: 10, c: "--s2" },
+    { name: "Handler", v: 20, c: "--s3" },
+    { name: "Downstream call", v: 45, c: "--s4", short: "Downstream" },
+    { name: "Serialization", v: 15, c: "--s5", short: "Ser" },
+    { name: `Queries (${n} × 6 ms)`, v: n * 6, c: "--s6", dark: true, short: "Queries" },
+  ],
+  read: (t, n) => `${fmt(t)} of 250 ms · ` + (t <= 250 ? `<span class="good">${250 - t} ms headroom</span>` : `<span class="bad">${t - 250} ms over</span>`) +
+    ` · test asserting ≤ 12 queries: ` + (n <= 12 ? `<span class="chip pass">PASS</span>` : `<span class="chip fail">FAIL</span>`)
+});
+const crk = $("crk"), nq = $("nq");
+crk.oninput = () => { $("crkOut").textContent = crk.value; vx(+crk.value); };
+nq.oninput = () => { $("nqOut").textContent = nq.value; en(+nq.value); };
+vx(+crk.value); en(+nq.value);
+
+// ---- 2: state space ring ----
+const ring = $("ring"), stp = $("stp"), ringCv = $("ringCv");
+let ringTicks = [];
+(function buildRing() {
+  el("circle", { cx: 130, cy: 130, r: 96, fill: "none", stroke: "var(--rule)" }, ring);
+  for (let i = 0; i < STEPS; i++) {
+    const a = i / STEPS * 2 * Math.PI - Math.PI / 2, ca = Math.cos(a), sa = Math.sin(a);
+    const t = el("line", { x1: 130 + ca * 100, y1: 130 + sa * 100, x2: 130 + ca * 110, y2: 130 + sa * 110, "stroke-width": 1.4 }, ring);
+    ringTicks.push({ t, ca, sa, v: i % VIEWS });
+  }
+})();
+const ringMarks = el("g", {}, ring);
+const ringHand = el("line", { stroke: "var(--fg)", "stroke-width": 1.5 }, ring);
+const ringTxt = el("text", { x: 130, y: 126, "text-anchor": "middle", fill: "var(--fg)", "font-family": "IBM Plex Mono, monospace", "font-size": 22, "font-weight": 500 }, ring);
+const ringSub = el("text", { x: 130, y: 146, "text-anchor": "middle", fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace", "font-size": 11 }, ring);
+function setStep(s) {
+  s = ((s % STEPS) + STEPS) % STEPS; stp.value = s; $("stpOut").textContent = s;
+  const { v, idx, mir } = viewOf(s), twin = (VIEWS - v) % VIEWS;
+  ringMarks.innerHTML = "";
+  const same = [], twins = [];
+  ringTicks.forEach((o, i) => {
+    o.t.setAttribute("stroke", o.v < STORED ? "var(--accent)" : "var(--rule)");
+    o.t.setAttribute("stroke-opacity", o.v < STORED ? .55 : 1);
+    if (o.v === v) { same.push(i); el("circle", { cx: 130 + o.ca * 118, cy: 130 + o.sa * 118, r: 5, fill: "var(--s2)", stroke: "var(--surface)", "stroke-width": 2 }, ringMarks); }
+    else if (o.v === twin) { twins.push(i); el("circle", { cx: 130 + o.ca * 118, cy: 130 + o.sa * 118, r: 4, fill: "var(--surface)", stroke: "var(--s2)", "stroke-width": 2 }, ringMarks); }
+  });
+  const o = ringTicks[s]; ringHand.setAttribute("x1", 130 + o.ca * 62); ringHand.setAttribute("y1", 130 + o.sa * 62); ringHand.setAttribute("x2", 130 + o.ca * 92); ringHand.setAttribute("y2", 130 + o.sa * 92);
+  ringTxt.textContent = "step " + s; ringSub.textContent = "view " + v;
+  $("ringCap").textContent = mir ? `stored view ${idx}, mirrored` : `stored view ${idx}`;
+  $("ringRead").innerHTML = `step ${s} → view ${v} (${s} mod 48) → ` + (mir ? `not stored: view ${idx} drawn with x negated` : `stored view ${idx}`) +
+    `<br>same picture at steps ${same.join(", ")}` + (twins.length ? `<br>mirror image at steps ${twins.join(", ")}` : "");
+  drawDome(ringCv, s);
+}
+stp.oninput = () => setStep(+stp.value);
+function ringPick(e) { const r = ring.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 260 - 130, y = (e.clientY - r.top) / r.height * 260 - 130; let a = Math.atan2(y, x) + Math.PI / 2; if (a < 0) a += 2 * Math.PI; setStep(Math.round(a / (2 * Math.PI) * STEPS)); }
+ring.addEventListener("pointerdown", e => { ringPick(e); ring.setPointerCapture(e.pointerId); });
+ring.addEventListener("pointermove", e => { if (e.buttons) ringPick(e); });
+let ringRate = 50, ringRun = false, ringAcc = 0, ringPrev = 0, ringStepF = 0;
+function ringLoop(t) {
+  if (!ringRun) return;
+  const dt = ringPrev ? t - ringPrev : 0; ringPrev = t; ringStepF += dt / 20; // dome turns 1 step per 20 ms of game time
+  ringAcc += dt;
+  if (ringAcc >= 1000 / ringRate) { ringAcc %= 1000 / ringRate; setStep(Math.floor(ringStepF)); }
+  requestAnimationFrame(ringLoop);
+}
+$("ringPlay").onclick = () => { ringRun = !ringRun; $("ringPlay").setAttribute("aria-pressed", ringRun); $("ringPlay").textContent = ringRun ? "Stop" : "Turn the dome"; ringPrev = 0; ringStepF = +stp.value; if (ringRun) requestAnimationFrame(ringLoop); };
+const rateBtn = r => { ringRate = r; $("r50").setAttribute("aria-pressed", r === 50); $("r14").setAttribute("aria-pressed", r === 14); };
+$("r50").onclick = () => rateBtn(50); $("r14").onclick = () => rateBtn(14);
+setStep(29);
+
+// ---- 3: collision matrix ----
+let mode = "esrg", mCells = [], bAim = [];
+function seeded(n) { let s = n; return () => (s = (s * 1103515245 + 12345) % 2147483648) / 2147483648; }
+let rnd = seeded(7);
+function shuffle() {
+  const pool = [...Array(76).keys()];
+  for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+  mCells = pool.slice(0, 40); // missiles target distinct cells
+  bAim = Array.from({ length: 20 }, (_, i) => i === 0 ? { r: .5 } : i === 1 ? { cell: mCells[60] } : rnd() < .45 ? { r: rnd() } : { cell: Math.floor(rnd() * 76) });
+}
+shuffle();
+function drawMx() {
+  const M = +$("nm").value, B = +$("nb").value, cs = 16, ox = 34, oy = 22;
+  const W = ox + M * cs + 4, H = oy + B * cs + 4;
+  const bCells = bAim.map(a => a.cell !== undefined ? a.cell : mCells[Math.floor(a.r * M)]);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Bullet-by-missile pair matrix" });
+  let k = 0;
+  for (let j = 0; j < M; j++) if (M <= 12 || j % 5 === 0) el("text", { x: ox + j * cs + 7, y: 14, "text-anchor": "middle", "font-size": 9, fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace" }, svg).textContent = "m" + (j + 1);
+  for (let i = 0; i < B; i++) {
+    el("text", { x: ox - 6, y: oy + i * cs + 11, "text-anchor": "end", "font-size": 9, fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace" }, svg).textContent = "b" + (i + 1);
+    for (let j = 0; j < M; j++) {
+      const hit = bCells[i] === mCells[j]; if (hit) k++;
+      const x = ox + j * cs, y = oy + i * cs;
+      let r;
+      if (mode === "geo") r = el("rect", { x, y, width: cs - 2, height: cs - 2, rx: 2, fill: hit ? "var(--s2)" : "var(--muted)", "fill-opacity": hit ? 1 : .55 }, svg);
+      else if (mode === "esrg") r = hit ? el("rect", { x, y, width: cs - 2, height: cs - 2, rx: 2, fill: "var(--s2)" }, svg)
+        : el("rect", { x: x + 4, y: y + 4, width: cs - 10, height: cs - 10, rx: 1, fill: "none", stroke: "var(--muted)", "stroke-width": 1 }, svg);
+      else r = hit ? el("rect", { x, y, width: cs - 2, height: cs - 2, rx: 2, fill: "var(--s2)" }, svg)
+        : el("rect", { x: x + 6, y: y + 6, width: 2, height: 2, fill: "var(--rule)" }, svg);
+      const txt = mode === "geo" ? "3 subtractions, 3 multiplies, 1 compare" : mode === "esrg" ? (hit ? "cells match: 1 distance compare" : "ring or azimuth differ: skipped") : (hit ? "found by cell lookup" : "never visited");
+      r.addEventListener("pointermove", e => showTip(e, `b${i + 1} vs m${j + 1}<br>cells ${bCells[i]} / ${mCells[j]}<br>${txt}`));
+      r.addEventListener("pointerleave", hideTip);
+    }
+  }
+  svg.style.width = `min(100%, ${W * 2}px)`;
+  const mx = $("mx"); mx.innerHTML = ""; mx.appendChild(svg);
+  const P = M * B;
+  const t = mode === "geo" ? [P, 3 * P, P] : mode === "esrg" ? [P, 0, 2 * P + k] : [k, 0, B + k];
+  $("tPairs").textContent = fmt(t[0]); $("tMul").textContent = fmt(t[1]); $("tCmp").textContent = fmt(t[2]);
+}
+document.querySelectorAll("[data-m]").forEach(b => b.onclick = () => { mode = b.dataset.m; document.querySelectorAll("[data-m]").forEach(x => x.setAttribute("aria-pressed", x === b)); drawMx(); });
+$("nm").oninput = () => { $("nmOut").textContent = $("nm").value; drawMx(); };
+$("nb").oninput = () => { $("nbOut").textContent = $("nb").value; drawMx(); };
+$("shuf").onclick = () => { shuffle(); drawMx(); };
+drawMx();
+
+// ---- 4: fixed step vs naive ----
+const FRAME = 30000, UNITS = 117, MAXS = 3, CPS = 1.5e6;
+const ld = $("ld");
+let sims, t0, clkRun = !reduce;
+function newSim(fixed) { return { fixed, loopEnd: 0, frames: 0, shown: 0, pend: 1, over: 0, draws: [] }; }
+function resetSims() { sims = [newSim(false), newSim(true)]; t0 = performance.now(); sims.forEach(s => { s.loopEnd = Math.max(FRAME, +ld.value); s.draws.push({ t: 0, f: 0 }); }); }
+function advance(s, cyc) {
+  const C = +ld.value, len = Math.max(FRAME, C);
+  while (cyc >= s.loopEnd) {
+    if (s.fixed) {
+      s.frames += s.pend;
+      s.over += Math.floor(Math.max(0, C - FRAME) / 256);
+      let n = 1; while (s.over >= UNITS && n < MAXS) { s.over -= UNITS; n++; }
+      if (s.over >= UNITS) s.over = 0;
+      s.pend = n;
+    } else s.frames += 1;
+    s.shown = s.frames; s.draws.push({ t: s.loopEnd / CPS, f: s.frames });
+    s.loopEnd += len;
+  }
+  const cut = cyc / CPS - 2; while (s.draws.length > 2 && s.draws[1].t < cut) s.draws.shift();
+}
+function drawClock(cv, s, wall) {
+  const { c, w, h } = fit(cv); clear(c, w, h);
+  const R = Math.min(w / 2 - 16, (h - 56) / 2), cx = w / 2, cy = R + 14, rev = 4;
+  glow(c, () => { c.beginPath(); c.arc(cx, cy, R, 0, 2 * Math.PI); }, 1);
+  c.strokeStyle = DIM; c.lineWidth = 1;
+  for (let i = 0; i < 8; i++) { const a = i / 8 * 2 * Math.PI; c.beginPath(); c.moveTo(cx + Math.sin(a) * (R - 7), cy - Math.cos(a) * (R - 7)); c.lineTo(cx + Math.sin(a) * R, cy - Math.cos(a) * R); c.stroke(); }
+  const hand = (sec, len, col, wd) => { const a = sec / rev * 2 * Math.PI; c.strokeStyle = col; c.lineWidth = wd; c.lineCap = "round"; c.beginPath(); c.moveTo(cx, cy); c.lineTo(cx + Math.sin(a) * len, cy - Math.cos(a) * len); c.stroke(); };
+  hand(wall, R - 4, "#9fb0cc", 1.2);
+  hand(s.shown / 50, R - 14, AMB, 3.5);
+  c.fillStyle = AMB; c.beginPath(); c.arc(cx, cy, 3.5, 0, 2 * Math.PI); c.fill();
+  // strip of drawn pictures, last 2 s
+  const sy = h - 22, x0 = 14, x1 = w - 14;
+  c.strokeStyle = DIM; c.lineWidth = 1; c.beginPath(); c.moveTo(x0, sy + 8); c.lineTo(x1, sy + 8); c.stroke();
+  c.strokeStyle = PH; c.lineWidth = 1.5;
+  s.draws.forEach(d => { const x = x1 - (wall - d.t) / 2 * (x1 - x0); if (x >= x0) { c.beginPath(); c.moveTo(x, sy - 4); c.lineTo(x, sy + 8); c.stroke(); } });
+  c.fillStyle = DIM; c.font = "10px IBM Plex Mono, monospace"; c.fillText("drawn pictures, last 2 s", x0, sy - 8);
+}
+function clkRead(s, wall) {
+  if (wall < 1) return "measuring…<br>&nbsp;";
+  const span = Math.min(2, wall), ds = s.draws.filter(d => d.t >= wall - span);
+  const pics = span > .25 ? (ds.length / span) : 0;
+  const first = s.draws.find(d => d.t >= wall - span) || s.draws[0], last = s.draws[s.draws.length - 1];
+  const speed = (last.t - first.t) > .2 ? (last.f - first.f) / 50 / (last.t - first.t) : 1;
+  const lag = wall - s.shown / 50;
+  return `${pics.toFixed(0)} pictures/s · game speed <span class="${speed < .97 ? "bad" : "good"}">${Math.round(speed * 100)}%</span> of real time` + `<br>game clock behind wall clock: ${Math.max(0, lag).toFixed(2)} s`;
+}
+let clkLast = 0;
+function clkLoop(now) {
+  if (!clkRun) return;
+  const wall = (now - t0) / 1000;
+  sims.forEach(s => advance(s, wall * CPS));
+  drawClock($("ckA"), sims[0], wall); drawClock($("ckB"), sims[1], wall);
+  if (now - clkLast > 250) { $("ckAr").innerHTML = clkRead(sims[0], wall); $("ckBr").innerHTML = clkRead(sims[1], wall); clkLast = now; }
+  requestAnimationFrame(clkLoop);
+}
+function clkStatic() { const wall = 1.6; resetSims(); sims.forEach(s => advance(s, wall * CPS)); drawClock($("ckA"), sims[0], wall); drawClock($("ckB"), sims[1], wall); $("ckAr").innerHTML = clkRead(sims[0], wall); $("ckBr").innerHTML = clkRead(sims[1], wall); }
+ld.oninput = () => { $("ldOut").textContent = fmt(+ld.value); resetSims(); if (!clkRun) clkStatic(); };
+let clkVisible = false;
+function clkStart() { if (clkRun && clkVisible) { resetSims(); requestAnimationFrame(clkLoop); } }
+$("clkPlay").onclick = () => { clkRun = !clkRun; $("clkPlay").setAttribute("aria-pressed", clkRun); $("clkPlay").textContent = clkRun ? "Pause" : "Play"; if (clkRun) clkStart(); };
+$("clkPlay").setAttribute("aria-pressed", clkRun); $("clkPlay").textContent = clkRun ? "Pause" : "Play";
+resetSims(); clkStatic();
+visible($("ckA"), () => { const was = clkVisible; clkVisible = true; if (!was) clkStart(); }, () => { clkVisible = false; });
+
+// ---- 5a: projection slots ----
+const NOBJ = 5, HIST = 24, names = ["M1", "M2", "M3", "B1", "B2"];
+const slotsSvg = $("slots");
+let objs, mframe, hist, slRun = !reduce, fno;
+function slInit() {
+  objs = names.map((n, i) => ({ on: i < 3, isNew: 0, life: 0 }));
+  mframe = 0; hist = []; fno = 0;
+  for (let f = 0; f < HIST; f++) { if (f === 13) fireB(); slStep(); }
+}
+function fireB() { const b = objs.slice(3).find(o => !o.on); if (!b) return false; b.on = true; b.isNew = 2; b.life = 32; return true; }
+function slStep() {
+  mframe = (mframe + 1) % NOBJ; let proj = mframe;
+  for (let i = 0; i < NOBJ; i++) if (objs[i].on && objs[i].isNew) { objs[i].isNew--; proj = i; break; }
+  const col = objs.map((o, i) => o.on ? (i === proj ? "P" : "E") : "-");
+  hist.push({ col, f: fno++ }); if (hist.length > HIST) hist.shift();
+  objs.forEach((o, i) => { if (i >= 3 && o.on && --o.life <= 0) o.on = false; });
+  $("fire").disabled = !objs.slice(3).some(o => !o.on);
+}
+function slDraw() {
+  slotsSvg.innerHTML = "";
+  const VW = vw(slotsSvg), COLS = VW < 500 ? 12 : 24, shown = hist.slice(-COLS);
+  slotsSvg.setAttribute("viewBox", `0 0 ${VW} 150`);
+  const ox = 34, cw = (VW - ox) / COLS, rh = 24, oy = 18;
+  names.forEach((n, r) => el("text", { x: 0, y: oy + r * rh + 15, "font-size": 12, fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace" }, slotsSvg).textContent = n);
+  shown.forEach((h, ci) => {
+    const x = ox + ci * cw;
+    if (h.f % 4 === 0) el("text", { x: x + cw / 2, y: 11, "text-anchor": "middle", "font-size": 9, fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace" }, slotsSvg).textContent = h.f;
+    h.col.forEach((s, r) => {
+      const y = oy + r * rh;
+      if (s === "P") el("rect", { x: x + 1, y: y + 2, width: cw - 3, height: rh - 5, rx: 3, fill: "var(--accent)" }, slotsSvg);
+      else if (s === "E") el("rect", { x: x + 3, y: y + 5, width: cw - 7, height: rh - 11, rx: 2, fill: "none", stroke: "var(--muted)", "stroke-width": 1.2 }, slotsSvg);
+      else el("circle", { cx: x + cw / 2, cy: y + rh / 2 - 1, r: 2, fill: "var(--rule)" }, slotsSvg);
+    });
+  });
+  const last = hist[hist.length - 1], active = last.col.filter(s => s !== "-").length, p = last.col.indexOf("P");
+  $("slRead").textContent = `frame ${last.f}: ${p >= 0 ? "projected " + names[p] : "projected nothing (empty slot's turn)"} · projecting all ${active} active would cost ~${active}k`;
+}
+let slTimer = null;
+function slTick() { slStep(); slDraw(); }
+function slSet(on) { slRun = on; $("slPlay").setAttribute("aria-pressed", on); $("slPlay").textContent = on ? "Pause" : "Play"; clearInterval(slTimer); if (on) slTimer = setInterval(slTick, 320); }
+$("slPlay").onclick = () => slSet(!slRun);
+$("fire").onclick = () => { fireB(); if (!slRun) slTick(); };
+slInit(); slDraw();
+visible(slotsSvg, () => { if (slRun) slSet(true); }, () => clearInterval(slTimer));
+
+// ---- 5b: thundering herd ----
+const herd = $("herd"), CAP = 300, TICKS = 120;
+function drawHerd() {
+  const N = +$("ck").value, T = +$("ttl").value;
+  herd.innerHTML = "";
+  const VW = vw(herd); herd.setAttribute("viewBox", `0 0 ${VW} 250`);
+  const sync = Array.from({ length: TICKS }, (_, t) => t % T === 0 ? N : 0);
+  const base = Math.floor(N / T), rem = N % T;
+  const stag = Array.from({ length: TICKS }, (_, t) => base + ((t % T) < rem ? 1 : 0));
+  const ymax = Math.max(N, CAP) * 1.05, ox = 44, pw = VW - ox - 6, rowH = 92, bw = pw / TICKS;
+  const rows = [{ name: "All keys expire together", d: sync, y: 14, c: "var(--warn)" }, { name: "Staggered rotation", d: stag, y: 14 + rowH + 38, c: "var(--accent)" }];
+  rows.forEach(r => {
+    el("text", { x: ox, y: r.y - 2, "font-size": 11, fill: "var(--fg)", "font-family": "IBM Plex Sans, sans-serif", "font-weight": 600 }, herd).textContent = r.name;
+    const base = r.y + 8 + rowH - 8, sy = v => base - v / ymax * (rowH - 8);
+    [0, ymax / 1.05].forEach(v => { const y = sy(v); el("line", { x1: ox, x2: ox + pw, y1: y, y2: y, stroke: "var(--rule)", "stroke-width": 1 }, herd); el("text", { x: ox - 6, y: y + 3, "text-anchor": "end", "font-size": 9, fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace" }, herd).textContent = fmt(v); });
+    r.d.forEach((v, t) => { if (v > 0) el("rect", { x: ox + t * bw + .5, y: sy(v), width: Math.max(1, bw - 1.5), height: base - sy(v), fill: r.c, rx: Math.min(2, bw / 3) }, herd); });
+    const cy = sy(CAP); el("line", { x1: ox, x2: ox + pw, y1: cy, y2: cy, stroke: "var(--fg)", "stroke-dasharray": "4 3", "stroke-width": 1 }, herd);
+    el("text", { x: ox + pw, y: cy - 4, "text-anchor": "end", "font-size": 9, fill: "var(--fg)", "font-family": "IBM Plex Mono, monospace" }, herd).textContent = "backend capacity " + CAP;
+    const hit = el("rect", { x: ox, y: r.y + 8, width: pw, height: rowH - 8, fill: "transparent" }, herd);
+    hit.addEventListener("pointermove", e => { const b = herd.getBoundingClientRect(), t = Math.max(0, Math.min(TICKS - 1, Math.floor(((e.clientX - b.left) / b.width * VW - ox) / bw))); showTip(e, `${r.name}<br>tick ${t}: ${fmt(r.d[t])} refreshes`); });
+    hit.addEventListener("pointerleave", hideTip);
+  });
+  el("text", { x: ox + pw, y: 250 - 2, "text-anchor": "end", "font-size": 9, fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace" }, herd).textContent = `${TICKS} ticks`;
+  $("herdRead").innerHTML = `peak per tick: <span class="${N > CAP ? "bad" : "good"}">${fmt(N)}</span> together vs <span class="${Math.ceil(N / T) > CAP ? "bad" : "good"}">${fmt(Math.ceil(N / T))}</span> staggered · same total work`;
+}
+["ck", "ttl"].forEach(id => $(id).oninput = () => { $(id + "Out").textContent = fmt(+$(id).value); drawHerd(); });
+drawHerd();
+
+// ---- 6: dependency tree (illustrative) ----
+const TREE = { n: "order-service", own: true, k: [
+  { n: "acme-commons 4.2", m: "you call StringUtils.slugify()", cls: 610, k: [
+    { n: "acme-json 2.9", cls: 340, k: [{ n: "acme-reflect 1.4", cls: 120 }, { n: "acme-annotations 1.1", cls: 25 }] },
+    { n: "acme-http-client 5.0", cls: 420, k: [{ n: "acme-codec 1.15", cls: 90 }, { n: "acme-logging-bridge 2.0", cls: 60 }, { n: "acme-tls-utils 0.9", cls: 75 }] },
+    { n: "acme-cache 3.3", cls: 260, k: [{ n: "acme-metrics 1.8", cls: 150 }] },
+    { n: "acme-text 1.10", cls: 180, k: [{ n: "acme-icu-lite 72", cls: 410 }] },
+    { n: "acme-config 2.1", cls: 130, k: [{ n: "acme-yaml 2.2", cls: 110 }] },
+  ] } ] };
+const OWN = { n: "order-service", own: true, k: [{ n: "Slugify.java", m: "20 lines you own", cls: 1 }] };
+let depMode = "add";
+const count = n => (n.k || []).reduce((a, c) => { const r = count(c); return [a[0] + 1 + r[0], a[1] + (c.cls || 0) + r[1]]; }, [0, 0]);
+function renderTree(open) {
+  const t = depMode === "add" ? TREE : OWN, ul = $("tree"); ul.innerHTML = "";
+  const mk = (node, parent, depth) => {
+    const li = document.createElement("li");
+    const kids = node.k && node.k.length;
+    if (kids && !node.own) { const b = document.createElement("button"); b.textContent = open || depth < 1 ? "−" : "+"; b.setAttribute("aria-label", "Toggle " + node.n); li.appendChild(b); b.onclick = () => { const sub = li.querySelector("ul"); sub.hidden = !sub.hidden; b.textContent = sub.hidden ? "+" : "−"; }; }
+    li.insertAdjacentHTML("beforeend", `<span class="${node.m ? "used" : ""}">${node.n}</span>` + (node.m ? ` <span class="meta">· ${node.m}</span>` : "") + (node.cls && !node.own ? ` <span class="meta">· ${node.cls} classes</span>` : "") + (kids && !node.own ? ` <span class="meta">· ${count(node)[0]} transitive</span>` : ""));
+    if (kids) { const sub = document.createElement("ul"); sub.hidden = !(open || depth < 1 || node.own); node.k.forEach(c => mk(c, sub, depth + 1)); li.appendChild(sub); }
+    parent.appendChild(li);
+  };
+  mk(t, ul, 0);
+  const [jars, cls] = count(t);
+  $("tJars").textContent = depMode === "add" ? jars : 0;
+  $("tCls").textContent = fmt(cls);
+  $("depExp").disabled = depMode !== "add";
+}
+$("depAdd").onclick = () => { depMode = "add"; $("depAdd").setAttribute("aria-pressed", true); $("depOwn").setAttribute("aria-pressed", false); renderTree(false); };
+$("depOwn").onclick = () => { depMode = "own"; $("depOwn").setAttribute("aria-pressed", true); $("depAdd").setAttribute("aria-pressed", false); renderTree(false); };
+$("depExp").onclick = () => renderTree(true);
+renderTree(false);
+
+// ---- 7a: ramp tail on a real view ----
+const tl = $("tl"), ps = $("ps"), tailCv = $("tailCv");
+function drawTail() {
+  const t = +tl.value, S = +ps.value, P = DC.pos, mul = DC.mul;
+  $("tlOut").textContent = t.toFixed(1); $("psOut").textContent = S;
+  const f = 1 + mul * t / P, g = (S + t) / P, ideal = Math.round(P + (mul - 1) * t);
+  const { c, w, h } = fit(tailCv); clear(c, w, h);
+  const k = Math.min(w / 260, h / 196), cx = w / 2, cy = h / 2 + 14, A = DC.anchorY;
+  const X = x => cx + x * k, Y = y => cy - (y - YC) * k;
+  const starts = [];
+  glow(c, () => {
+    c.beginPath();
+    DC.chunks.forEach(([cy0, cx0, ents]) => {
+      let x = cx0 * g / f, y = A + cy0 * g / f; starts.push([x, y]);
+      ents.forEach(([l, dy, dx]) => { const nx = x + dx / mul, ny = y + dy / mul; if (l) { c.moveTo(X(x), Y(y)); c.lineTo(X(nx), Y(ny)); } x = nx; y = ny; });
+    });
+  });
+  c.fillStyle = AMB; starts.forEach(([x, y]) => { c.beginPath(); c.arc(X(x), Y(y), 2.6, 0, 2 * Math.PI); c.fill(); });
+  const mis = (g / f - 1) * 100, ok = Math.abs(mis) < 0.8;
+  $("tailRead").innerHTML = `strokes run ${((f - 1) * 100).toFixed(1)}% long · polyline starts run ${((g - 1) * 100).toFixed(1)}% long` +
+    `<br>joints: ` + (ok ? `<span class="good">meet</span>` : `<span class="bad">miss by ${Math.abs(mis).toFixed(1)}%</span>`) +
+    `<br>calibrated scale = 64 + 3 × ${t.toFixed(1)} = <b>${(P + (mul - 1) * t).toFixed(1)}</b> (nearest: ${ideal})`;
+}
+tl.oninput = drawTail; ps.oninput = drawTail;
+$("tVecx").onclick = () => { tl.value = 0; ps.value = 64; drawTail(); };
+$("tCal").onclick = () => { ps.value = Math.round(64 + 3 * +tl.value); drawTail(); };
+drawTail();
+
+// ---- 7b: rolling deploy (illustrative) ----
+const dep = $("dep"), dt = $("dt");
+const MIG = 12, PODS = [24, 40, 56, 72], START = 6; // pod i: v1 until PODS[i], starting until +START, then v2
+function drawDep() {
+  const t = +dt.value; $("dtOut").textContent = t;
+  dep.innerHTML = "";
+  const VW = vw(dep); dep.setAttribute("viewBox", `0 0 ${VW} 210`);
+  const ox = VW < 500 ? 56 : 74, pw = VW - ox - 10, X = v => ox + v / 100 * pw, rh = 26, oy = 34;
+  el("rect", { x: X(PODS[0] + START), y: oy - 22, width: X(PODS[3]) - X(PODS[0] + START), height: rh * 5 + 26, fill: "var(--warn-soft)" }, dep);
+  el("text", { x: (X(PODS[0] + START) + X(PODS[3])) / 2, y: oy - 10, "text-anchor": "middle", "font-size": 11, fill: "var(--warn)", "font-family": "IBM Plex Mono, monospace", "font-weight": 500 }, dep).textContent = "mixed: v1 and v2 both serve";
+  const lab = (y, s) => el("text", { x: 0, y: y + 15, "font-size": 11, fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace" }, dep).textContent = s;
+  const band = (x0, x1, y, fill, text, ink) => { el("rect", { x: X(x0), y: y + 3, width: Math.max(0, X(x1) - X(x0) - 2), height: rh - 8, rx: 3, fill }, dep); if (X(x1) - X(x0) > 40) el("text", { x: X(x0) + 6, y: y + 17, "font-size": 10, fill: ink, "font-family": "IBM Plex Mono, monospace" }, dep).textContent = text; };
+  lab(oy, "schema"); band(0, MIG, oy, "var(--rule)", "old", "var(--fg)"); band(MIG, 100, oy, "var(--s3)", "migrated", "#08130e");
+  PODS.forEach((p, i) => { const y = oy + (i + 1) * rh; lab(y, "pod " + (i + 1)); band(0, p, y, "var(--s1)", "v1", "#fff"); band(p, p + START, y, "var(--rule)", "", "var(--fg)"); band(p + START, 100, y, "var(--s5)", "v2", "#1a0710"); });
+  const ty = oy + rh * 5 + 14;
+  [0, 100].forEach(v => { el("path", { d: `M${X(v)} ${ty + 2} l-5 9 h10 z`, fill: "var(--muted)" }, dep); });
+  el("text", { x: X(0), y: ty + 24, "font-size": 10, fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace" }, dep).textContent = "end-state test";
+  el("text", { x: X(100), y: ty + 24, "text-anchor": "end", "font-size": 10, fill: "var(--muted)", "font-family": "IBM Plex Mono, monospace" }, dep).textContent = "end-state test";
+  el("line", { x1: X(t), x2: X(t), y1: oy - 4, y2: oy + rh * 5 + 2, stroke: "var(--fg)", "stroke-width": 2 }, dep);
+  const v1 = PODS.filter(p => t < p).length, v2 = PODS.filter(p => t >= p + START).length, st = 4 - v1 - v2, mig = t >= MIG;
+  let s = `t=${t}: schema ${mig ? "migrated" : "old"} · ${v1} pod${v1 === 1 ? "" : "s"} on v1, ${v2} on v2${st ? `, ${st} starting` : ""}`;
+  if (mig && v1 && v2) s += `<br><span class="bad">v1 and v2 serve the same users against the migrated schema; neither end-state test ran this</span>`;
+  else if (mig && v1) s += `<br><span class="bad">v1 code runs against the migrated schema</span>`;
+  else s += `<br>an end state: covered by the usual tests`;
+  $("depRead").innerHTML = s;
+}
+dt.oninput = drawDep; drawDep();
+
+// redraw canvases on resize and theme change
+let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => { drawDome(heroCv, heroStep); setStep(+stp.value); drawTail(); if (!clkRun) clkStatic(); vx(+crk.value); en(+nq.value); slDraw(); drawHerd(); drawDep(); }, 120); });
+redrawers.push(() => { setStep(+stp.value); drawMx(); slDraw(); drawHerd(); drawDep(); });
+})();
+</script>
+
+</body></html>
