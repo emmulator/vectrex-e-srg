@@ -17,6 +17,15 @@ emulators (RetroArch's vecx core, MAME, VIDE).
   score. NORMAL's is kept in the BIOS high-score slot, so it survives a
   reset (and, on a UVMC2, a power cycle).
 
+## On a real Vectrex
+
+[Gameplay video on YouTube](https://www.youtube.com/watch?v=tprYcejVHpM)
+
+<p>
+<img src="docs/images/e-srg-title.jpg" width="45%" alt="The title screen on a real Vectrex: E-SRG, the NORMAL high score 45490, the turning dome and '2 TO CHANGE LEVEL'">
+<img src="docs/images/e-srg-play.jpg" width="45%" alt="Play on a real Vectrex: missiles diving at the dome among the stars, the ship on the dome, the radar lower left, 100% integrity and three lives lower right">
+</p>
+
 Ready-made ROMs are on the releases page: `e-srg-<version>v.bin` for a
 Vectrex, `e-srg-<version>e.bin` for emulators.
 
