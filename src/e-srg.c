@@ -18,7 +18,7 @@
 #define VERSION_Y -40
 #define VERSION_X -63
 #endif
-#define GAME_VERSION "1.0.1"              // (the Makefile reads it for the ROM names)
+#define GAME_VERSION "1.0.2"              // (the Makefile reads it for the ROM names)
 #if defined(DOME_NO_TAIL)                // + the build: E emulator (make emu),
 #define GAME_BUILD "E"
 #elif defined(DOME_MINE)                 //   M one particular Vectrex (make mine),
@@ -767,8 +767,10 @@ static unsigned char collapse_update(void)   // 0: don't draw the dome
 
     dome_burst = dome_shake = dome_dim = 0;
     dome_sink = 0;
-    if (!dead_t || !dome_dead)
+    if (!dome_dead)
         return 1;
+    if (!dead_t)
+        return (unsigned char)!game_over;    // (gone under GAME OVER after a dome death)
     f = (unsigned char)(DEAD_FRAMES - dead_t);
     if (f >= COLLAPSE_GONE)
         return 0;
@@ -1246,7 +1248,7 @@ int main(void)
                                          //  the dome's front, like its far side)
         if (collapse_update())
             dome_draw(dome_angle);
-        whole = (unsigned char)(!dome_dead || !dead_t);   // (cracks hidden while it collapses)
+        whole = (unsigned char)(!dome_dead || !(dead_t || game_over));   // (cracks hidden while it collapses, and after)
         if (!dead_t && !game_over)
             ship_draw(ship_lat);
         if (game_over) {

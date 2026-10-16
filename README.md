@@ -46,12 +46,14 @@ enjoy it!
 <img src="docs/images/e-srg-play.jpg" width="45%" alt="Play on a real Vectrex: missiles diving at the dome among the stars, the ship on the dome, the radar lower left, 100% integrity and three lives lower right">
 </p>
 
+- Game design: John Emmer.
+- Implementation: Claude Code, using Opus 5.5, working with
+  the designer.
+- Built with gcc6809, ASxxxx, Peer Johannsen's PeerC runtime and
+  Malban's VIDE.
+
 Ready-made ROMs are on the releases page: `e-srg-<version>v.bin` for a
 Vectrex, `e-srg-<version>e.bin` for emulators.
-
-Game design: John Emmer. Implementation: Claude (Anthropic), working with
-the designer. Built with gcc6809, ASxxxx, Peer Johannsen's PeerC runtime and
-Malban's VIDE.
 
 Developer notes (how the game is built, traps, budgets):
 [AGENTS.md](AGENTS.md).
@@ -108,16 +110,16 @@ cartridge (UVMC2 `.um2`, PiTrex) only run on that one.
 ## Build & test
 
 ```sh
-make            # build/e-srg-1.0.1v.bin: for a typical Vectrex (the release ROM)
-make mine       # build/e-srg-1.0.1m.bin: preset for one particular Vectrex
-make run        # build build/e-srg-1.0.1e.bin (emulator setting) and run it
-make emu        # just build build/e-srg-1.0.1e.bin
+make            # build/e-srg-1.0.2v.bin: for a typical Vectrex (the release ROM)
+make mine       # build/e-srg-1.0.2m.bin: preset for one particular Vectrex
+make run        # build build/e-srg-1.0.2e.bin (emulator setting) and run it
+make emu        # just build build/e-srg-1.0.2e.bin
 make test       # headless: the emulator ROM must start and draw; writes a PNG
 ```
 
 The ROM names carry the version (`GAME_VERSION` in `src/e-srg.c`; the
 Makefile reads it from there) and the build: **v** typical Vectrex, **e**
-emulator, **m** one particular console (yours, once you set it). The boot screen shows the same, e.g. `V1.0.1M`
+emulator, **m** one particular console (yours, once you set it). The boot screen shows the same, e.g. `V1.0.2M`
 under the name. On the UVMC2 renaming a ROM keeps its high score, but each
 new build starts from 0 (see "The number at the top of the boot screen"
 below).
@@ -157,7 +159,7 @@ For a one-off experiment,
 `GCC_FLAGS` adds options:
 
 ```sh
-make run GAME=e-srg-2x GCC_FLAGS="-DMIS_SPEED_TEST=164"   # build/e-srg-2x-1.0.1e.bin
+make run GAME=e-srg-2x GCC_FLAGS="-DMIS_SPEED_TEST=164"   # build/e-srg-2x-1.0.2e.bin
 ```
 
 Always pass the same `GCC_FLAGS` the ROM was built with: if any source
@@ -226,8 +228,8 @@ there slowed the page from 93% to 78% of 50 Hz.
 - **The BIOS boot screen** (the name shown after "VECTREX") is
   `game_header` at the top of the file: `.name` and `.version` lines (each
   with height, width, y, x), and `.copyright`, which must start with `g GCE`
-  and the year. The version is `GAME_VERSION` ("1.0.1") plus the build letter
-  (`GAME_BUILD`), shown as e.g. V1.0.1V.
+  and the year. The version is `GAME_VERSION` ("1.0.2") plus the build letter
+  (`GAME_BUILD`), shown as e.g. V1.0.2V.
 - **The number at the top of the boot screen** on the Vectrex is the
   BIOS's high-score slot, which the BIOS prints after a warm start (reset
   button, or a menu cart like the UVMC2 launching the game) but not after

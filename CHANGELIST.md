@@ -1,5 +1,14 @@
 # Changelist
 
+## 1.0.2
+
+- **Fixed: the dome reappeared, fully cracked, under GAME OVER** ([#2](https://github.com/emmulator/vectrex-e-srg/issues/2)).
+  When a dome death ended the game (every dome death on HARD, or one that took
+  your last life on NORMAL), the dome collapsed, then came back with every tile
+  cracked until the game returned to the title screen. It now stays gone under
+  GAME OVER. A last-life death on a cracked tile still shows the dome's real
+  cracks. ROM +17 bytes.
+
 ## 1.0.1
 
 - **Fixed: missiles could stop coming** ([#1](https://github.com/emmulator/vectrex-e-srg/issues/1)).
