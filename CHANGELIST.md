@@ -1,5 +1,12 @@
 # Changelist
 
+## 1.1.0
+
+- **New: slower missiles on EASY.** A player found the game too hard, so EASY's
+  missiles now fly at 0.75x the speed at every step of the score ramp (the
+  steps still come at the same scores). NORMAL and HARD are unchanged. 13 bytes
+  of ROM are left.
+
 ## 1.0.2
 
 - **Fixed: the dome reappeared, fully cracked, under GAME OVER** ([#2](https://github.com/emmulator/vectrex-e-srg/issues/2)).

@@ -309,7 +309,7 @@ turn).
 
 ## ROM
 
-About 55 bytes free in 1.0.0. Space was found by halving/quartering tables
+About 13 bytes free in 1.1.0 (was 55 in 1.0.0). Space was found by halving/quartering tables
 with interpolation (`mis_occ`, `crack_pos`, `mis_absin`), reusing missile
 pictures for bullets, generating flight increments at launch, dropping
 PeerC's wrappers and switching to `-Os`. Remaining ideas: sprites and

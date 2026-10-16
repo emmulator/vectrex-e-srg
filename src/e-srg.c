@@ -18,7 +18,7 @@
 #define VERSION_Y -40
 #define VERSION_X -63
 #endif
-#define GAME_VERSION "1.0.2"              // (the Makefile reads it for the ROM names)
+#define GAME_VERSION "1.1.0"              // (the Makefile reads it for the ROM names)
 #if defined(DOME_NO_TAIL)                // + the build: E emulator (make emu),
 #define GAME_BUILD "E"
 #elif defined(DOME_MINE)                 //   M one particular Vectrex (make mine),
@@ -217,6 +217,16 @@ static void ship_input(void)
     }
 }
 
+// Levels, chosen on the title screen (button 2). They differ in the
+// collapse count above and in a dome death: easy costs no life, normal one,
+// hard ends the game (kill_ship); easy's missiles are also
+// slower (see spawn). Each has its own high score.
+#define LEVEL_EASY   0
+#define LEVEL_NORMAL 1
+#define LEVEL_HARD   2
+#define LEVELS       3
+static unsigned char level = LEVEL_NORMAL;
+
 // ---- enemy missiles --------------------------------------------------------
 // Each wave sets which rings of cells missiles aim at (ring 0 = the peak;
 // the first rings come in from above, so they're on screen longest), their
@@ -239,6 +249,7 @@ static unsigned char integ_pct = 100;     // dome integrity, %: scales each kill
 #define SPEED_STEPS 5
 static const unsigned long speed_score[SPEED_STEPS] = { 0, 1000, 2500, 5000, 10000 };
 static const unsigned char speed_val[SPEED_STEPS] = { 82, 98, 115, 131, 164 };  // 1x 1.2x 1.4x 1.6x 2x
+static const unsigned char speed_easy[SPEED_STEPS] = { 61, 73, 86, 98, 123 };   // easy: a quarter slower
 static unsigned char wave_live = 2;       // at most this many at once (<= NMIS)
 static unsigned char spawn_timer = 50;    // frames until the next launch
 #define SPAWN_GAP 40                      // frames between launches: SPAWN_GAP + 0..63
@@ -302,7 +313,7 @@ static void spawn(struct missile *m)
     k = SPEED_STEPS - 1;
     while (!score_hi && score10 < speed_score[k])
         k--;
-    fl_spd = speed_val[k];
+    fl_spd = (level ? speed_val : speed_easy)[k];
 #endif
     flight_inc(m->inc);
     m->kind = KIND_MISSILE;
@@ -513,14 +524,6 @@ static void explosions_update(void)
 // (missiles only aim at whole cells). How many depends on the level:
 // COLLAPSE_EASY - level (5 easy, 4 normal, 3 hard).
 #define COLLAPSE_EASY 5
-// Levels, chosen on the title screen (button 2). They differ in the
-// collapse count above and in a dome death: easy costs no life, normal one,
-// hard ends the game (kill_ship). Each has its own high score.
-#define LEVEL_EASY   0
-#define LEVEL_NORMAL 1
-#define LEVEL_HARD   2
-#define LEVELS       3
-static unsigned char level = LEVEL_NORMAL;
 #define DOME_LIMIT 38                     // integrity 0% at this many broken cells (half the dome)
 unsigned char broken[NCELLS];             // broken cells, in the order they broke
 unsigned char nbroken;
@@ -1248,7 +1251,7 @@ int main(void)
                                          //  the dome's front, like its far side)
         if (collapse_update())
             dome_draw(dome_angle);
-        whole = (unsigned char)(!dome_dead || !(dead_t || game_over));   // (cracks hidden while it collapses, and after)
+        whole = (unsigned char)!(dome_dead && (dead_t | game_over));   // (cracks hidden while it collapses, and after)
         if (!dead_t && !game_over)
             ship_draw(ship_lat);
         if (game_over) {

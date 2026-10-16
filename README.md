@@ -14,7 +14,7 @@ emulators (RetroArch's vecx core, MAME, VIDE).
 - The radar (lower left) shows missiles before they're on screen and
   blinks and beeps when you're lined up with one.
 - Score: 1000 points per missile times the dome's integrity. Missiles get
-  faster as the score grows.
+  faster as the score grows (EASY's start and stay a quarter slower).
 - Three levels (button 2 on the title screen), each with its own high
   score. NORMAL's is kept in the BIOS high-score slot, so it survives a
   reset (and, on a UVMC2, a power cycle).
@@ -110,16 +110,16 @@ cartridge (UVMC2 `.um2`, PiTrex) only run on that one.
 ## Build & test
 
 ```sh
-make            # build/e-srg-1.0.2v.bin: for a typical Vectrex (the release ROM)
-make mine       # build/e-srg-1.0.2m.bin: preset for one particular Vectrex
-make run        # build build/e-srg-1.0.2e.bin (emulator setting) and run it
-make emu        # just build build/e-srg-1.0.2e.bin
+make            # build/e-srg-1.1.0v.bin: for a typical Vectrex (the release ROM)
+make mine       # build/e-srg-1.1.0m.bin: preset for one particular Vectrex
+make run        # build build/e-srg-1.1.0e.bin (emulator setting) and run it
+make emu        # just build build/e-srg-1.1.0e.bin
 make test       # headless: the emulator ROM must start and draw; writes a PNG
 ```
 
 The ROM names carry the version (`GAME_VERSION` in `src/e-srg.c`; the
 Makefile reads it from there) and the build: **v** typical Vectrex, **e**
-emulator, **m** one particular console (yours, once you set it). The boot screen shows the same, e.g. `V1.0.2M`
+emulator, **m** one particular console (yours, once you set it). The boot screen shows the same, e.g. `V1.1.0M`
 under the name. On the UVMC2 renaming a ROM keeps its high score, but each
 new build starts from 0 (see "The number at the top of the boot screen"
 below).
@@ -159,7 +159,7 @@ For a one-off experiment,
 `GCC_FLAGS` adds options:
 
 ```sh
-make run GAME=e-srg-2x GCC_FLAGS="-DMIS_SPEED_TEST=164"   # build/e-srg-2x-1.0.2e.bin
+make run GAME=e-srg-2x GCC_FLAGS="-DMIS_SPEED_TEST=164"   # build/e-srg-2x-1.1.0e.bin
 ```
 
 Always pass the same `GCC_FLAGS` the ROM was built with: if any source
@@ -211,8 +211,9 @@ there slowed the page from 93% to 78% of 50 Hz.
 - **Levels:** button 2 on any title page (it jumps back to the first) picks EASY / NORMAL / HARD
   (`level_name`, shown at y 60 on the title page with that level's high
   score under it, `BEST_Y`). They differ in how many broken neighbours
-  collapse a cell (`COLLAPSE_EASY - level`: 5 / 4 / 3) and in what a dome
-  collapse costs (`kill_ship`: nothing / a life / the game).
+  collapse a cell (`COLLAPSE_EASY - level`: 5 / 4 / 3), in what a dome
+  collapse costs (`kill_ship`: nothing / a life / the game), and in missile
+  speed: EASY uses `speed_easy`, 0.75x of `speed_val` at each score step.
 - **High scores:** one per level, on `page_best` (the names are
   `name_easy` etc., the numbers in vector digits at `best_rows_y`). GAME
   OVER returns to that page. Only NORMAL's is kept in the BIOS slot, so
@@ -228,8 +229,8 @@ there slowed the page from 93% to 78% of 50 Hz.
 - **The BIOS boot screen** (the name shown after "VECTREX") is
   `game_header` at the top of the file: `.name` and `.version` lines (each
   with height, width, y, x), and `.copyright`, which must start with `g GCE`
-  and the year. The version is `GAME_VERSION` ("1.0.2") plus the build letter
-  (`GAME_BUILD`), shown as e.g. V1.0.2V.
+  and the year. The version is `GAME_VERSION` ("1.1.0") plus the build letter
+  (`GAME_BUILD`), shown as e.g. V1.1.0V.
 - **The number at the top of the boot screen** on the Vectrex is the
   BIOS's high-score slot, which the BIOS prints after a warm start (reset
   button, or a menu cart like the UVMC2 launching the game) but not after
@@ -245,7 +246,7 @@ there slowed the page from 93% to 78% of 50 Hz.
   title line, so `name`/`version` must be exactly their text's length (no
   room for C's NUL); the build stops with an error otherwise.
 
-The ROM is nearly full (about 55 bytes free in 1.0.0, built with `-Os`):
+The ROM is nearly full (13 bytes free in 1.1.0, built with `-Os`):
 `make` prints the size; the cartridge holds 32768 bytes.
 
 ## CLion
