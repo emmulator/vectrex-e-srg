@@ -18,7 +18,7 @@
 #define VERSION_Y -40
 #define VERSION_X -63
 #endif
-#define GAME_VERSION "1.0.0"              // (the Makefile reads it for the ROM names)
+#define GAME_VERSION "1.0.1"              // (the Makefile reads it for the ROM names)
 #if defined(DOME_NO_TAIL)                // + the build: E emulator (make emu),
 #define GAME_BUILD "E"
 #elif defined(DOME_MINE)                 //   M one particular Vectrex (make mine),
@@ -226,6 +226,8 @@ static unsigned char wave_rings = 5;      // targets in rings 0..wave_rings-1 (u
 // rings, down to the dome's bottom row: on screen for less time).
 static unsigned char low_rings_at = 6;
 static unsigned char kills;               // (stops at 255)
+static unsigned char hits;                // missiles that hit the dome: low_rings_at of them
+                                          //   also opens all rings (stops at 255)
 unsigned long score10;                    // score / 10 (shown with a trailing 0): low 16 bits
 static unsigned char score_hi;            //   and its top 8 (long is 16 bits under -mint8)
 #define SCORE_MAX_HI 0x98                 // capped at 9,999,999 (= $98967F): 99,999,990
@@ -284,7 +286,7 @@ static void spawn(struct missile *m)
 #else
     k = 8;                           // a free cell in the wave's rings (a few tries)
     do
-        c = rand_below(mis_ring_end[(kills >= low_rings_at ? MIS_RINGS : wave_rings) - 1]);
+        c = rand_below(mis_ring_end[(kills >= low_rings_at || hits >= low_rings_at ? MIS_RINGS : wave_rings) - 1]);
     while (!free_target(c) && --k);
     if (!free_target(c))
         return;                      // (none found this time)
@@ -553,6 +555,8 @@ static void break_tile(struct missile *m)
     if (is_broken(c))
         return;                          // (missiles don't aim at broken cells)
     crack(c);
+    if (hits != 255)
+        hits++;
     snd_crack = CRACK_FRAMES;            // the impact
     snd_thud = 0x300;
     snd_hit = 0;
@@ -822,7 +826,7 @@ static void new_game(void)
     score_hi = SCORE_TEST_HI;            //   or near the cap
 #endif
 #endif
-    kills = 0;
+    kills = hits = 0;
     game_over = 0;
     dome_dead = 1;
     respawn();

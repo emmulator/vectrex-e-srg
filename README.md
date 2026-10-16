@@ -1,4 +1,6 @@
 # E-SRG
+- "The Elite-Style Radar Game"
+- Pronounced "e-surge"
 
 A game for the **Vectrex** (GCE, 1982): defend a rotating geodesic dome from
 incoming missiles. It's a native 6809 cartridge ROM (`.bin`), so it runs on
@@ -16,6 +18,24 @@ emulators (RetroArch's vecx core, MAME, VIDE).
 - Three levels (button 2 on the title screen), each with its own high
   score. NORMAL's is kept in the BIOS high-score slot, so it survives a
   reset (and, on a UVMC2, a power cycle).
+
+## Background
+
+One of the first commercial games that I got for my first computer, a C64, was Elite.  (The very first
+was Gridrunner.) Like many others, I put many hours into Elite. A few years later, everyone was
+suddenly talking about Wing Commander, and I couldn't understand why.  Wing Commander had a few pre-rendered
+angles for the enemy ships and a crappy 2D radar.  Why would anyone want to play that, when they
+could have "smooth" vector graphics that rendered every possible angle of objects and the awesome
+3D radar that showed you exactly where everything was relative to your own ship?  Anyway, I see in
+the screenshots for Squadron 42 that they're now using the Elite-style radar, so clearly I was right
+all along. :)  
+
+Anyway, I've been thinking about ways to incorporate an Elite-style radar into a game of my own for
+decades now, and the Vectrex seems like the ideal place for such a tribute.  I'm a programmer by day,
+but that's "Enterprise Java", and I've never had the time and energy to apply myself to learn C and 
+assembly to the extent I'd need for a project like this.  But I use Claude Code at work as well, so I 
+figured "he" could help me with this.  I'm pretty happy with how this has turned out.  I hope you
+enjoy it!
 
 ## On a real Vectrex
 
@@ -88,16 +108,16 @@ cartridge (UVMC2 `.um2`, PiTrex) only run on that one.
 ## Build & test
 
 ```sh
-make            # build/e-srg-1.0.0v.bin: for a typical Vectrex (the release ROM)
-make mine       # build/e-srg-1.0.0m.bin: preset for one particular Vectrex
-make run        # build build/e-srg-1.0.0e.bin (emulator setting) and run it
-make emu        # just build build/e-srg-1.0.0e.bin
+make            # build/e-srg-1.0.1v.bin: for a typical Vectrex (the release ROM)
+make mine       # build/e-srg-1.0.1m.bin: preset for one particular Vectrex
+make run        # build build/e-srg-1.0.1e.bin (emulator setting) and run it
+make emu        # just build build/e-srg-1.0.1e.bin
 make test       # headless: the emulator ROM must start and draw; writes a PNG
 ```
 
 The ROM names carry the version (`GAME_VERSION` in `src/e-srg.c`; the
 Makefile reads it from there) and the build: **v** typical Vectrex, **e**
-emulator, **m** one particular console (yours, once you set it). The boot screen shows the same, e.g. `V1.0.0M`
+emulator, **m** one particular console (yours, once you set it). The boot screen shows the same, e.g. `V1.0.1M`
 under the name. On the UVMC2 renaming a ROM keeps its high score, but each
 new build starts from 0 (see "The number at the top of the boot screen"
 below).
@@ -137,7 +157,7 @@ For a one-off experiment,
 `GCC_FLAGS` adds options:
 
 ```sh
-make run GAME=e-srg-2x GCC_FLAGS="-DMIS_SPEED_TEST=164"   # build/e-srg-2x-1.0.0e.bin
+make run GAME=e-srg-2x GCC_FLAGS="-DMIS_SPEED_TEST=164"   # build/e-srg-2x-1.0.1e.bin
 ```
 
 Always pass the same `GCC_FLAGS` the ROM was built with: if any source
@@ -206,8 +226,8 @@ there slowed the page from 93% to 78% of 50 Hz.
 - **The BIOS boot screen** (the name shown after "VECTREX") is
   `game_header` at the top of the file: `.name` and `.version` lines (each
   with height, width, y, x), and `.copyright`, which must start with `g GCE`
-  and the year. The version is `GAME_VERSION` ("1.0.0") plus the build letter
-  (`GAME_BUILD`), shown as e.g. V1.0.0V.
+  and the year. The version is `GAME_VERSION` ("1.0.1") plus the build letter
+  (`GAME_BUILD`), shown as e.g. V1.0.1V.
 - **The number at the top of the boot screen** on the Vectrex is the
   BIOS's high-score slot, which the BIOS prints after a warm start (reset
   button, or a menu cart like the UVMC2 launching the game) but not after
